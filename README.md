@@ -51,9 +51,7 @@ digital prototype – slik at dere har en felles forståelse for konseptet og we
 
 For de som ønsker å sette seg inn i det er det en god måte å utvikle en nettside på.
 
-
 For dere som ønsker å gjøre det på "gamlemåten" tar dere utganspunkt i '/deploy' mappen.
-
 
 Alt dere skal jobbe med gjøres der.
 
