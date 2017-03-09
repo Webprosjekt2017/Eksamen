@@ -15,7 +15,7 @@ på nærmiljøet» og de tilbudene som her finnes. Dere velger selv hvilke av ca
 av teknologi. Prøv også å finne noe «unikt» ved nettopp deres løsning – en slags «added value».
 Tenk kreativt og nytt! Før dere går i gang med det tekniske utviklingsarbeidet skal dere utvikle en
 digital prototype – slik at dere har en felles forståelse for konseptet og websiden som skal utvikles.
- 
+
 ###Tekniske krav til løsningen
 - Websiden skal bestå av én hovedside og minimum fire undersider
 - Designet skal være brukervennlig, følge gjeldene prinsipper og tilpasset målgruppen
@@ -44,4 +44,14 @@ digital prototype – slik at dere har en felles forståelse for konseptet og we
 - Bruk av unit tester
 - Bruk av code coverage med PHPUnit
 - Bruk av Javascript for å gjøre websiden mer dynamisk
-    
+
+## Jekyll and gulp
+
+For de som ønsker å sette seg inn i det er det en god måte å utvikle en nettside på.
+For dere som ønsker å gjøre det på "gamlemåten" tar dere utganspunkt i '/deploy' mappen.
+Alt dere skal jobbe med gjøres der.
+
+Mer info:
+ - [Noda-js](https://nodejs.org/en/ "Node-js Home Page")
+ - [Jekyll](https://jekyllrb.com/ "Jekyll Home Page")
+ - [Gulp-js](http://gulpjs.com/ "Gulp-js Home Page")
