@@ -50,7 +50,7 @@ digital prototype – slik at dere har en felles forståelse for konseptet og we
 ## Jekyll and gulp
 
 For de som ønsker å sette seg inn i det er det en god måte å utvikle en nettside på.  
-For dere som ønsker å gjøre det på "gamlemåten" tar dere utganspunkt i '/deploy' mappen.  
+For dere som ønsker å gjøre det på "gamlemåten" tar dere utganspunkt i '/\_site' mappen.  
 Alt dere skal jobbe med gjøres der.
 
 Mer info:
