@@ -47,13 +47,17 @@ digital prototype – slik at dere har en felles forståelse for konseptet og we
 
 ---
 
-## Jekyll and gulp
+##Jekyll og gulp
 
 For de som ønsker å sette seg inn i det er det en god måte å utvikle en nettside på.  
-For dere som ønsker å gjøre det på "gamlemåten" tar dere utganspunkt i '/\_site' mappen.  
-Alt dere skal jobbe med gjøres der.
+For dere som ønsker å gjøre det på "gamlemåten" ignorerer dere bare mapper som starter
+med '\_' . Alle './assests/\*.scss' filene er grunnlaget for Jekyll's sass/scss
+compilering så ikke fjern, flytt eller bruk samme navn på css filer i denne mappen.  
+Uten om det kan dere er det bare å legge til mapper filer og gjøre som vanlig.  
+Det er derimot veldig enkelt å lære des Jekyll og det er høyt anbefalt.
+Den vanskeligste biten er å få det installert.
 
-Mer info:
+__Mer info:__
  - [Node-js](https://nodejs.org/en/ "Node-js Home Page")
  - [Jekyll](https://jekyllrb.com/ "Jekyll Home Page")
  - [Gulp-js](http://gulpjs.com/ "Gulp-js Home Page")

@@ -5,7 +5,4 @@ _site
 *.local.*
 .idea
 
-package.json
 node_modules
-gulpfile.js
-DEV
