@@ -1,4 +1,4 @@
 *.local.*
 .idea
-
 node_modules
+_sass/.sass-cache
