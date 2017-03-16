@@ -2,7 +2,7 @@
 
 var   gulp  = require('gulp');
 var   sass  = require('gulp-sass');
-const pug   = require('gulp-pug2')
+const pug   = require('gulp-pug2');
 
 gulp.task('pug', function() {
     return gulp.src('./_pug/*.pug')
