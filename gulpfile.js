@@ -11,12 +11,12 @@ gulp.task('pug', function() {
 });
 
 gulp.task('sass', function () {
-  return gulp.src('./_sass/*.sass')
+  return gulp.src(['./_sass/*.sass', './_sass/*.scss'])
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(gulp.dest('./assets'));
 });
 
 gulp.task('default', function () {
-  gulp.watch('./_sass/*.sass', ['sass']);
-  gulp.watch('./_pug/*.pug', ['pug'])
+  gulp.watch(['./_sass/*.sass', './_sass/*.scss'], ['sass']);
+  gulp.watch('./_pug/*.pug', ['pug']);
 });
