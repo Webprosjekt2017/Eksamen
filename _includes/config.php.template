@@ -1,0 +1,19 @@
+<?php
+
+$config = array(
+    "urls" => array(
+        "baseUrl" => "https://tek.westerdals.no"
+    ),
+    "paths" => array(
+        "img" => $_SERVER["DOCUMENT_ROOT"] . "/images/"
+    ),
+    "db" => array(
+        "dbname" => "database",
+        "username" => "brukernavn",
+        "password" => "passord",
+        "host" => "localhost"
+    )
+);
+
+ini_set("error_reporting", "true");
+error_reporting(E_ALL|E_STRICT);
