@@ -1,4 +1,4 @@
-# PRO101 Webprosjekt - Eksamen
+# PRO101 Webprosjekt - Eksamen [![Build Status](https://travis-ci.org/Webrprosjekt2017/Eksamen.svg?branch=master)](https://travis-ci.org/Webrprosjekt2017/Eksamen)
 
 __Utlevering:__ 23. februar 2017  
 __Innlevering:__ 28. mai 2017 kl. 23.55 via its learning  
