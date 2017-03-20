@@ -3,3 +3,4 @@ _includes/config.php
 .idea
 node_modules
 _sass/.sass-cache
+vendor
