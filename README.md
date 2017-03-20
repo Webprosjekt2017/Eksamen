@@ -4,7 +4,7 @@ __Utlevering:__ 23. februar 2017
 __Innlevering:__ 28. mai 2017 kl. 23.55 via its learning  
 __Tillatte hjelpemidler:__ Alle  
 
-###Oppgavetekst
+### Oppgavetekst  
 Westerdals Oslo ACT har campus tre ulike steder i Oslo sentrum (Campus Fjerdingen, Campus
 Vulkan og Brenneriveien). For både studenter og ansatte er flere av disse stedene nye og mange
 kjenner lite til hvilken tilbud for finnes i nærmiljøet (eks. spisesteder, treningsmuligheter, butikker
@@ -16,7 +16,7 @@ av teknologi. Prøv også å finne noe «unikt» ved nettopp deres løsning – 
 Tenk kreativt og nytt! Før dere går i gang med det tekniske utviklingsarbeidet skal dere utvikle en
 digital prototype – slik at dere har en felles forståelse for konseptet og websiden som skal utvikles.
 
-###Tekniske krav til løsningen
+### Tekniske krav til løsningen
 - Websiden skal bestå av én hovedside og minimum fire undersider
 - Designet skal være brukervennlig, følge gjeldene prinsipper og tilpasset målgruppen
 - Websiden skal kommunisere med en database og dere skal gjøre bruk av PHP
@@ -28,7 +28,7 @@ digital prototype – slik at dere har en felles forståelse for konseptet og we
 - Vis at dere har tenkt på kravene til universell utforming (WCAG) ved å legge til rette for også de med nedsatt funksjonsevne
 - Koden skal være ryddig og lettleselig, med konsis indentering, samt kommentarer hvor det er nødvendig og god mappestruktur
 
-###Krav til dokumentasjon (innhold i prosjektrapporten)
+### Krav til dokumentasjon (innhold i prosjektrapporten)
 - En beskrivelsen av ideen og konseptet til løsningen dere har utviklet
 - En beskrivelse av hvordan dere benyttet Kanban (agile utviklingsmetode) i prosjektet. Hva fungerte godt og hva fungerte mindre godt?
 - Lenke til en video der dere gir en innføring i valgt støtteverktøy for bruk av Kanban i deres prosjekt
@@ -38,7 +38,7 @@ digital prototype – slik at dere har en felles forståelse for konseptet og we
 - Ellers skal rapporten være ryddig, godt strukturert og lett å lese. Den skal også ha en innholdsfortegnelse (se mal på emnesiden)
 
 
-###Ting som trekker opp leveransen (ikke krav)
+### Ting som trekker opp leveransen (ikke krav)
 - Bruk av composer og tredjepartspakker
 - Støtte i flere nettlesere (CSS browser prefixes)
 - Bruk av unit tester
@@ -47,15 +47,8 @@ digital prototype – slik at dere har en felles forståelse for konseptet og we
 
 ---
 
-##Jekyll og gulp
-
-For de som ønsker å sette seg inn i det er det en god måte å utvikle en nettside på.  
-For dere som ønsker å gjøre det på "gamlemåten" ignorerer dere bare mapper som starter med '\_' .  
-Alle './assests/\*.scss' filene er grunnlaget for Jekyll's sass/scss compilering så ikke fjern eller flytt disse. Og ikke bruk samme navn på css filer i denne mappen.  
-Uten om det kan dere er det bare å legge til mapper filer og gjøre som vanlig.  
-Det er derimot veldig enkelt å lære des Jekyll og det er høyt anbefalt. Den vanskeligste biten er å få det installert.
+## Gulp
 
 __Mer info:__
  - [Node-js](https://nodejs.org/en/ "Node-js Home Page")
- - [Jekyll](https://jekyllrb.com/ "Jekyll Home Page")
  - [Gulp-js](http://gulpjs.com/ "Gulp-js Home Page")
