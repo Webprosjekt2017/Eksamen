@@ -20,3 +20,4 @@ after_script:
   #- php vendor/bin/phpcov.php merge --clover build/logs/clover.xml build/cov
   #- php -d memory_limit=-1 vendor/bin/phpcov.php
   - travis_retry php vendor/bin/coveralls -v
+  - CODECLIMATE_REPO_TOKEN="ae0e9b2abe60df07dd4a91fbb42b3e02855d84ed3c996b44d545220ed02386b8" vendor/bin/test-reporter
