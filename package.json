@@ -1,14 +1,11 @@
 {
   "name": "eksamen",
   "version": "0.0.1",
-  "description": "PRO101 Webprosjekt - Eksamen",
+  "description": "PRO101 Webprosjekt",
   "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Otard95/Eksamen.git"
+    "url": "git+https://github.com/Webrprosjekt2017/Eksamen.git"
   },
   "keywords": [
     "Jekyll",
@@ -23,13 +20,16 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Otard95/Eksamen/issues"
+    "url": "https://github.com/Webrprosjekt2017/Eksamen/issues"
   },
-  "homepage": "https://github.com/Otard95/Eksamen#readme",
+  "homepage": "https://github.com/Webrprosjekt2017/Eksamen#readme",
   "devDependencies": {
     "browser-sync": "^2.18.8",
     "gulp": "^3.9.1",
     "gulp-pug2": "0.0.2",
     "gulp-sass": "^3.1.0"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
 }
