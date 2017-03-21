@@ -1,8 +1,34 @@
+---
+engines:
+  csslint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - ruby
+      - javascript
+      - python
+      - php
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+  phpmd:
+    enabled: true
+ratings:
+  paths:
+  - "**.css"
+  - "**.inc"
+  - "**.js"
+  - "**.jsx"
+  - "**.module"
+  - "**.php"
+  - "**.py"
+  - "**.rb"
 exclude_paths:
-  - "src/assets/js/jsvendor/"
-  - "vendor"
-  - "node_modules"
-  - "Concept"
-  - "_pug"
-  - "_sass"
-
+- vendor/
+- _pug/
+- _sass/
+- Concept
+- src/assets/js/jsvendor
