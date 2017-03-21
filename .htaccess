@@ -1,0 +1,4 @@
+IndexIgnore *
+RewriteEngine on
+
+RewriteRule ^main/([^/\.]+)/?$ index.php?page=$1 [L]
