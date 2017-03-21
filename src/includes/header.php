@@ -1,22 +1,34 @@
 <!DOCTYPE html>
+<html lang="no">
 <head>
-    <title><?php echo $pageTitle ?></title>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
+    <title><?php echo $pageTitle ?></title>
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="/assets/css/okayNav.css" media="screen">
+
+
 </head>
 
 <body>
+<div class="container">
+    <header id="header">
+        <a class="site-logo" href="#">
+            Logo
+        </a>
 
-<div class="top-line"></div>
-<!-- BODY WRAPPER -->
-<div class="wrapper">
-    <!-- HEADER -->
-    <div class="left">
-        <a href="/" title=""><img src="<?php echo Logo ?>" alt="Webprosjekt 2017"/></a>
-    </div>
-    <div class="right">
-        <div class="menu-left"></div>
-    </div>
+        <nav role="navigation" id="nav-main" class="okayNav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Explore</a></li>
+                <li><a href="#">Random</a></li>
+                <li><a href="#">Log in</a></li>
+                <li><a href="#">Sign up</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
