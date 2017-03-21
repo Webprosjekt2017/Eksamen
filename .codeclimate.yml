@@ -1,0 +1,7 @@
+exclude_paths:
+  - "src/assets/js/jsvendor/"
+  - "vendor"
+  - "node_modules"
+  - "Concept"
+  - "_pug"
+  - "_sass"
