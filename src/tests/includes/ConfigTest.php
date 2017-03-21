@@ -9,4 +9,5 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
         $config = new Config();
         $this->assertTrue($config->fluffFunction(7, 3));
     }
+
 }

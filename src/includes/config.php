@@ -8,6 +8,7 @@ class Config {
     static $DB_USERNAME     = 'username';
     static $DB_PASSWORD     = 'password';
 
+
     public function fluffFunction($min, $max) {
         if ($min > $max) {
             return true;
