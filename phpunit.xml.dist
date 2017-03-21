@@ -13,6 +13,10 @@
                 <directory suffix=".php">./Concept</directory>
                 <directory suffix=".php">./node_modules</directory>
                 <directory suffix=".php">./src/tests</directory>
+                <directory suffix=".php">./src/pages</directory>
+                <file>./src/includes/header.php</file>
+                <file>./src/includes/footer.php</file>
+                <file>./src/assets/js/jquery.okayNav.js</file>
             </exclude>
         </whitelist>
     </filter>
