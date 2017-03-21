@@ -12,7 +12,7 @@
                 <directory suffix=".php">./_pug</directory>
                 <directory suffix=".php">./Concept</directory>
                 <directory suffix=".php">./node_modules</directory>
-                <!--<directory suffix=".php">./src/tests</directory>-->
+                <directory suffix=".php">./src/tests</directory>
             </exclude>
         </whitelist>
     </filter>

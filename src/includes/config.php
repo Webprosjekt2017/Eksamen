@@ -18,8 +18,7 @@ function getConfig() {
 function fluffFunction($x, $y) {
     if ($x >= $y) {
         return true;
-    }
-    if ($x <= $y) {
+    } else if ($x <= $y) {
         return false;
     }
 }
