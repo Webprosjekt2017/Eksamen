@@ -7,6 +7,10 @@ php:
   - '7.1'
   - hhvm
 
+addons:
+  code_climate:
+    repo_token: ae0e9b2abe60df07dd4a91fbb42b3e02855d84ed3c996b44d545220ed02386b8
+
 before_install:
   #- echo "extension = xdebug.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - composer install --dev
@@ -16,4 +20,4 @@ script:
   - php vendor/bin/phpunit -c phpunit.xml.dist
 
 after_script:
-  - CODECLIMATE_REPO_TOKEN="ae0e9b2abe60df07dd4a91fbb42b3e02855d84ed3c996b44d545220ed02386b8" vendor/bin/test-reporter
+  - ./vendor/bin/test-reporter
