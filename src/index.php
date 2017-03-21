@@ -19,7 +19,7 @@ if($WebsiteEnabled) {
     require_once("includes/config.php");
 
     if (!isset($_GET['page'])) {
-        Header("Location: /main/home/");
+        Header("Location: ./main/home/");
         die();
     }
 
@@ -27,7 +27,9 @@ if($WebsiteEnabled) {
         switch ($_GET['page']) {
             case 'home':
                 $pageTitle = "Hjem - Main";
+                require_once("includes/header.php");
                 require_once("pages/main.php");
+                require_once("includes/footer.php");
                 break;
         }
     }
