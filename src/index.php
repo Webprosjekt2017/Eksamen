@@ -14,7 +14,7 @@ elseif ($_SESSION['SESSION_IP'] != $_SERVER['REMOTE_ADDR'])
 }
 
 
-$WebsiteEnabled = false;
+$WebsiteEnabled = true;
 if($WebsiteEnabled) {
     require_once("includes/config.php");
 
