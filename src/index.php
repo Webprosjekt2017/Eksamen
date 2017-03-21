@@ -27,9 +27,7 @@ if($WebsiteEnabled) {
         switch ($_GET['page']) {
             case 'home':
                 $pageTitle = "Hjem - Main";
-                require_once("includes/header.php");
                 require_once("pages/main.php");
-                require_once("includes/footer.php");
                 break;
         }
     }
