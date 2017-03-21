@@ -14,11 +14,7 @@
                 <directory suffix=".php">./node_modules</directory>
                 <directory suffix=".php">./src/tests</directory>
                 <directory suffix=".php">./src/pages</directory>
-                <directory>./src/assets/js/jsvendor</directory>
-                <file>./src/index.php</file>
-                <file>./src/includes/header.php</file>
-                <file>./src/includes/footer.php</file>
-                <file>./src/assets/js/jsvendor/jquery.okayNav.js</file>
+                <directory suffix=".js">./src/assets/js/jsvendor</directory>
             </exclude>
         </whitelist>
     </filter>
