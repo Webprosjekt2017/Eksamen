@@ -2,23 +2,17 @@
 
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) header("Location: /home/");
 
-$Config = array();
+class Config {
+    static $DB_HOST         = 'localhost';
+    static $DB_DATABASE     = 'database';
+    static $DB_USERNAME     = 'username';
+    static $DB_PASSWORD     = 'password';
 
-// Database Details
-$Config['database'] = array();
-$Config['database']['hostname'] = 'localhost';
-$Config['database']['username'] = 'username';
-$Config['database']['password'] = 'password';
-$Config['database']['database'] = 'test';
-
-function getConfig() {
-    return "Config Loaded";
-}
-
-function fluffFunction($x, $y) {
-    if ($x >= $y) {
-        return true;
-    } else if ($x <= $y) {
-        return false;
+    public function fluffFunction($min, $max) {
+        if ($min > $max) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
