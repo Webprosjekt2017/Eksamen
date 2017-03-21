@@ -4,3 +4,4 @@ _includes/config.php
 node_modules
 _sass/.sass-cache
 vendor
+build

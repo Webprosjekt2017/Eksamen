@@ -8,15 +8,13 @@ php:
   - hhvm
 
 before_install:
+  #- echo "extension = xdebug.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - composer install --dev
 
 script:
   - mkdir -p build/logs
   - php vendor/bin/phpunit -c phpunit.xml.dist
-  - ./vendor/bin/phpunit --coverage-clover ./build/logs/clover.xml
-  #- ./vendor/bin/phpunit --coverage-php build/cov/coverage-${component_name}.cov
+  - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
 
 after_script:
-  #- php vendor/bin/phpcov.php merge --clover build/logs/clover.xml build/cov
-  #- php -d memory_limit=-1 vendor/bin/phpcov.php
-  - travis_retry php vendor/bin/coveralls -v
+  - ./vendor/bin/test-reporter
