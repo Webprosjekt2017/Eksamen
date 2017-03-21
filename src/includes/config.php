@@ -15,7 +15,11 @@ function getConfig() {
     return "Config Loaded";
 }
 
-function fluffFunction() {
-    // To check if coverage goes down
-    return "fluffFunction";
+function fluffFunction($x, $y) {
+    if ($x >= $y) {
+        return true;
+    }
+    if ($x <= $y) {
+        return false;
+    }
 }

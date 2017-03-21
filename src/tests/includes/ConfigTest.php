@@ -8,4 +8,8 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals("Config Loaded", getConfig());
     }
+
+    public function testFluffFunctionXIsLargerThanY() {
+        $this->assertTrue(fluffFunction(7, 3));
+    }
 }
