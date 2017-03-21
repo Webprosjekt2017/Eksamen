@@ -14,3 +14,8 @@ $Config['database']['database'] = 'test';
 function getConfig() {
     return "Config Loaded";
 }
+
+function fluffFunction() {
+    // To check if coverage goes down
+    return "fluffFunction";
+}
