@@ -3,6 +3,18 @@
     <!--<logging>
         <log type="coverage-clover" target="build/logs/clover.xml"/>
     </logging>-->
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
+            <exclude>
+                <directory suffix=".php">./vendor</directory>
+                <directory suffix=".php">./_sass</directory>
+                <directory suffix=".php">./_pug</directory>
+                <directory suffix=".php">./Concept</directory>
+                <directory suffix=".php">./node_modules</directory>
+            </exclude>
+        </whitelist>
+    </filter>
     <testsuites>
         <testsuite name="Test Suite">
             <directory>./src/tests/</directory>
