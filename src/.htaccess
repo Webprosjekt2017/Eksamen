@@ -1,0 +1,18 @@
+IndexIgnore *
+RewriteEngine on
+
+RewriteRule ^main/([^/\.]+)/?$ index.php?page=$1 [L]
+
+allow from all
+
+<Files *>
+    Order Deny,Allow
+    Allow from 192.168.100.123 127.0.0.1
+    Deny from all
+</Files>
+
+<FilesMatch "(.*)">
+Order Allow,Deny
+Allow from all
+Deny from env=bad_botDeny from 97.85.61.183
+</FilesMatch>
