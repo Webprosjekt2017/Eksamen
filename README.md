@@ -49,6 +49,10 @@ digital prototype – slik at dere har en felles forståelse for konseptet og we
 
 ## Gulp
 
+Gulp er en module(plugin) for NodeJS - npm. I dette tilfelle bruker vi det for å autocompilere pug også kjent som jade og sass/cscc. Gulp bir oss også browser-reload når vi gjør noen endringer. Det er opp til en self om en ønsker å bruke pug og/eller sass/scss. Skulle en ønske å kun bruke vanlig html og css er det bare å styre unna './\_sass' og './\_pug' mappene. Uansett om du bruker sass/scss og pug eller ikke er gulp enkelt å få installert, og brwoser-reload funksjonen er ytterst behagelig å jobbe med.
+
 __Mer info:__
  - [Node-js](https://nodejs.org/en/ "Node-js Home Page")
  - [Gulp-js](http://gulpjs.com/ "Gulp-js Home Page")
+ - [Pug2](https://pugjs.org/api/migration-v2.html "Pug homepage --> migrating to Pug2")
+ - [SASS/SCSS Syntax](http://sass-lang.com/guide#topic-2 "Sass homepage --> learn")
