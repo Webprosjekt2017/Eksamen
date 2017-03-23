@@ -29,9 +29,8 @@ gulp.task('pug_inc', function() {
 
 gulp.task('sass', function () {
   return gulp.src(['./_sass/*.sass', './_sass/*.scss'])
-    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-    .pipe(gulp.dest('src/assets/css'))
-    .pipe(browserSync.reload({ stream:true }));
+    .pipe(sass().on('error', sass.logError)) //{outputStyle: 'compressed'}
+    .pipe(gulp.dest('src/assets/css'));
 });
 
 gulp.task('css_inject', function() {
