@@ -40,6 +40,10 @@ if (isset($_GET["destination"])) {
 }
 
 $pageTitle = "Hjem";
-require_once("includes/header.php");
-require_once("pages/main.php");
-require_once("includes/footer.php");
+echo '<!DOCTYPE html';
+echo '<html>';
+require_once("includes/head.html");
+echo '<body>';
+require_once("includes/nav.html");
+require_once("pages/home.html");
+require_once("includes/footer.html");
