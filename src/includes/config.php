@@ -1,12 +1,15 @@
 <?php
 
-if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) header("Location: /home/");
+if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) header("Location: /");
 
 class Config {
-    static $DB_HOST         = 'localhost';
-    static $DB_DATABASE     = 'database';
-    static $DB_USERNAME     = 'username';
-    static $DB_PASSWORD     = 'password';
+    const
+        DB_HOST = 'hostname',
+        DB_USER = 'username',
+        DB_PASSWORD = 'password',
+        DB_DATABASE = 'database',
+        REQUIRE_DB = false,
+        WEBSITE_ONLINE = true;
 
 
     public function fluffFunction($min, $max) {

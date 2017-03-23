@@ -1,44 +1,45 @@
 <?php
 error_reporting(E_ALL);
 
-// Opprett en session på IP hvis det ikke allerede eksisterer
-if(!(isset($_SESSION)))
-{
-    session_start();
-    $_SESSION['SESSION_IP'] = $_SERVER['REMOTE_ADDR'];
-}
-elseif ($_SESSION['SESSION_IP'] != $_SERVER['REMOTE_ADDR'])
-{
-    session_destroy();
-    die("Session Invalid");
+require_once('includes/config.php');
+require_once('includes/Database.php');
+
+
+if (!Config::WEBSITE_ONLINE) {
+    echo 'Website Offline';
+    die();
 }
 
-
-$WebsiteEnabled = true;
-if($WebsiteEnabled) {
-    require_once("includes/config.php");
-
-    if (!isset($_GET['page'])) {
-        Header("Location: ./main/home/");
+if (Config::REQUIRE_DB) {
+    $db = new Database();
+    if ($db->getError()) {
+        echo 'Connection to database could not be established.';
+        echo '<br>';
+        echo $db->getError();
         die();
     }
+}
 
-    if (isset($_GET['page'])) {
-        switch ($_GET['page']) {
-            case 'home':
-                $pageTitle = "Hjem - Main";
-                echo '<!DOCTYPE html';
-                echo '<html>';
-                require_once("includes/head.html");
-                echo '<body>';
-                require_once("includes/nav.html");
-                require_once("pages/home.html");
-                require_once("includes/footer.html");
-                break;
-        }
+if (isset($_GET["destination"])) {
+    switch ($_GET["destination"]) {
+        case 'about':
+            print_r($_GET["destination"]);
+            echo 'body for about loaded';
+            break;
+        case 'login':
+            echo 'body for login loaded';
+            break;
+        case 'other':
+            echo 'body for other loaded';
+            break;
+        default:
+            header("Location: /");
+            break;
     }
+    die();
 }
-else
-{
-    echo "This website is currently disabled.</br>";
-}
+
+$pageTitle = "Hjem";
+require_once("includes/header.php");
+require_once("pages/main.php");
+require_once("includes/footer.php");
