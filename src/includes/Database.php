@@ -20,7 +20,7 @@ class Database
         );
 
         try{
-            $this->conn = new PDO($dsn, Config::DB_USER, Config::DB_PASSWORD);
+            $this->conn = new PDO($dsn, Config::DB_USER, Config::DB_PASSWORD, $opt);
         } catch (PDOException $e) {
             $this->err = $e->getMessage();
         }
