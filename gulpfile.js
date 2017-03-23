@@ -4,6 +4,7 @@ var   gulp        = require('gulp');
 var   sass        = require('gulp-sass');
 const pug         = require('gulp-pug2');
 var   browserSync = require('browser-sync').create();
+var   rename      = require('gulp-rename');
 
 gulp.task('browser-sync', function() {
     browserSync.init({
@@ -18,12 +19,14 @@ gulp.task('reload', function() {
 gulp.task('pug_pages', function() {
     return gulp.src('./_pug/pages/*.pug')
         .pipe(pug({ yourTemplate: 'Locals' }))
+        .pipe(rename({extname: '.php'}))
         .pipe(gulp.dest('src/pages'));
 });
 
 gulp.task('pug_inc', function() {
     return gulp.src('./_pug/includes/*.pug')
         .pipe(pug({ yourTemplate: 'Locals' }))
+        .pipe(rename({extname: '.php'}))
         .pipe(gulp.dest('src/includes'));
 });
 
