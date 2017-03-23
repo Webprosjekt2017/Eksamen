@@ -37,9 +37,6 @@ digital prototype – slik at dere har en felles forståelse for konseptet og we
 - Bruk av Git skal dokumenteres ved bruk av Punch card- og Contributors-graf. Eksempelvis gjennom skjermdumper (screenshots av grafer) eller annen logg av Git-historikk
 - Ellers skal rapporten være ryddig, godt strukturert og lett å lese. Den skal også ha en innholdsfortegnelse (se mal på emnesiden)
 
-Link til felles word dokument for dokumentasjon:
-https://docs.google.com/document/d/1Nas6qm5GDvWzBiRSA3gR-isIURLapuoTQo1HsbZeTQA/edit?ts=58d3b103
-
 ### Ting som trekker opp leveransen (ikke krav)
 - Bruk av composer og tredjepartspakker
 - Støtte i flere nettlesere (CSS browser prefixes)
@@ -58,3 +55,9 @@ __Mer info:__
  - [Gulp-js](http://gulpjs.com/ "Gulp-js Home Page")
  - [Pug2](https://pugjs.org/api/migration-v2.html "Pug homepage --> migrating to Pug2")
  - [SASS/SCSS Syntax](http://sass-lang.com/guide#topic-2 "Sass homepage --> learn")
+
+---
+
+# DOCS
+
+ - [Temp Docs](https://docs.google.com/document/d/1Nas6qm5GDvWzBiRSA3gR-isIURLapuoTQo1HsbZeTQA/edit?ts=58d3b103)
