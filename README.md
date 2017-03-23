@@ -1,4 +1,4 @@
-# PRO101 Webprosjekt [![Build Status](https://travis-ci.org/Webprosjekt2017/Eksamen.svg?branch=master)](https://travis-ci.org/Webprosjekt2017/Eksamen) [![Code Climate](https://codeclimate.com/github/Webprosjekt2017/Eksamen/badges/gpa.svg)](https://codeclimate.com/github/Webprosjekt2017/Eksamen) [![Issue Count](https://codeclimate.com/github/Webprosjekt2017/Eksamen/badges/issue_count.svg)](https://codeclimate.com/github/Webprosjekt2017/Eksamen) [![Test Coverage](https://codeclimate.com/github/Webprosjekt2017/Eksamen/badges/coverage.svg)](https://codeclimate.com/github/Webprosjekt2017/Eksamen/coverage)   
+﻿# PRO101 Webprosjekt [![Build Status](https://travis-ci.org/Webprosjekt2017/Eksamen.svg?branch=master)](https://travis-ci.org/Webprosjekt2017/Eksamen) [![Code Climate](https://codeclimate.com/github/Webprosjekt2017/Eksamen/badges/gpa.svg)](https://codeclimate.com/github/Webprosjekt2017/Eksamen) [![Issue Count](https://codeclimate.com/github/Webprosjekt2017/Eksamen/badges/issue_count.svg)](https://codeclimate.com/github/Webprosjekt2017/Eksamen) [![Test Coverage](https://codeclimate.com/github/Webprosjekt2017/Eksamen/badges/coverage.svg)](https://codeclimate.com/github/Webprosjekt2017/Eksamen/coverage)   
 
 __Utlevering:__ 23. februar 2017  
 __Innlevering:__ 28. mai 2017 kl. 23.55 via its learning  
@@ -37,6 +37,8 @@ digital prototype – slik at dere har en felles forståelse for konseptet og we
 - Bruk av Git skal dokumenteres ved bruk av Punch card- og Contributors-graf. Eksempelvis gjennom skjermdumper (screenshots av grafer) eller annen logg av Git-historikk
 - Ellers skal rapporten være ryddig, godt strukturert og lett å lese. Den skal også ha en innholdsfortegnelse (se mal på emnesiden)
 
+Link til felles word dokument for dokumentasjon:
+https://docs.google.com/document/d/1Nas6qm5GDvWzBiRSA3gR-isIURLapuoTQo1HsbZeTQA/edit?ts=58d3b103
 
 ### Ting som trekker opp leveransen (ikke krav)
 - Bruk av composer og tredjepartspakker
