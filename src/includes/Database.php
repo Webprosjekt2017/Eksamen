@@ -10,9 +10,9 @@ class Database
 
     private $err;
 
-    public function __construct($host = Config::DB_HOST, $db = Config::DB_DATABASE, $user = Config::DB_USER, $pwd = Config::DB_PASSWORD)
+    public function __construct()
     {
-        $dsn = 'mysql:host=' . $host . ';dbname=' . $db;
+        $dsn = 'mysql:host=' . Config::DB_HOST . ';dbname=' . Config::DB_DATABASE;
         $opt = array(
             PDO::ATTR_PERSISTENT => true,
             PDO::ATTR_TIMEOUT => "5",
@@ -20,7 +20,7 @@ class Database
         );
 
         try{
-            $this->conn = new PDO($dsn, $user, $pwd, $opt);
+            $this->conn = new PDO($dsn, Config::DB_USER, Config::DB_PASSWORD, $opt);
         } catch (PDOException $e) {
             $this->err = $e->getMessage();
         }
