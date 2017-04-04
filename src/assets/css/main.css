@@ -42,3 +42,69 @@ nav {
         position: relative;
         left: 0;
         transition: left ease-in-out 300ms; }
+
+.map {
+  width: 100%;
+  height: 90vh;
+  background: url("../imgs/VulcanMap.png");
+  background-size: contain;
+  position: relative; }
+  .map .location {
+    width: 25px;
+    height: 25px;
+    border: 3px solid #ef8f12;
+    border-radius: 50%;
+    background: #eee;
+    position: absolute;
+    top: 40%;
+    left: 70%; }
+    .map .location .locInfo {
+      height: 400px;
+      width: 250px;
+      border: 2px solid #ef8f12;
+      border-radius: 10px;
+      background: #eee;
+      position: absolute;
+      top: -180px;
+      right: -270px; }
+      .map .location .locInfo img {
+        width: 100%;
+        height: 80px; }
+      .map .location .locInfo .title {
+        margin: 5px 8px;
+        margin-top: -15px; }
+      .map .location .locInfo .tags {
+        width: 100%;
+        height: 20px;
+        display: flex;
+        margin-left: 10px;
+        margin-bottom: 10px; }
+        .map .location .locInfo .tags span {
+          display: inline-block;
+          height: 100%;
+          margin: 0 5px;
+          padding: 3px;
+          background: #ccc;
+          border-radius: 6px;
+          box-sizing: border-box;
+          font-size: 0.8em; }
+      .map .location .locInfo .desc {
+        font-size: .95em;
+        margin: 0 10px;
+        margin-bottom: 10px; }
+      .map .location .locInfo .open {
+        width: 100%;
+        height: 18px;
+        margin: 0 10px;
+        padding: 0 5px;
+        border-left: 2px solid #ef8f12;
+        font-size: .95em;
+        overflow: hidden; }
+        .map .location .locInfo .open .toggleBtn {
+          display: inline-block;
+          width: 18px;
+          height: 18px;
+          margin-left: 15px; }
+    .map .location .subLocations {
+      height: 100px;
+      width: 50px; }

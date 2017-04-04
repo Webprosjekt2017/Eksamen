@@ -1,4 +1,25 @@
 .container
-  h1 Main content goes here
+  .map
+    .location#adressHere
+      .locInfo
+        img(src="linkhere")
+        h2.title Title here
+        .tags 
+          span tag1
+          span tag2
+        .desc Description
+          br
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+        .open Open now
+          .toggleBtn
+          .times 
+            | Mon - Fri: 10 - 22
+            br
+            | Sat: 12 - 01
+            br
+            | Sun: Closed
+        
+      .subLocations
+        a(htef="#") Title
   
 script nav.sel = 0;
