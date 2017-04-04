@@ -6,10 +6,10 @@
         <h2 class="title">Title here</h2>
         <div class="tags"> <span>tag1</span><span>tag2</span></div>
         <div class="desc">Description<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</div>
-        <div class="open">Open now
-          <div class="toggleBtn"></div>
-          <div class="times">
-             Mon - Fri: 10 - 22<br/>Sat: 12 - 01<br/>Sun: Closed</div>
+        <div class="open"> 
+          <div class="status">Open now</div>
+          <div class="toggleBtn" onclick="someFunction()"></div>
+          <div class="times">Mon - Fri: 10 - 22<br/>Sat: 12 - 01<br/>Sun: Closed</div>
         </div>
       </div>
       <div class="subLocations"><a htef="#">Title</a></div>
