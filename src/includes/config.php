@@ -15,8 +15,8 @@ class Config {
     public function fluffFunction($min, $max) {
         if ($min > $max) {
             return true;
-        } else {
-            return false;
         }
+
+        return false;
     }
 }
