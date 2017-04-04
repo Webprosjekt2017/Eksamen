@@ -1,7 +1,11 @@
 *.local.*
 _includes/config.php
 .idea
-node_modules
-_sass/.sass-cache
 vendor
 build
+yarn.lock
+
+# NPM Related
+node_modules
+*.bat
+_sass/.sass-cache
