@@ -8,11 +8,11 @@
         <div class="desc">Description<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</div>
         <div class="open"> 
           <div class="status">Open now</div>
-          <div class="toggleBtn" onclick="someFunction()"></div>
+          <div class="toggleBtn" onclick="showTimes(this)" data-open="false"></div>
           <div class="times">Mon - Fri: 10 - 22<br/>Sat: 12 - 01<br/>Sun: Closed</div>
         </div>
       </div>
-      <div class="subLocations"><a htef="#">Title</a></div>
+      <div class="subLocations"><a htef="#">ico</a></div>
     </div>
   </div>
 </div>
