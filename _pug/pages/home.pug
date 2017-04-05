@@ -14,13 +14,20 @@
           .status Open now
           .toggleBtn(onclick="showTimes(this)", data-open="false")
           .times
-            | Mon - Fri: 10 - 22
-            br
-            | Sat: 12 - 01
-            br
-            | Sun: Closed
+            .row
+              .c2 Mon - Fri
+              .c2 10 - 22
+            .row
+              .c2 Sat
+              .c2 12 - 01
+            .row
+              .c2 Sun
+              .c2 Closed
+            
+            
         
       .subLocations
+        a(htef="#") ico
         a(htef="#") ico
   
 script nav.sel = 0;

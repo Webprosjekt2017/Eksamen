@@ -6,6 +6,7 @@
   <title></title>
   <!-- STYLESHEET-->
   <link rel="stylesheet" href="/assets/css/main.css"/>
+  <link rel="stylesheet" href="/assets/css/base.css"/>
   <!-- SCRIPTS-->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="/assets/js/nav.js"></script>

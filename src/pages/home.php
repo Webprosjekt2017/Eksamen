@@ -9,10 +9,23 @@
         <div class="open"> 
           <div class="status">Open now</div>
           <div class="toggleBtn" onclick="showTimes(this)" data-open="false"></div>
-          <div class="times">Mon - Fri: 10 - 22<br/>Sat: 12 - 01<br/>Sun: Closed</div>
+          <div class="times">
+            <div class="row">
+              <div class="c2">Mon - Fri</div>
+              <div class="c2">10 - 22</div>
+            </div>
+            <div class="row">
+              <div class="c2">Sat</div>
+              <div class="c2">12 - 01</div>
+            </div>
+            <div class="row">
+              <div class="c2">Sun</div>
+              <div class="c2">Closed</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="subLocations"><a htef="#">ico</a></div>
+      <div class="subLocations"><a htef="#">ico</a><a htef="#">ico</a></div>
     </div>
   </div>
 </div>
