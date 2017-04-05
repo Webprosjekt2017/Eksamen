@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 
 require_once('includes/config.php');
-require_once('includes/Database.php');
+require_once('includes/ExploreDatabase.php');
 
 
 if (!Config::WEBSITE_ONLINE) {
@@ -31,6 +31,9 @@ if (isset($_GET["destination"])) {
             break;
         case 'other':
             echo 'body for other loaded';
+            break;
+        case 'debug':
+            require ("pages/queries.php");
             break;
         default:
             header("Location: /");
