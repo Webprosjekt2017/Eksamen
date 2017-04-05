@@ -10,11 +10,13 @@ function showTimes(e) {
 }
 
 $(document).ready(function() {
-  $('.location').on('click', function() {
+  $('.location').on('click', function(event) {
     if ( $(this).css('overflow') == 'hidden') {
       $(this).css('overflow', 'visible');
     } else {
       $(this).css('overflow', 'hidden');
     }
-  });
+  }).children().click(function(e) {
+    return false;
+  });;
 });
