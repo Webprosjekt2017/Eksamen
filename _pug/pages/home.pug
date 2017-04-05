@@ -10,9 +10,10 @@
         .desc Description
           br
           | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-        .open Open now
-          .toggleBtn
-          .times 
+        .open 
+          .status Open now
+          .toggleBtn(onclick="showTimes(this)", data-open="false")
+          .times
             | Mon - Fri: 10 - 22
             br
             | Sat: 12 - 01
@@ -20,6 +21,6 @@
             | Sun: Closed
         
       .subLocations
-        a(htef="#") Title
+        a(htef="#") ico
   
 script nav.sel = 0;

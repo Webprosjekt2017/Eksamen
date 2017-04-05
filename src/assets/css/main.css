@@ -3,15 +3,17 @@ html, body {
   padding: 0;
   height: 100vh;
   background: #fefefe;
-  font-family: "Areal", sans-serif; }
+  font-family: "Areal", sans-serif;
+  overflow-x: hidden; }
 
 nav {
   width: 100%;
   height: 80px;
   background: #eee;
   border-bottom: 4px solid #ef8f12;
-  box-shadow: 0px 2px 15px 0px #888;
-  position: relative; }
+  box-shadow: 0 2px 15px 0 #888;
+  position: relative;
+  z-index: 100; }
   nav .logo {
     height: 115px;
     position: absolute;
@@ -45,9 +47,9 @@ nav {
 
 .map {
   width: 100%;
-  height: 90vh;
+  height: 45vw;
   background: url("../imgs/VulcanMap.png");
-  background-size: contain;
+  background-size: cover;
   position: relative; }
   .map .location {
     width: 25px;
@@ -57,7 +59,8 @@ nav {
     background: #eee;
     position: absolute;
     top: 40%;
-    left: 70%; }
+    left: 70%;
+    overflow: hidden; }
     .map .location .locInfo {
       height: 400px;
       width: 250px;
@@ -72,7 +75,8 @@ nav {
         height: 80px; }
       .map .location .locInfo .title {
         margin: 5px 8px;
-        margin-top: -15px; }
+        margin-top: -15px;
+        color: #cf6f08; }
       .map .location .locInfo .tags {
         width: 100%;
         height: 20px;
@@ -84,7 +88,7 @@ nav {
           height: 100%;
           margin: 0 5px;
           padding: 3px;
-          background: #ccc;
+          background: #ffcf90;
           border-radius: 6px;
           box-sizing: border-box;
           font-size: 0.8em; }
@@ -93,18 +97,41 @@ nav {
         margin: 0 10px;
         margin-bottom: 10px; }
       .map .location .locInfo .open {
-        width: 100%;
         height: 18px;
         margin: 0 10px;
         padding: 0 5px;
         border-left: 2px solid #ef8f12;
         font-size: .95em;
-        overflow: hidden; }
+        overflow: hidden;
+        transition: height 300ms ease-in-out; }
+        .map .location .locInfo .open .status {
+          display: inline-block;
+          height: 18px;
+          vertical-align: top; }
         .map .location .locInfo .open .toggleBtn {
           display: inline-block;
           width: 18px;
           height: 18px;
-          margin-left: 15px; }
+          margin-left: 15px;
+          background: url("../imgs/DropDownArrow.png");
+          background-size: 80% 80%;
+          background-position: center;
+          background-repeat: no-repeat;
+          cursor: pointer; }
     .map .location .subLocations {
-      height: 100px;
-      width: 50px; }
+      height: 150px;
+      width: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: -75px;
+      position: absolute;
+      left: -60px;
+      top: 50%; }
+      .map .location .subLocations a {
+        display: block;
+        height: 20px;
+        width: 20px;
+        border: 2px solid #ef8f12;
+        border-radius: 50%; }
