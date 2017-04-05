@@ -10,27 +10,14 @@ if ($db->getError()) {
     echo nl2br("Connection to database has been established\n");
 }
 
-if ($images = $db->getImages('rema 1000')) {
-    foreach ($images as $image) {
-        echo ($image['path']);
-        echo "<br>";
-    }
-} else {
-    echo 'No images!';
-    print_r($images);
-}
 
-echo "<br>";
+$locations = $db->getAllLocations();
+print_r($locations);
 
-if ($tags = $db->getTags("rema 1000")) {
-    foreach ($tags as $tag) {
-        echo ($tag['tag']);
-        echo "<br>";
-    }
-} else {
-    echo 'No tags!';
-    print_r($tags);
-}
+echo "<br><br><br>";
 
+$multidim =
+    $db->getAllLocations();
 
+print_r($multidim);
 echo "</pre>";

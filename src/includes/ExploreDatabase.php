@@ -36,4 +36,37 @@ class ExploreDatabase extends Database
         }
         return array();
     }
+
+    public function getOpeningHours($title) {
+        if ($location = $this->getLocId($title)) {
+            $this->query("SELECT `day`, `open`, `close` FROM `opening_hours` WHERE `loc_id`=:loc_id");
+            $this->bind(":loc_id", $location);
+            $hours = $this->fetchAll();
+            return $hours;
+        }
+        return array();
+    }
+
+    public function getPhoneNumbers($title) {
+        if ($location = $this->getLocId($title)) {
+            $this->query("SELECT `country_code`, `number` FROM `phone_numbers` WHERE `loc_id`=:loc_id");
+            $this->bind(":loc_id", $location);
+            $numbers = $this->fetchAll();
+            return $numbers;
+        }
+        return array();
+    }
+
+    public function getLocation($title) {
+        $this->query("SELECT * FROM `locations` WHERE `title`=:title");
+        $this->bind(":title", $title);
+        $location = $this->single();
+        return $location;
+    }
+
+    public function getAllLocations() {
+        $this->query("SELECT * FROM `locations`");
+        $locations = $this->fetchAll();
+        return $locations;
+    }
 }
