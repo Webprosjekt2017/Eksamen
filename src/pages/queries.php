@@ -11,13 +11,8 @@ if ($db->getError()) {
 }
 
 
-$locations = $db->getAllLocations();
-print_r($locations);
-
 echo "<br><br><br>";
 
-$multidim =
-    $db->getAllLocations();
+print_r($db->getAllLocationsData());
 
-print_r($multidim);
 echo "</pre>";

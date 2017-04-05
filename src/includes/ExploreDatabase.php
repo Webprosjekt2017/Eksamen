@@ -69,4 +69,36 @@ class ExploreDatabase extends Database
         $locations = $this->fetchAll();
         return $locations;
     }
+
+    public function testQuery() {
+        $returnArray = array();
+        $remaArray = $this->getLocation("rema 1000") + array('images' => $this->getImages("rema 1000"));
+        $kiwiArray = $this->getLocation("kiwi") + array('images' => $this->getImages("kiwi"));
+        array_push($returnArray, $remaArray);
+        array_push($returnArray, $kiwiArray);
+        return $returnArray;
+    }
+
+    public function getAllLocationsData() {
+        $returnArray = array();
+        $this->query("SELECT * FROM `locations`");
+
+        $rows = $this->fetchAll();
+
+        while ($row = array_shift($rows)) {
+            $mergedArray =
+                $row +
+                array('images' => $this->getImages($row['title'])) +
+                array('tags' => $this->getTags($row['title'])) +
+                array('hours' => $this->getOpeningHours($row['title'])) +
+                array('numbers' => $this->getPhoneNumbers($row['title']));
+            array_push($returnArray, $mergedArray);
+        }
+
+        return $returnArray;
+
+
+    }
+
+
 }
