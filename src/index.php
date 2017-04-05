@@ -33,7 +33,8 @@ if (isset($_GET["destination"])) {
             echo 'body for other loaded';
             break;
         case 'debug':
-            require_once ("pages/queries.php");
+            require ("pages/queries.php");
+            break;
         default:
             header("Location: /");
             break;
