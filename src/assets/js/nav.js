@@ -29,6 +29,5 @@ $(document).ready(function() {
 
 
 function hoverController(l){
-  console.log('hover: ' + l.innerText);
   $(nav.selector).css('left', (l.offsetLeft - nav.sel.offsetLeft) );
 }
