@@ -24,36 +24,44 @@ CREATE TABLE IF NOT EXISTS `locations` (
   `title` TINYTEXT NOT NULL,
   `description` TEXT,
   `URL` VARCHAR(255),
-  `takeaway` BOOL DEFAULT (FALSE ),
-  `delivery` BOOL DEFAULT (FALSE ),
-  `show_title` BOOL DEFAULT (TRUE),
+  `takeaway` BOOL DEFAULT 0,
+  `delivery` BOOL DEFAULT 0,
+  `show_title` BOOL DEFAULT 1,
   PRIMARY KEY (`id`)
 ) DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 
 CREATE TABLE IF NOT EXISTS `opening_hours` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT UNIQUE,
   `loc_id` INT(11) NOT NULL,
-  `day` ENUM(0, 1, 2, 3, 4, 5, 6) NOT NULL,
+  `day` INT NOT NULL,
   `open` TIME NOT NULL,
   `close` TIME NOT NULL,
+  PRIMARY KEY (`id`),
   FOREIGN KEY (`loc_id`) REFERENCES locations(`id`)
 ) DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 CREATE TABLE IF NOT EXISTS `location_tags` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT UNIQUE,
   `loc_id` INT(11) NOT NULL,
   `tag` TINYTEXT NOT NULL,
+  PRIMARY KEY (`id`),
   FOREIGN KEY (`loc_id`) REFERENCES locations(`id`)
 ) DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 CREATE TABLE IF NOT EXISTS `location_images` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT UNIQUE,
   `loc_id` INT(11) NOT NULL,
   `path` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`),
   FOREIGN KEY (`loc_id`) REFERENCES locations(`id`)
 ) DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 CREATE TABLE IF NOT EXISTS `phone_numbers` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT UNIQUE,
   `loc_id` INT(11) NOT NULL,
   `country_code` CHAR(2),
-  `number` VARCHAR(9),
+  `number` VARCHAR(8),
+  PRIMARY KEY (`id`),
   FOREIGN KEY (`loc_id`) REFERENCES locations(`id`)
 ) DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
