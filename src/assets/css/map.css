@@ -52,8 +52,8 @@
     .map .campus:hover .cover {
       opacity: .3; }
     .map .campus.active {
-      height: 20px;
-      width: 20px;
+      height: 30px;
+      width: 30px;
       border-width: 2px;
       transform: translate(50%, -50%) !important; }
       .map .campus.active h1 {
@@ -77,9 +77,9 @@
     border-radius: 50%;
     background: #eee;
     position: absolute;
-    top: 40%;
-    left: 70%;
-    overflow: hidden; }
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 300ms ease-in-out; }
     .map .location .locInfo {
       height: 400px;
       width: 250px;

@@ -23,6 +23,49 @@ var map = {
   }
 }
 
+var loc = {
+  dom: null,
+  pos: null,
+  printLoops: 0,
+  printLocs: function() {
+
+    // clear locations if any before loading new ones
+    $('.location').remove();
+
+    if((this.dom == null || this.pos == null)) {
+      if(this.printLoops < 10) {
+        this.printLoops++;
+        setTimeout(function() {loc.printLocs();}, 100);
+      }
+      return false;
+    }
+
+    $('.map').append(this.dom);
+
+    $('.location').click(function() {
+      if ( $(this).css('overflow') == 'hidden') {
+        $(this).css('overflow', 'visible');
+      } else {
+        $(this).css('overflow', 'hidden');
+      }
+    }).children().click(function() {
+      return false;
+    });
+
+    $.each(loc.pos, function(key, val) {
+      $('#' + key).css({
+        'left': val.x + '%',
+        'top': val.y + '%'
+      })
+    });
+
+    setTimeout(function() {
+      $('.location').css('opacity', 1);
+    }, 1000 - (loc.printLoops * 100));
+
+  } // ##### END printLocs()
+}
+
 $(document).ready(function() {
   // Get map and relevant childred
   map.dom = $('.map');
@@ -37,22 +80,43 @@ $(document).ready(function() {
       map.dom.css('background-image', 'url(assets/imgs/' + $(this).data('bg') + ')');
     });
 
-    $(this.dom).click(function() { // Activate map
+    $(this.dom).click(function() { // ##### Activate map
+
+      loc.dom = null;
+      loc.pos = null;
+      loc.printLoops = 0;
+
+      // Start ajax request first, as it takes the longest
+      $.ajax({ // ##### LOAD map locations
+
+        url: 'includes/mapContent.local.php'
+
+      }).done(function (res){ // ##### DONE function
+
+        loc.dom = res;
+
+      }); // ##### END ajax done function
+
+      $.getJSON( "assets/" + $(this).text().trim().toLowerCase() + ".json", function( data ) {
+        loc.pos = data;
+        loc.printLocs();
+      });
+
       // Show filter on nav bar
       nav.showFilter();
       // Chhange map
       map.dom.css('background-image', 'url(assets/imgs/' + $(this).data('bg') + ')');
       // Add 'standby' class to sibling campus buttons
-      $(this).siblings().not('.cover').addClass('standby');
+      $(this).siblings().not('.cover, .location').addClass('standby');
       // remove potential 'active' class
-      $(this).siblings().not('.cover').removeClass('active');
+      $(this).siblings().not('.cover, .location').removeClass('active');
       // Remove potential 'standby' class
       $(this).removeClass('standby');
       // add 'active' class to active campus
       $(this).addClass('active');
       // Overrode mouseover function
-      $(this).siblings().addBack().not('.cover').off('mouseover');
-      $(this).siblings().addBack().not('.cover').mouseover(function() {
+      $(this).siblings().addBack().not('.cover, .location').off('mouseover');
+      $(this).siblings().addBack().not('.cover, .location').mouseover(function() {
         // Show campus name
         showName(this.innerText);
       }).mouseleave(function() {
@@ -60,16 +124,6 @@ $(document).ready(function() {
         stopName();
       });
     });
-  });
-
-  $('.location').click(function(event) {
-    if ( $(this).css('overflow') == 'hidden') {
-      $(this).css('overflow', 'visible');
-    } else {
-      $(this).css('overflow', 'hidden');
-    }
-  }).children().click(function(e) {
-    return false;
   });
 
 });
@@ -100,4 +154,8 @@ function showName(name) {
 function stopName() {
   $(document).off('mousemove');
   $('.showName').remove();
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }

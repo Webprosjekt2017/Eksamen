@@ -62,8 +62,8 @@
         opacity: .3
 
     &.active
-      height: 20px
-      width: 20px
+      height: 30px
+      width: 30px
       border-width: 2px
       transform: translate(50%, -50%)!important
 
@@ -92,10 +92,10 @@
     border-radius: 50%
     background: #eee
     position: absolute
-    top: 40%
-    left: 70%
 
+    opacity: 0
     overflow: hidden
+    transition: opacity 300ms ease-in-out
 
     .locInfo
       height: 400px
