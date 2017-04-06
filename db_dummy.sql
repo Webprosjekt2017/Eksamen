@@ -1,6 +1,6 @@
-INSERT INTO `locations` (`id`, `title`, `description`, `URL`, `takeaway`, `delivery`, `show_title`)
-VALUES (NULL, 'rema 1000', 'dette er en beskrivelse', 'http://www.rema.no', '0', '0', '1'),
-  (NULL, 'kiwi', NULL, 'www.kiwi.no', '0', '0', '1');
+INSERT INTO `locations` (`id`, `title`, `description`, `address`, `URL`, `takeaway`, `delivery`, `show_title`)
+VALUES (NULL, 'REMA 1000 VULKAN', 'dette er en beskrivelse', 'Maridalsveien 15, 0178 OSLO', 'http://www.rema.no', '0', '0', '1'),
+  (NULL, 'KIWI Markveien', NULL, 'Markveien 35B, 0554 Oslo', 'www.kiwi.no', '0', '0', '0');
 
 
 INSERT INTO `location_images` (`loc_id`, `path`)
