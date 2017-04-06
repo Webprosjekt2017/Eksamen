@@ -8,7 +8,7 @@ class Config {
         DB_USER = 'woact',
         DB_PASSWORD = 'password',
         DB_DATABASE = 'woact_explore',
-        REQUIRE_DB = false,
+        REQUIRE_DB = true,
         WEBSITE_ONLINE = true;
 
 
