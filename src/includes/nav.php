@@ -1,5 +1,5 @@
 
-<nav><img class="logo" src="/assets/imgs/LogoTransparent.png"/>
+<nav><img class="logo" src="assets/imgs/LogoTransparent.png"/>
   <div class="navLinkWrapper">
     <div id="navDrawerKnob">
       <div class="arrow"></div>
