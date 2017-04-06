@@ -12,8 +12,9 @@ class Database
 
     public function __construct($host = Config::DB_HOST, $db = Config::DB_DATABASE, $user = Config::DB_USER, $pwd = Config::DB_PASSWORD)
     {
-        $dsn = 'mysql:host=' . $host . ';dbname=' . $db;
+        $dsn = 'mysql:host=' . $host . ';dbname=' . $db . ';charset=utf8';
         $opt = array(
+            PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
             PDO::ATTR_PERSISTENT => true,
             PDO::ATTR_TIMEOUT => "5",
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
