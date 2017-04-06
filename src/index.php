@@ -36,17 +36,14 @@ if (isset($_GET["destination"])) {
             require ("pages/queries.php");
             break;
         default:
-            header("Location: /");
-            break;
+            $pageTitle = "Hjem";
+            echo '<!DOCTYPE html';
+            echo '<html>';
+            require_once("includes/head.php");
+            echo '<body>';
+            require_once("includes/nav.php");
+            require_once("pages/home.php");
+            require_once("includes/footer.php");
     }
     die();
 }
-
-$pageTitle = "Hjem";
-echo '<!DOCTYPE html';
-echo '<html>';
-require_once("includes/head.php");
-echo '<body>';
-require_once("includes/nav.php");
-require_once("pages/home.php");
-require_once("includes/footer.php");
