@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS `locations` (
   `title` TINYTEXT NOT NULL,
   `description` TEXT,
   `URL` VARCHAR(255),
+  `address` VARCHAR(255),
   `takeaway` BOOL DEFAULT 0,
   `delivery` BOOL DEFAULT 0,
   `show_title` BOOL DEFAULT 1,
