@@ -11,7 +11,7 @@ if (!Config::WEBSITE_ONLINE) {
 }
 
 if (Config::REQUIRE_DB) {
-    $db = new Database();
+    $db = new ExploreDatabase();
     if ($db->getError()) {
         echo 'Connection to database could not be established.';
         echo '<br>';
@@ -33,7 +33,13 @@ if (isset($_GET["destination"])) {
             echo 'body for other loaded';
             break;
         case 'debug':
-            require ("pages/queries.php");
+            echo '<!DOCTYPE html';
+            echo '<html>';
+            require_once("includes/head.php");
+            echo '<body>';
+            require_once("includes/nav.php");
+            require_once("includes/mapContent.php");
+            require_once("includes/footer.php");
             break;
         default:
             $pageTitle = "Hjem";
