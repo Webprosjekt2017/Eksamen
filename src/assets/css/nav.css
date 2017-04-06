@@ -24,10 +24,10 @@ nav {
     nav .navLinkWrapper.closed {
       transform: translate(96%); }
       nav .navLinkWrapper.closed #navDrawerKnob .arrow {
-        transform: skewX(-20deg) translate(-20%, -50%) rotate(90deg); }
+        transform: skewX(-20deg) translate(-10%, -50%) rotate(90deg); }
     nav .navLinkWrapper #navDrawerKnob {
       height: 80px;
-      width: 28px;
+      width: 32px;
       flex: none;
       margin-top: -20px;
       border-left: 4px solid #ef8f12;
@@ -47,7 +47,7 @@ nav {
         position: relative;
         top: 50%;
         transition: transform 300ms ease-in-out;
-        transform: skewX(-20deg) translate(-20%, -50%) rotate(-90deg); }
+        transform: skewX(-20deg) translate(-10%, -50%) rotate(-90deg); }
     nav .navLinkWrapper .navLink {
       display: block;
       height: 100%;
