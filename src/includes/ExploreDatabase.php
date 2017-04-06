@@ -69,16 +69,7 @@ class ExploreDatabase extends Database
         $locations = $this->fetchAll();
         return $locations;
     }
-
-    public function testQuery() {
-        $returnArray = array();
-        $remaArray = $this->getLocation("rema 1000") + array('images' => $this->getImages("rema 1000"));
-        $kiwiArray = $this->getLocation("kiwi") + array('images' => $this->getImages("kiwi"));
-        array_push($returnArray, $remaArray);
-        array_push($returnArray, $kiwiArray);
-        return $returnArray;
-    }
-
+    
     public function getAllLocationsData() {
         $returnArray = array();
         $this->query("SELECT * FROM `locations`");

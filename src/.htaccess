@@ -1,6 +1,4 @@
+IndexOptions +Charset=UTF-8
 IndexIgnore *
 RewriteEngine on
-
-#RewriteRule ^page/([^/\.]+)/?$ index.php?page=$1 [L]
-#RewriteRule ^([^/\.]+)/?$ index.php?loc=$1&adr=$2 [L]
 RewriteRule ^([^/\.]+)?$ index.php?destination=$1 [L]

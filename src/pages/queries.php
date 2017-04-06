@@ -13,6 +13,8 @@ if ($db->getError()) {
 
 echo "<br><br><br>";
 
-print_r($db->getAllLocationsData());
+$locations = $db->getAllLocationsData();
+
+print_r($locations);
 
 echo "</pre>";
