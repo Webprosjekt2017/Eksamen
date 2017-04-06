@@ -1,4 +1,13 @@
-var nav = {};
+var nav = {
+  links: null,
+  linkWrapper: null,
+  drawerKnow: null,
+  selector: null,
+  showFilter: function() {
+    nav.linkWrapper.addClass('closed');
+    nav.drawerKnow.addClass('show')
+  }
+};
 
 $(document).ready(function() {
 
