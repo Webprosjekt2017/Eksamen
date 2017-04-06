@@ -1,27 +1,42 @@
+<div class="map">
+<?php
+    $locations = $db->getAllLocationsData();
+    $days = array('Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'Søndag');
+    foreach ($locations as $location) {
+?>
+<div class="location" id="<?= strtolower(preg_replace('/\s*/', '', $location[address])) ?>">
+    <div class="locInfo">
+        <img src="<?= $location[images][0][path] ?>" alt="<?= $location[title] ?>">
 
-<div class="location" id="adressHere">
-  <div class="locInfo"><img src="linkhere"/>
-    <h2 class="title">Title here</h2>
-    <div class="tags"> <span>tag1</span><span>tag2</span></div>
-    <div class="desc">Description<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</div>
-    <div class="open"> 
-      <div class="status">Open now</div>
-      <div class="toggleBtn" onclick="showTimes(this)" data-open="false"></div>
-      <div class="times">
-        <div class="row">
-          <div class="c2">Mon - Fri</div>
-          <div class="c2">10 - 22</div>
+        <?php if ($location[show_title]) { ?>
+            <h2 class="title"><?= $location[title] ?></h2>
+        <?php } ?>
+
+        <div class="tags">
+            <?php foreach ($location[tags] as $tag) { ?>
+                <span><?= $tag[tag] ?></span>
+            <?php } ?>
         </div>
-        <div class="row">
-          <div class="c2">Sat</div>
-          <div class="c2">12 - 01</div>
+
+        <?php if ($location[description]) {?>
+            <div class="desc"><?= nl2br($location[description]) ?></div>
+        <?php } ?>
+
+        <div class="open">
+            <div class="status">Open Now</div>
+            <div class="toggleBtn" onclick="showTimes(this)" data-open="false"></div>
+            <div class="times">
+                <?php foreach($location[hours] as $hours) { ?>
+                    <div class="row">
+                        <div class="c2"><?= $days[$hours[day]] ?></div>
+                        <div class="c2"><?= $hours[open] ?> - <?= $hours[close] ?></div>
+                    </div>
+                <?php } ?>
+            </div>
         </div>
-        <div class="row">
-          <div class="c2">Sun</div>
-          <div class="c2">Closed</div>
-        </div>
-      </div>
+
     </div>
-  </div>
-  <div class="subLocations"><a htef="#">ico</a><a htef="#">ico</a></div>
+    <div class="subLocations"><a htef="#">ico</a><a htef="#">ico</a></div>
+</div>
+<?php } ?>
 </div>
