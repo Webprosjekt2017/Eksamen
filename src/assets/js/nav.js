@@ -14,7 +14,13 @@ $(document).ready(function() {
   nav.linkWrapper = $('.navLinkWrapper');
   nav.linkWrapper.mouseleave(function() {
     hoverController(nav.sel);
-  })
+  });
+
+  // Get nav drawer knob
+  nav.drawerKnow = $('#navDrawerKnob');
+  nav.drawerKnow.click(function(){
+    $(this).parent().toggleClass('closed');
+  });
 
   // replace nav.sel(index) with corresponding element
   nav.sel = nav.links[nav.sel];
