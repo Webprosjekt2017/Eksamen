@@ -33,7 +33,7 @@ if (isset($_GET["destination"])) {
             echo 'body for other loaded';
             break;
         case 'debug':
-            echo '<!DOCTYPE html';
+            echo '<!DOCTYPE html>';
             echo '<html>';
             require_once("includes/head.php");
             echo '<body>';
@@ -43,7 +43,7 @@ if (isset($_GET["destination"])) {
             break;
         default:
             $pageTitle = "Hjem";
-            echo '<!DOCTYPE html';
+            echo '<!DOCTYPE html>';
             echo '<html>';
             require_once("includes/head.php");
             echo '<body>';
