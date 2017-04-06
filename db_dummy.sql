@@ -4,10 +4,8 @@ VALUES (NULL, 'REMA 1000 VULKAN', 'dette er en beskrivelse', 'Maridalsveien 15, 
 
 
 INSERT INTO `location_images` (`loc_id`, `path`)
-VALUES ('1', '/img/rema.png'),
-  ('1', '/img/rema2.png'),
-  ('1', '/img/rema3.png'),
-  ('2', '/img/kiwi.png');
+VALUES ('1', 'assets/imgs/rema-vulkan.jpg'),
+  ('2', 'assets/imgs/kiwi.png');
 
 INSERT INTO `location_tags` (`loc_id`, `tag`)
 VALUES ('1', 'dagligvare'),
