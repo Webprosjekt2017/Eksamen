@@ -29,8 +29,7 @@ var loc = {
   printLoops: 0,
   printLocs: function() {
 
-    // clear locations if any before loading new ones
-    $('.location').remove();
+    this.clearLocs();
 
     if((this.dom == null || this.pos == null)) {
       if(this.printLoops < 10) {
@@ -42,16 +41,9 @@ var loc = {
 
     $('.map').append(this.dom);
 
-    $('.location').click(function() {
-      if ( $(this).css('overflow') == 'hidden') {
-        $(this).css('overflow', 'visible');
-      } else {
-        $(this).css('overflow', 'hidden');
-      }
-    }).children().click(function() {
-      return false;
-    });
+    this.addOnClick();
 
+    // Position locations on the map
     $.each(loc.pos, function(key, val) {
       $('#' + key).css({
         'left': val.x + '%',
@@ -59,11 +51,23 @@ var loc = {
       })
     });
 
+    // fade in locations in 1000 - (loc.printLoops * 100)
     setTimeout(function() {
       $('.location').css('opacity', 1);
     }, 1000 - (loc.printLoops * 100));
 
-  } // ##### END printLocs()
+  }, // ##### END printLocs()
+  clearLocs: function() {
+    // clear locations if any before loading new ones
+    $('.location').remove();
+  },
+  addOnClick: function() {
+    $('.location').click(function() {
+      $(this).toggleClass('show');
+    }).children().click(function() {
+      return false;
+    });
+  }
 }
 
 $(document).ready(function() {
@@ -82,6 +86,7 @@ $(document).ready(function() {
 
     $(this.dom).click(function() { // ##### Activate map
 
+      // ### Reset location obj
       loc.dom = null;
       loc.pos = null;
       loc.printLoops = 0;
@@ -97,10 +102,13 @@ $(document).ready(function() {
 
       }); // ##### END ajax done function
 
+      // Get positions form json
       $.getJSON( "assets/" + $(this).text().trim().toLowerCase() + ".json", function( data ) {
         loc.pos = data;
-        loc.printLocs();
       });
+
+      // Start trying to print th elocations
+      loc.printLocs();
 
       // Show filter on nav bar
       nav.showFilter();

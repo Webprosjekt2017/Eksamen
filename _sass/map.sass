@@ -97,6 +97,18 @@
     overflow: hidden
     transition: opacity 300ms ease-in-out
 
+    &.show
+      overflow: visible !important
+
+      .locInfo
+        opacity: 1
+        transform: translate(10px)
+
+      .subLocations
+        opacity: 1
+        transform: translate(-10px)
+
+
     .locInfo
       height: 400px
       width: 250px
@@ -106,6 +118,9 @@
       position: absolute
       top: -180px
       right: -270px
+
+      opacity: 0
+      transition: all 300ms ease-in-out
 
       img
         width: 100%
@@ -175,6 +190,9 @@
       position: absolute
       left: -60px
       top: 50%
+
+      opacity: 0
+      transition: all 300ms ease-in-out
 
       a
         display: block
