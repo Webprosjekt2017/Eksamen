@@ -50,7 +50,7 @@
       background: #333;
       pointer-events: none; }
     .map .campus:hover .cover {
-      opacity: .3; }
+      opacity: .2; }
     .map .campus.active {
       height: 30px;
       width: 30px;
