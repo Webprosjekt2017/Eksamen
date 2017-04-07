@@ -94,7 +94,7 @@ $(document).ready(function() {
       // Start ajax request first, as it takes the longest
       $.ajax({ // ##### LOAD map locations
 
-        url: 'includes/mapContent.local.php'
+        url: 'includes/mapContent.local.test.php'
 
       }).done(function (res){ // ##### DONE function
 
