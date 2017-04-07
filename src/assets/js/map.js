@@ -1,11 +1,6 @@
 // Global Vars
 
 var map = {
-  background: {
-    vulkan: '',
-    fjerdingen: '',
-    brenneriveien: ''
-  },
   dom: null,
   campus: {
     vulkan: {
@@ -20,7 +15,8 @@ var map = {
       dom: null,
       background: 'brenneriveien-map.png'
     }
-  }
+  },
+  cover: null
 }
 
 var loc = {
@@ -76,6 +72,7 @@ $(document).ready(function() {
   map.campus.vulkan.dom = $('#Vulkan');
   map.campus.fjerdingen.dom = $('#Fjerdingen');
   map.campus.brenneriveien.dom = $('#Brenneriveien');
+  map.cover = $('#mapCover');
 
   $.each(map.campus, function() {
     // add hover action
@@ -85,6 +82,9 @@ $(document).ready(function() {
     });
 
     $(this.dom).click(function() { // ##### Activate map
+
+      // Hide mapCover
+      map.cover.css('opacity', 0);
 
       // ### Reset location obj
       loc.dom = null;
