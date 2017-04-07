@@ -34,7 +34,8 @@ nav {
       transform: skewX(20deg);
       position: relative;
       opacity: 0;
-      transition: opacity 300ms ease-in-out; }
+      transition: opacity 300ms ease-in-out;
+      cursor: pointer; }
       nav .navLinkWrapper #navDrawerKnob.show {
         opacity: 1; }
       nav .navLinkWrapper #navDrawerKnob .arrow {
