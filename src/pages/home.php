@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="map">
-    <div class="cover"></div>
+    <div class="cover" id="mapCover"></div>
     <div class="campus" id="Vulkan">
       <div class="cover"></div>
       <h1>Vulkan</h1>
