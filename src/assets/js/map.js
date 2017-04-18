@@ -16,7 +16,10 @@ var map = {
       background: 'brenneriveien-map.png'
     }
   },
-  cover: null
+  cover: null,
+  title: null,
+  desc: null,
+  classIgnore: '.cover, .location, .title, .desc, .scrollArrow'
 }
 
 var loc = {
@@ -73,6 +76,8 @@ $(document).ready(function() {
   map.campus.fjerdingen.dom = $('#Fjerdingen');
   map.campus.brenneriveien.dom = $('#Brenneriveien');
   map.cover = $('#mapCover');
+  map.title = $('.map > .title');
+  map.desc = $('.map > .desc');
 
   $.each(map.campus, function() {
     // add hover action
@@ -81,10 +86,19 @@ $(document).ready(function() {
       map.dom.css('background-image', 'url(assets/imgs/' + $(this).data('bg') + ')');
     });
 
+    $(this.dom).keydown(function(e) {
+      e.preventDefault();
+      // console.log($(this).text().trim() + ' | ' + e.which);
+      if (e.which == 32) $(this).click();
+    });
+
     $(this.dom).click(function() { // ##### Activate map
 
-      // Hide mapCover
+      // Hide mapCover, title and desc
       map.cover.css('opacity', 0);
+      map.title.css('opacity', 0);
+      map.desc.css('opacity', 0);
+
 
       // ### Reset location obj
       loc.dom = null;
@@ -107,24 +121,24 @@ $(document).ready(function() {
         loc.pos = data;
       });
 
-      // Start trying to print th elocations
+      // Start trying to print the locations
       loc.printLocs();
 
       // Show filter on nav bar
       nav.showFilter();
-      // Chhange map
+      // Change map
       map.dom.css('background-image', 'url(assets/imgs/' + $(this).data('bg') + ')');
       // Add 'standby' class to sibling campus buttons
-      $(this).siblings().not('.cover, .location').addClass('standby');
+      $(this).siblings().not(map.classIgnore).addClass('standby');
       // remove potential 'active' class
-      $(this).siblings().not('.cover, .location').removeClass('active');
+      $(this).siblings().not(map.classIgnore).removeClass('active');
       // Remove potential 'standby' class
       $(this).removeClass('standby');
       // add 'active' class to active campus
       $(this).addClass('active');
       // Overrode mouseover function
-      $(this).siblings().addBack().not('.cover, .location').off('mouseover');
-      $(this).siblings().addBack().not('.cover, .location').mouseover(function() {
+      $(this).siblings().addBack().not(map.classIgnore).off('mouseover');
+      $(this).siblings().addBack().not(map.classIgnore).mouseover(function() {
         // Show campus name
         showName(this.innerText);
       }).mouseleave(function() {
@@ -162,8 +176,4 @@ function showName(name) {
 function stopName() {
   $(document).off('mousemove');
   $('.showName').remove();
-}
-
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
 }
