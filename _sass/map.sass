@@ -5,6 +5,27 @@
   background-size: cover
   position: relative
   transition: background 300ms ease-in-out
+  overflow: hidden
+  text-align: center
+
+  .title
+    font-size: 40px
+    height: 60px
+    width: 30%
+    border-bottom: 1px solid gray
+    position: absolute
+    top: 5%
+    left: 50%
+    transform: translate(-50%, 0)
+    z-index: 150
+
+  .desc
+    font-size: 20px
+    position: absolute
+    top: 15%
+    left: 50%
+    transform: translate(-50%, 0)
+    z-index: 150
 
   .cover
     width: 100%
@@ -15,8 +36,8 @@
     transition: opacity 300ms ease-in-out
 
   .campus
-    height: 23vw
-    width: 23vw
+    height: 20vw
+    width: 20vw
     border: 8px solid #ef8f12
     border-radius: 50%
     display: flex
@@ -201,6 +222,20 @@
         border: 2px solid #ef8f12
         border-radius: 50%
 
+  .scrollArrow
+    height: 70px
+    width: 70px
+    background: url('../imgs/DropDownArrow.png')
+    background-size: contain
+    position: absolute
+    bottom: 10px
+    left: 50%
+    transform: translate(-50%, 0)
+    z-index: 200
+
+    animation: bounce 400ms ease-out 2s 9 alternate forwards, fall 500ms ease-in 5.6s forwards
+
+
 .showName
   height: 30px
   border: 2px solid #ef8f12
@@ -214,3 +249,16 @@
   position: absolute
   transform: translate(-100%, 0)
   z-index: 1000
+
+@keyframes bounce
+  0%
+    transform: translate(-50%, 0%)
+
+  100%
+    transform: translate(-50%, -80%)
+
+@keyframes fall
+  0%
+    transform: translate(-50%, -80%)
+  100%
+    transform: translate(-50%, 150%)
