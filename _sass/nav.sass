@@ -16,17 +16,19 @@ nav
 
   .navLinkWrapper
     width: 60%
-    height: 40px
+    height: 60px
     display: flex
     align-content: stretch
     position: absolute
-    top: 20px
+    top: 10px
     right: 10px
     transform: translate(0%)
     transition: transform 300ms ease-in-out
 
     &.closed
       transform: translate(96%)
+      transition-duration: 1000ms
+      
       #navDrawerKnob
         .arrow
           transform: skewX(-20deg) translate(0, -50%) rotate(90deg)
@@ -35,7 +37,7 @@ nav
       height: 80px
       width: 32px
       flex: none
-      margin-top: -20px
+      margin-top: -10px
       border-left: 4px solid #ef8f12
       transform: skewX(20deg)
       position: relative
@@ -65,7 +67,7 @@ nav
       width: 100%
 
       text-align: center
-      line-height: 150%
+      line-height: 200%
       font-size: 30px
       text-decoration: none
       color: #ef8f12
@@ -77,5 +79,7 @@ nav
         background: #ef8f12
         position: relative
         left: 0
+        top: -5px
+        pointer-events: none
 
         transition: left ease-in-out 300ms
