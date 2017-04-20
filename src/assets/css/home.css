@@ -1,0 +1,17 @@
+.wrapper {
+  width: 70%;
+  margin: auto; }
+  .wrapper .row {
+    margin: 60px 0; }
+  .wrapper .overview .c2 {
+    padding: 0 50px;
+    margin: 50px 0; }
+    .wrapper .overview .c2:first-child {
+      border-right: 2px solid #ef8f12;
+      text-align: right; }
+    .wrapper .overview .c2 h1 {
+      margin: 20px;
+      font-size: 50px; }
+    .wrapper .overview .c2 p {
+      margin: 50px 0;
+      font-size: 20px; }
