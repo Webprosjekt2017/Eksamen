@@ -17,9 +17,8 @@ var map = {
     }
   },
   cover: null,
-  title: null,
-  desc: null,
-  classIgnore: '.cover, .location, .title, .desc, .scrollArrow'
+  mapText: null,
+  classIgnore: '.cover, .location, .title, .desc, .scrollArrow, .mapText'
 }
 
 var loc = {
@@ -76,8 +75,7 @@ $(document).ready(function() {
   map.campus.fjerdingen.dom = $('#Fjerdingen');
   map.campus.brenneriveien.dom = $('#Brenneriveien');
   map.cover = $('#mapCover');
-  map.title = $('.map > .title');
-  map.desc = $('.map > .desc');
+  map.mapText = $('.mapText');
 
   $.each(map.campus, function() {
     // add hover action
@@ -96,9 +94,7 @@ $(document).ready(function() {
 
       // Hide mapCover, title and desc
       map.cover.css('opacity', 0);
-      map.title.css('opacity', 0);
-      map.desc.css('opacity', 0);
-
+      map.mapText.css('opacity', 0);
 
       // ### Reset location obj
       loc.dom = null;
