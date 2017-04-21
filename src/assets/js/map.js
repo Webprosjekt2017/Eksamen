@@ -16,9 +16,10 @@ var map = {
       background: 'brenneriveien-map.png'
     }
   },
+  backBtn: null,
   cover: null,
   mapText: null,
-  classIgnore: '.cover, .location, .title, .desc, .scrollArrow, .mapText'
+  classIgnore: '.cover, .location, .title, .desc, .scrollArrow, .mapText, .backBtn'
 }
 
 var loc = {
@@ -27,7 +28,7 @@ var loc = {
   printLoops: 0,
   printLocs: function() {
 
-    this.clearLocs();
+    this.clear();
 
     if((this.dom == null || this.pos == null)) {
       if(this.printLoops < 10) {
@@ -55,7 +56,7 @@ var loc = {
     }, 1000 - (loc.printLoops * 100));
 
   }, // ##### END printLocs()
-  clearLocs: function() {
+  clear: function() {
     // clear locations if any before loading new ones
     $('.location').remove();
   },
@@ -65,6 +66,9 @@ var loc = {
     }).children().click(function() {
       return false;
     });
+  },
+  hide: function() {
+    $('.location').removeClass('show');
   }
 }
 
@@ -76,6 +80,27 @@ $(document).ready(function() {
   map.campus.brenneriveien.dom = $('#Brenneriveien');
   map.cover = $('#mapCover');
   map.mapText = $('.mapText');
+  map.backBtn = $('.backBtn');
+
+  // Close location info when ckicking outside them
+  map.cover.click(function(e) {
+    if (e.target !== this) return;
+
+    loc.hide();
+  })
+
+  // Setup back button
+  map.backBtn.click(function() {
+    map.cover.removeClass('hide');
+    map.mapText.removeClass('hide');
+    map.backBtn.removeClass('show');
+    $('.campus').removeClass('active standby').off('mouseover').mouseover(function() {
+      // Hover function chanes map in background
+      map.dom.css('background-image', 'url(assets/imgs/' + $(this).data('bg') + ')');
+    });
+    loc.clear();
+    nav.hideFilter();
+  });
 
   $.each(map.campus, function() {
     // add hover action
@@ -90,11 +115,18 @@ $(document).ready(function() {
       if (e.which == 32) $(this).click();
     });
 
+    /*
+     * #### Click function
+     * #### Place campus on map
+     * #### Get locations
+     * #### Hide cover, title, desc and show back botton
+     */
     $(this.dom).click(function() { // ##### Activate map
 
       // Hide mapCover, title and desc
-      map.cover.css('opacity', 0);
-      map.mapText.css('opacity', 0);
+      map.cover.addClass('hide');
+      map.mapText.addClass('hide');
+      map.backBtn.addClass('show');
 
       // ### Reset location obj
       loc.dom = null;

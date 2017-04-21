@@ -8,8 +8,37 @@
   transition: background 300ms ease-in-out
   overflow: hidden
 
+  .backBtn
+    font-size: 30px
+    opacity: 0
+    padding: 8px
+    padding-top: 0
+    padding-left: 0
+    border-radius: 10px
+    background: rgba(100, 100, 100, .1)
+    transition: all 300ms ease-in-out
+    cursor: pointer
+    position: absolute
+    top: 40px
+    left: 40px
+    z-index: 150
+    pointer-events: none
+
+    img
+      display: inline-block
+      height: 40px
+      transform: rotate(90deg) translate(20%, 0)
+
+    &:hover
+      background: rgba(100, 100, 100, .2)
+
+    &.show
+      opacity: 1
+      pointer-events: all
+
   .mapText
     text-align: center
+    transition: opacity 300ms ease-in-out
 
     .title
       font-size: 40px
@@ -30,6 +59,9 @@
       transform: translate(-50%, 0)
       z-index: 150
 
+    &.hide
+      opacity: 0
+
   .cover
     width: 100%
     height: 100%
@@ -37,6 +69,9 @@
     opacity: .5
     position: absolute
     transition: opacity 300ms ease-in-out
+
+    &.hide
+      opacity: 0
 
   .campus
     height: 20vw
@@ -118,13 +153,12 @@
     position: absolute
 
     opacity: 0
-    overflow: hidden
     transition: opacity 300ms ease-in-out
 
     &.show
-      overflow: visible !important
 
       .locInfo
+        pointer-events: all
         opacity: 1
         transform: translate(10px)
 
@@ -134,6 +168,7 @@
 
 
     .locInfo
+      pointer-events: none
       height: 400px
       width: 250px
       border: 2px solid #ef8f12

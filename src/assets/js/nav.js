@@ -6,6 +6,10 @@ var nav = {
   showFilter: function() {
     nav.linkWrapper.addClass('closed');
     nav.drawerKnow.addClass('show')
+  },
+  hideFilter: function() {
+    nav.linkWrapper.removeClass('closed');
+    nav.drawerKnow.removeClass('show')
   }
 };
 

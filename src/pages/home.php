@@ -1,6 +1,7 @@
 
 <div class="container">
   <div class="map">
+    <div class="backBtn"><img src="assets/imgs/DropDownArrow.png"/>Tilbake</div>
     <div class="mapText">
       <div class="title">
         <Lorum>Ipsum</Lorum>
