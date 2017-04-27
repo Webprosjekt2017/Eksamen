@@ -127,6 +127,7 @@
     border-radius: 50%;
     background: #eee;
     position: absolute;
+    z-index: 200;
     opacity: 0;
     transition: opacity 300ms ease-in-out; }
     .map .location.show .locInfo {
@@ -152,7 +153,7 @@
         height: 80px; }
       .map .location .locInfo .title {
         margin: 5px 8px;
-        margin-top: -15px;
+        margin-top: 0;
         color: #cf6f08; }
       .map .location .locInfo .tags {
         width: 100%;

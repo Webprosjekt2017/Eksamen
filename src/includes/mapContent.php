@@ -21,9 +21,14 @@ foreach ($locations as $location) {
     ?>
 
     <div class="location" id="<?= strtolower(preg_replace('/\s*/', '', $location['address'])) ?>">
+        <div class="hover-title"><?= $location['title'] ?></div>
         <div class="locInfo">
-            <img src="linkHere" alt="altHere"/>
-            <h2 class="title"><?= $location['title'] ?></h2>
+
+            <img src="<?= $location['images'][0]['path'] ?>" alt="<?= $location['title'] ?>">
+
+            <?php if ($location['show_title']) { ?>
+                <h2 class="title"><?= $location['title'] ?></h2>
+            <?php }?>
 
             <div class="tags">
                 <?php foreach ($location['tags'] as $tag) { ?>
