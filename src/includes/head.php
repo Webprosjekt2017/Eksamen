@@ -10,10 +10,11 @@
   <link rel="stylesheet" href="assets/css/map.css"/>
   <link rel="stylesheet" href="assets/css/nav.css"/>
   <link rel="stylesheet" href="assets/css/home.css"/>
-    <link rel="stylesheet" href="assets/css/contac.css"/>
     <?php
     if ($_GET["destination"] == 'about') {
         echo '<link rel="stylesheet" href="assets/css/om-oss.css"/>';
+    } else if ($_GET["destination"] == 'contact') {
+        echo '<link rel="stylesheet" href="assets/css/contact.css"/>';
     }
   ?>
   <!-- SCRIPTS-->
