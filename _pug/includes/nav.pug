@@ -7,3 +7,11 @@ nav
     a.navLink(href="#", tabindex="2") Kart
     a.navLink(href="#", tabindex="3") Om Oss
     a.navLink(href="#", tabindex="4") Kontakt oss
+    
+  .filterWrapper
+    select.filter#filter-type
+      option(value="0") Hva ser du etter?
+      each val in ['Bar','Restaurant','Matbutikk']
+        option(value=val)=val
+        
+    input#filter-name(type="text", placeholder="Kjenner du navnet?")
