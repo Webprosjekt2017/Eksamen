@@ -1,8 +1,17 @@
-    #aboutusbox{
-       padding: 20px;
-    }
+#aboutusbox{
+    padding: 20px;
+    top: 25%;
+}
 
   
-    #aboutusbox .c2{
+#aboutusbox .c2{
     
     }
+
+#aboutusbox .c2 #aboutustext{
+    
+}
+
+#aboutusbox .c2 #aboutusimg{
+    width: 50%;
+}
