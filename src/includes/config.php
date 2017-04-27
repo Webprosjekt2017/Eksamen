@@ -10,5 +10,5 @@ class Config {
         DB_DATABASE = 'woact_explore',
         REQUIRE_DB = true,
         WEBSITE_ONLINE = true;
-    
+
 }
