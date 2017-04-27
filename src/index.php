@@ -23,22 +23,10 @@ if (Config::REQUIRE_DB) {
 if (isset($_GET["destination"])) {
     switch ($_GET["destination"]) {
         case 'about':
-            print_r($_GET["destination"]);
-            echo 'body for about loaded';
-            break;
-        case 'login':
-            echo 'body for login loaded';
-            break;
-        case 'other':
-            echo 'body for other loaded';
-            break;
-        case 'debug':
-            echo '<!DOCTYPE html>';
-            echo '<html>';
+            $pageTitle = "Om oss";
             require_once("includes/head.php");
-            echo '<body>';
             require_once("includes/nav.php");
-            require_once("includes/mapContent.php");
+            require_once("pages/om-oss.php");
             require_once("includes/footer.php");
             break;
         default:
