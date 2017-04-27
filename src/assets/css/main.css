@@ -8,7 +8,8 @@ html, body {
 
 .row {
   width: 100%;
-  display: flex; }
+  display: flex;
+  box-sizing: border-box; }
   .row.vertival {
     flex-direction: column; }
   .row .c2 {
