@@ -19,6 +19,9 @@
                 <file>./src/includes/header.php</file>
                 <file>./src/includes/footer.php</file>
                 <file>./src/includes/mapContent.php</file>
+                <file>./src/includes/config.php</file>
+                <file>./src/includes/Database.php</file>
+                <file>./src/includes/ExploreDatabase.php</file>
             </exclude>
         </whitelist>
     </filter>
