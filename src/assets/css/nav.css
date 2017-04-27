@@ -54,18 +54,28 @@ nav {
       display: block;
       height: 100%;
       width: 100%;
+      border-right: 1px solid #ef8f12;
+      box-sizing: border-box;
       text-align: center;
       line-height: 200%;
       font-size: 30px;
       text-decoration: none;
-      color: #ef8f12; }
+      color: #ef8f12;
+      position: relative; }
       nav .navLinkWrapper .navLink .selector {
         height: 3px;
         width: 80%;
-        margin-left: 10%;
         background: #ef8f12;
-        position: relative;
+        position: absolute;
         left: 0;
-        top: -5px;
+        bottom: 5px;
         pointer-events: none;
-        transition: left ease-in-out 300ms; }
+        transition: all ease-in-out 300ms;
+        transform: translateX(10%); }
+      nav .navLinkWrapper .navLink:nth-child(2) {
+        border-right: none;
+        width: 50%; }
+      nav .navLinkWrapper .navLink:nth-child(3) {
+        width: 50%; }
+      nav .navLinkWrapper .navLink:last-child {
+        border-right: none; }
