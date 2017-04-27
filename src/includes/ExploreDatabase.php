@@ -118,3 +118,4 @@ class ExploreDatabase extends Database
 
 
 }
+// @codeCoverageIgnore

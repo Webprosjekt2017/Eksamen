@@ -16,3 +16,4 @@ class Config {
         WEBSITE_ONLINE = true;
 
 }
+// @codeCoverageIgnore
