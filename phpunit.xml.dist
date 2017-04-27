@@ -18,8 +18,10 @@
                 <file>./src/index.php</file>
                 <file>./src/includes/header.php</file>
                 <file>./src/includes/footer.php</file>
+                <file>./src/includes/nav.php</file>
+                <file>./src/includes/globals.php</file>
+                <file>./src/includes/head.php</file>
                 <file>./src/includes/mapContent.php</file>
-                <file>./src/includes/config.php</file>
                 <file>./src/includes/Database.php</file>
                 <file>./src/includes/ExploreDatabase.php</file>
             </exclude>
