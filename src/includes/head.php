@@ -9,7 +9,13 @@
   <link rel="stylesheet" href="assets/css/main.css"/>
   <link rel="stylesheet" href="assets/css/map.css"/>
   <link rel="stylesheet" href="assets/css/nav.css"/>
-  <link rel="stylesheet" href="assets/css/home.css"/>
+  <?php
+    if ($_GET["destination"] == 'home') {
+        echo '<link rel="stylesheet" href="assets/css/home.css"/>';
+    } else if ($_GET["destination"] == 'about') {
+        echo '<link rel="stylesheet" href="assets/css/om-oss.css"/>';
+    }
+  ?>
   <!-- SCRIPTS-->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="assets/js/nav.js"></script>
