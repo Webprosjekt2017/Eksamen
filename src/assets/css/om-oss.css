@@ -1,11 +1,13 @@
 #aboutusbox{
     padding: 20px;
-    top: 25%;
+    position: relative;
+    left: 5%;
+    top: 10%;
+    
 }
 
   
 #aboutusbox .c2{
-    
     }
 
 #aboutusbox .c2 #aboutustext{
@@ -14,4 +16,6 @@
 
 #aboutusbox .c2 #aboutusimg{
     width: 50%;
+    position: relative;
+    left: 10%;
 }
