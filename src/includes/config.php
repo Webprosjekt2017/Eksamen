@@ -11,12 +11,4 @@ class Config {
         REQUIRE_DB = true,
         WEBSITE_ONLINE = true;
 
-
-    public function fluffFunction($min, $max) {
-        if ($min > $max) {
-            return true;
-        }
-
-        return false;
-    }
 }

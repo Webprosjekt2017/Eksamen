@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * @codeCoverageIgnore
+ */
 include_once('Database.php');
 
 class ExploreDatabase extends Database

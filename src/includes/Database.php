@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @codeCoverageIgnore
+ */
+
 class Database
 {
     /** @var PDO  */
