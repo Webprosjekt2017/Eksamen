@@ -11,7 +11,8 @@ services:
   - mysql
 
 before_install:
-  - mysql -u root -e 'CREATE DATABASE woact_explore;'
+  - mysql -u root -e 'CREATE DATABASE woact_test;'
+  - mysql -u root -e 'USE woact_test;'
   - mysql -u root -e "CREATE TABLE IF NOT EXISTS `locations` (
                         `id` INT(11) NOT NULL AUTO_INCREMENT UNIQUE,
                         `title` TINYTEXT NOT NULL,
