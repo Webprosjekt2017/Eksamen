@@ -67,6 +67,11 @@ class ExploreDatabase extends Database
         return $location;
     }
 
+    public function getCampus($title) {
+        $this->query("SELECT `campus` FROM `locations` WHERE `title`=:title");
+        $this->bind(":title", $title);
+        return $this->single();
+    }
     public function getAllLocations() {
         $this->query("SELECT * FROM `locations`");
         $locations = $this->fetchAll();
@@ -85,7 +90,8 @@ class ExploreDatabase extends Database
                 array('images' => $this->getImages($row['title'])) +
                 array('tags' => $this->getTags($row['title'])) +
                 array('hours' => $this->getOpeningHours($row['title'])) +
-                array('numbers' => $this->getPhoneNumbers($row['title']));
+                array('numbers' => $this->getPhoneNumbers($row['title'])) +
+                array('campus' => $this->getCampus($row['title']));
             array_push($returnArray, $mergedArray);
         }
 

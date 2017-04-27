@@ -18,17 +18,20 @@ if (Config::REQUIRE_DB) {
 $locations = $db->getAllLocationsData();
 $days = array('Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'Søndag');
 foreach ($locations as $location) {
+        if($_POST['campus'] == $location['campus']) {
     ?>
 
     <div class="location" id="<?= strtolower(preg_replace('/\s*/', '', $location['address'])) ?>">
         <div class="hover-title"><?= $location['title'] ?></div>
         <div class="locInfo">
 
-            <img src="<?= $location['images'][0]['path'] ?>" alt="<?= $location['title'] ?>">
+            <?php if (isset($location['images']['0']['path'])) { ?>
+                <img src="<?= $location['images'][0]['path'] ?>" alt="<?= $location['title'] ?>">
+            <?php } ?>
 
             <?php if ($location['show_title']) { ?>
                 <h2 class="title"><?= $location['title'] ?></h2>
-            <?php }?>
+            <?php } ?>
 
             <div class="tags">
                 <?php foreach ($location['tags'] as $tag) { ?>
@@ -57,4 +60,4 @@ foreach ($locations as $location) {
         </div>
         <!--<div class="subLocations"><a href="#">ico</a><a href="#">ico</a></div>-->
     </div>
-<?php } ?>
+<?php }} ?>
