@@ -13,19 +13,20 @@ if (!Config::WEBSITE_ONLINE) {
 if (isset($_GET["destination"])) {
     switch ($_GET["destination"]) {
         case 'about':
-            $pageTitle = "Om oss";
+            $pageTitle = "Om pss";
             require_once("includes/head.php");
             require_once("includes/nav.php");
-            require_once("pages/om-oss.php");
+            require_once("pages/about.php");
             require_once("includes/footer.php");
             break;
         case 'debug':
             require_once ("includes/mapContent.php");
             break;
         case 'contact':
+            $pageTitle = "Kontakt oss";
             require_once("includes/head.php");
             require_once("includes/nav.php");
-            require_once("pages/kontakt_oss.php");
+            require_once("pages/contact.php");
             require_once("includes/footer.php");
             break;
         default:
