@@ -18,12 +18,14 @@ nav
     width: 60%
     height: 60px
     display: flex
+    background: #eee
     align-content: stretch
     position: absolute
     top: 10px
     right: 10px
     transform: translate(0%)
     transition: transform 300ms ease-in-out
+    z-index: 100
 
     &.closed
       transform: translate(96%)
@@ -103,37 +105,48 @@ nav
     align-content: stretch
     position: absolute
     top: 10px
-    right: 10px
+    right: 50px
     opacity: 0
     transform: translateY(-50%)
-    transition: all 300ms ease-in-out
+    transition: all 500ms ease-in-out
 
     &.show
       opacity: 1
       transform: translateY(0)
 
-    select.filter
+    .filter
       width: 40%
-      background: #eee
-      border: 1px solid #ef8f12
+      padding: 10px
+      font-size: 20px
+      background-color: #eee
+      border: 2px solid #ef8f12
       margin: 0 5%
       border-radius: 4px
-      box-shadow: inset 0 0 4px .5px #aaa
-      transition: border-width 300ms ease-in-out
+      transition: border-color 200ms ease-in-out
+
+    select
+      cursor: pointer
+      background-image: url('../imgs/DropDownArrow.png')
+      background-size: 30px
+      background-position: 98% center
+      background-repeat: no-repeat
+      -webkit-appearance: none
+      -moz-appearance: none
+      appearance: none
+
+      &::-ms-expand
+        /* remove default arrow on ie10 and ie11 */
+        display: none
+
+      /* target Internet Explorer 9 to undo the custom arrow */
+      @media screen and (min-width:0\0)
+        background: none\9
+        padding: 5px\9
 
       &:focus
         outline: none
-        border-width: 2px
+        border-color: #cf6f08
 
-    input
-      width: 40%
-      background: #eee
-      border: 1px solid #ef8f12
-      margin: 0 5%
-      border-radius: 4px
-      box-shadow: inset 0 0 4px 1px #aaa
-      transition: border-width 300ms ease-in-out
-
-      &:focus
+    input:focus
         outline: none
-        border-width: 2px
+        border-color: #cf6f08

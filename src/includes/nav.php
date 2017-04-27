@@ -12,6 +12,6 @@
       <option value="Restaurant">Restaurant</option>
       <option value="Matbutikk">Matbutikk</option>
     </select>
-    <input id="filter-name" type="text" placeholder="Kjenner du navnet?"/>
+    <input class="filter" id="filter-name" type="text" placeholder="Kjenner du navnet?"/>
   </div>
 </nav>

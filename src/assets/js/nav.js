@@ -2,15 +2,20 @@ var nav = {
   links: null,
   linkWrapper: null,
   drawerKnow: null,
+  filterWrapper: null,
   selector: null,
   selectorWidth: null,
   showFilter: function() {
     nav.linkWrapper.addClass('closed');
-    nav.drawerKnow.addClass('show')
+    nav.drawerKnow.addClass('show');
+    setTimeout(function() {
+      nav.filterWrapper.addClass('show');
+    }, 800)
   },
   hideFilter: function() {
     nav.linkWrapper.removeClass('closed');
-    nav.drawerKnow.removeClass('show')
+    nav.drawerKnow.removeClass('show');
+    nav.filterWrapper.removeClass('show');
   },
   hoverController: function hoverController(l){
     nav.selector.css({
@@ -44,6 +49,9 @@ $(document).ready(function() {
   nav.drawerKnow.click(function(){
     $(this).parent().toggleClass('closed');
   });
+
+  // Get filterWrapper
+  nav.filterWrapper = $('.filterWrapper');
 
   // replace nav.sel(index) with corresponding element
   nav.sel = $(nav.links[nav.sel]);
