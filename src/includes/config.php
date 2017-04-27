@@ -10,13 +10,5 @@ class Config {
         DB_DATABASE = 'woact_explore',
         REQUIRE_DB = true,
         WEBSITE_ONLINE = true;
-
-
-    public function fluffFunction($min, $max) {
-        if ($min > $max) {
-            return true;
-        }
-
-        return false;
-    }
+    
 }
