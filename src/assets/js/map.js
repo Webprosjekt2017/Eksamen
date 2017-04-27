@@ -100,6 +100,8 @@ $(document).ready(function() {
     });
     loc.clear();
     nav.hideFilter();
+
+    nav.setSel($('.navLink:eq(0)')); // Set selected tab to 'home'
   });
 
   $.each(map.campus, function() {
@@ -123,10 +125,12 @@ $(document).ready(function() {
      */
     $(this.dom).click(function() { // ##### Activate map
 
-      // Hide mapCover, title and desc
+      // Hide mapCover, title and desc. And set new active tab
       map.cover.addClass('hide');
       map.mapText.addClass('hide');
       map.backBtn.addClass('show');
+
+      nav.setSel($('.navLink:eq(1)')) // Set selected tab to 'map'
 
       // ### Reset location obj
       loc.dom = null;

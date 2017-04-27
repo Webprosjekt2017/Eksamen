@@ -11,6 +11,17 @@ var nav = {
   hideFilter: function() {
     nav.linkWrapper.removeClass('closed');
     nav.drawerKnow.removeClass('show')
+  },
+  hoverController: function hoverController(l){
+    nav.selector.css({
+        'left': (l.offsetLeft - nav.sel[0].offsetLeft) + 'px',
+        'width': $(l).width() * nav.selectorWidth + 'px'
+    });
+  },
+  setSel: function(l) {
+    l.append(nav.selector);
+    nav.sel.find('.selector').remove();
+    nav.sel = l;
   }
 };
 
@@ -19,13 +30,13 @@ $(document).ready(function() {
   // Add eventlistner 'mouseEnter' to navLinks
   nav.links = $('.navLink');
   nav.links.mouseenter(function() {
-    hoverController(this);
+    nav.hoverController(this);
   });
 
   // find navLinkWrapper and add event 'mouseleave'
   nav.linkWrapper = $('.navLinkWrapper');
   nav.linkWrapper.mouseleave(function() {
-    hoverController(nav.sel[0]);
+    nav.hoverController(nav.sel[0]);
   });
 
   // Get nav drawer knob
@@ -45,11 +56,3 @@ $(document).ready(function() {
   nav.selectorWidth = Math.round( 100 * (nav.selector.width() / nav.sel.width()) ) / 100;
 
 }); // END document ready function
-
-
-function hoverController(l){
-  nav.selector.css({
-      'left': (l.offsetLeft - nav.sel[0].offsetLeft) + 'px',
-      'width': $(l).width() * nav.selectorWidth + 'px'
-  });
-}
