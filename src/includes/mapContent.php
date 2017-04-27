@@ -2,6 +2,19 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
 
+require_once('config.php');
+require_once('ExploreDatabase.php');
+
+if (Config::REQUIRE_DB) {
+    $db = new ExploreDatabase();
+    if ($db->getError()) {
+        echo 'Connection to database could not be established.';
+        echo '<br>';
+        echo $db->getError();
+        die();
+    }
+}
+
 $locations = $db->getAllLocationsData();
 $days = array('Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'Søndag');
 foreach ($locations as $location) {
