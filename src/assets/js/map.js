@@ -139,9 +139,9 @@ $(document).ready(function() {
 
       // Start ajax request first, as it takes the longest
       $.ajax({ // ##### LOAD map locations
-
-        url: 'includes/mapContent.php'
-
+        type: 'POST',
+        url: 'includes/mapContent.php',
+        data: {campus: $(this).text().trim().toLowerCase()}
       }).done(function (res){ // ##### DONE function
 
         loc.dom = res;
