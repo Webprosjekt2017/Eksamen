@@ -29,6 +29,17 @@ if (isset($_GET["destination"])) {
             require_once("pages/contact.php");
             require_once("includes/footer.php");
             break;
+        case 'map':
+            $pageTitle = "Kart";
+            echo '<!DOCTYPE html>';
+            echo '<html>';
+            require_once("includes/head.php");
+            echo '<body>';
+            require_once("includes/nav.php");
+            require_once("pages/home.php");
+            require_once("includes/footer.php");
+            echo '<script>nav.sel = 1;</script>';
+            break;
         default:
             $pageTitle = "Hjem";
             echo '<!DOCTYPE html>';
@@ -38,6 +49,7 @@ if (isset($_GET["destination"])) {
             require_once("includes/nav.php");
             require_once("pages/home.php");
             require_once("includes/footer.php");
+            echo '<script>nav.sel = 0;</script>';
             break;
     }
     die();
