@@ -1,26 +1,8 @@
-html,body{
-    size: 100%;
-    }
-
     #aboutusbox{
-        width: 35%;
-        top: 25%;
-        left: 10%;
-        position: absolute;
+       padding: 20px;
     }
 
-    h1{
+  
+    #aboutusbox .c2{
     
-    }
-
-    #aboutustext{
-        
-    }
-
-    #aboutusimg{
-        position: absolute;
-        width: 25%;
-        height: 25%;
-        top: 25%;
-        right: 10%;
     }
