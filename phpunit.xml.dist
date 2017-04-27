@@ -18,6 +18,7 @@
                 <file>./src/index.php</file>
                 <file>./src/includes/header.php</file>
                 <file>./src/includes/footer.php</file>
+                <file>./src/includes/mapContent.php</file>
             </exclude>
         </whitelist>
     </filter>

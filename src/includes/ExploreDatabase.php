@@ -1,5 +1,8 @@
 <?php
-
+use PHPUnit\Framework\TestCase;
+/**
+ * @codeCoverageIgnore
+ */
 include_once('Database.php');
 
 class ExploreDatabase extends Database
@@ -115,3 +118,4 @@ class ExploreDatabase extends Database
 
 
 }
+// @codeCoverageIgnore

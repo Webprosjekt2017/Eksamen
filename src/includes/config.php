@@ -1,4 +1,8 @@
 <?php
+use PHPUnit\Framework\TestCase;
+/**
+ * @codeCoverageIgnore
+ */
 
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) header("Location: /");
 
@@ -12,11 +16,5 @@ class Config {
         WEBSITE_ONLINE = true;
 
 
-    public function fluffFunction($min, $max) {
-        if ($min > $max) {
-            return true;
-        }
-
-        return false;
-    }
 }
+// @codeCoverageIgnore

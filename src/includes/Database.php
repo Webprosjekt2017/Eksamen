@@ -1,4 +1,8 @@
 <?php
+use PHPUnit\Framework\TestCase;
+/**
+ * @codeCoverageIgnore
+ */
 
 class Database
 {
@@ -98,3 +102,4 @@ class Database
     }
 
 }
+// @codeCoverageIgnore
