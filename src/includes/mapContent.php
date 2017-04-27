@@ -1,5 +1,6 @@
 <div class="map">
 <?php
+    $db->generateLocationJson();
     $locations = $db->getAllLocationsData();
     $days = array('Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'Søndag');
     foreach ($locations as $location) {
