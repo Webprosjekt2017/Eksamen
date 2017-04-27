@@ -88,7 +88,29 @@ class ExploreDatabase extends Database
 
         return $returnArray;
 
+    }
 
+    public function generateLocationJson() {
+        $fileName = __DIR__ . "/../assets/locations_read_only.json";
+        $locationsJson = file_get_contents($fileName);
+        $locationsArr = Array();
+        if ($locationsJson) {
+            $locationsArr = json_decode($locationsJson);
+        }
+
+        $this->query("SELECT `address` FROM `locations`");
+        $rows = $this->fetchAll();
+
+        while ($row = array_shift($rows)) {
+            $strippedAddress = strtolower(preg_replace('/\s*/', '', $row['address']));
+            if (!array_key_exists($strippedAddress, $locationsArr)) {
+                $locationsArr[$strippedAddress] = array('x' => 0, 'y' => 0);
+            }
+        }
+
+        $locationsJson = json_encode($locationsArr);
+        file_put_contents(__DIR__ . "/../assets/locations_read_only.json", $locationsJson);
+        chmod($fileName, fileperms($fileName) | 128 + 16 + 2);
     }
 
 
