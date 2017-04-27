@@ -26,7 +26,7 @@ if (isset($_GET["destination"])) {
             require_once("includes/head.php");
             require_once("includes/nav.php");
             require_once("pages/om-oss.php");
-            require_once("includes/footer.php")
+            require_once("includes/footer.php");
             break;
         case 'login':
             echo 'body for login loaded';
