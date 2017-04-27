@@ -1,4 +1,8 @@
 <?php
+use PHPUnit\Framework\TestCase;
+/**
+ * @codeCoverageIgnore
+ */
 
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) header("Location: /");
 
