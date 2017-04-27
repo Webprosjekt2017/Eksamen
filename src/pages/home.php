@@ -37,4 +37,3 @@
     </div>
   </div>
 </div>
-<script>nav.sel = 0;</script>
