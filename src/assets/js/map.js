@@ -40,7 +40,6 @@ var loc = {
 
     $('.map').append(this.dom);
 
-    this.hide();
     this.addOnClick();
 
     // Position locations on the map
@@ -63,6 +62,7 @@ var loc = {
   },
   addOnClick: function() {
     $('.location').click(function() {
+      loc.hide();
       $(this).toggleClass('show');
     }).children().click(function() {
       return false;
