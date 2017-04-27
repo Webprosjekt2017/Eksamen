@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+
 echo "<pre>";
 $db = new ExploreDatabase();
 
@@ -11,10 +13,4 @@ if ($db->getError()) {
 }
 
 
-echo "<br><br><br>";
-
-$locations = $db->getAllLocationsData();
-
-print_r($locations);
-
-echo "</pre>";
+print_r($db->getAllLocationsData());
