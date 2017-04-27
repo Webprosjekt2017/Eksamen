@@ -1,9 +1,6 @@
 #aboutusbox{
-    padding: 20px;
-    position: relative;
-    left: 5%;
-    top: 10%;
-    
+    padding: 100px;
+    text-align: center;
 }
 
   
@@ -15,7 +12,7 @@
 }
 
 #aboutusbox .c2 #aboutusimg{
-    width: 50%;
-    position: relative;
-    left: 10%;
+    height: 50%;
+    margin-left: 50px;
+    
 }

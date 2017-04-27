@@ -11,3 +11,6 @@
         <img id="aboutusimg" src="assets/imgs/sadpepe.jpeg">
     </div>
 </div>
+
+<script> nav.sel = 2;
+</script>
