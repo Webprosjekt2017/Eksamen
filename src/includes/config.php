@@ -15,6 +15,4 @@ class Config {
         REQUIRE_DB = false,
         WEBSITE_ONLINE = true;
 
-
 }
-// @codeCoverageIgnore
