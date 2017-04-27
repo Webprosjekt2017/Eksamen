@@ -40,6 +40,7 @@ var loc = {
 
     $('.map').append(this.dom);
 
+    this.hide();
     this.addOnClick();
 
     // Position locations on the map
