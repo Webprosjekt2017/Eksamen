@@ -138,8 +138,7 @@
       opacity: 1;
       transform: translate(-10px); }
     .map .location .hover-title {
-      opacity: 0;
-      user-select: none; }
+      visibility: hidden; }
     .map .location .locInfo {
       pointer-events: none;
       height: 400px;
