@@ -151,12 +151,12 @@
     border-radius: 50%
     background: #eee
     position: absolute
-
+    z-index: 200
     opacity: 0
     transition: opacity 300ms ease-in-out
 
-    &.show
 
+    &.show
       .locInfo
         pointer-events: all
         opacity: 1
@@ -166,6 +166,7 @@
         opacity: 1
         transform: translate(-10px)
 
+    .hover-title
 
     .locInfo
       pointer-events: none
@@ -186,7 +187,7 @@
 
       .title
         margin: 5px 8px
-        margin-top: -15px
+        margin-top: 0
         color: #cf6f08
 
       .tags
