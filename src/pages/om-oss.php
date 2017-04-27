@@ -8,6 +8,5 @@
         </p>
       </div>
     <div class="c2">
-        <img id="aboutusimg" src="placeholder">
     </div>
 </div>
