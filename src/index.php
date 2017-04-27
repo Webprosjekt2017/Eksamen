@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL);
+error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
 
 require_once('includes/config.php');
 require_once('includes/ExploreDatabase.php');
@@ -29,6 +29,15 @@ if (isset($_GET["destination"])) {
             require_once("pages/om-oss.php");
             require_once("includes/footer.php");
             break;
+        case 'debug':
+            require_once ("includes/mapContent.local.test.php");
+            break;
+        case 'contact':
+            require_once("includes/head.php");
+            require_once("includes/nav.php");
+            require_once("pages/kontakt_oss.php");
+            require_once("includes/footer.php");
+            break;
         default:
             $pageTitle = "Hjem";
             echo '<!DOCTYPE html>';
@@ -38,6 +47,7 @@ if (isset($_GET["destination"])) {
             require_once("includes/nav.php");
             require_once("pages/home.php");
             require_once("includes/footer.php");
+            break;
     }
     die();
 }
