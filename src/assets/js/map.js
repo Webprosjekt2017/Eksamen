@@ -62,7 +62,7 @@ var loc = {
   },
   addOnClick: function() {
     $('.location').click(function() {
-      loc.hide();
+      loc.hide(); // close all location before opening this one
       $(this).toggleClass('show');
     }).children().click(function() {
       return false;
