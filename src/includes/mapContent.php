@@ -51,8 +51,8 @@ foreach ($locations as $location) {
                     <?php foreach ($location['hours'] as $hours) { ?>
                         <div class="row">
                             <div class="c2"><?= $days[$hours['day']] ?></div>
-                            <div class="c2"><?= date("h", strtotime($hours['open'])) ?>
-                                - <?= date("h", strtotime($hours['close'])) ?></div>
+                            <div class="c2"><?= date("H", strtotime($hours['open'])) ?>
+                                - <?= date("H", strtotime($hours['close'])) ?></div>
                         </div>
                     <?php } ?>
                 </div>
