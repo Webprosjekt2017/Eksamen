@@ -3,6 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'on');
 
 require_once ('includes/config.php');
+require_once ('includes/ExploreDatabase.php');
 
 if (!Config::WEBSITE_ONLINE) {
     echo 'Website Offline';
@@ -20,7 +21,7 @@ if (isset($_GET["destination"])) {
             require_once("includes/footer.php");
             break;
         case 'debug':
-            require_once ("includes/mapContent.php");
+            require_once ("pages/queries.php");
             break;
         case 'contact':
             $pageTitle = "Kontakt oss";
