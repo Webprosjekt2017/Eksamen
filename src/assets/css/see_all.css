@@ -1,0 +1,9 @@
+.infokort {
+    padding: 5px;
+    border: 2px solid #ef8f12;
+    background-color: #eee;
+}
+
+.infokort img {
+    width: 100%;
+}
