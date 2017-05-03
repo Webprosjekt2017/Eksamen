@@ -32,3 +32,4 @@ exclude_paths:
 - _sass/
 - Concept
 - src/assets/js/jsvendor
+- src/admin
