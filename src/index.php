@@ -31,7 +31,7 @@ if (isset($_GET["destination"])) {
             require_once("includes/footer.php");
             break;
         case 'see_all':
-            $pageTitle = "Kontakt oss";
+            $pageTitle = "Se Alt";
             require_once("includes/head.php");
             require_once("includes/nav.php");
             require_once("pages/see_all.php");
