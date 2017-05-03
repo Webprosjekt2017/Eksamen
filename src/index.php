@@ -29,6 +29,13 @@ if (isset($_GET["destination"])) {
             require_once("pages/contact.php");
             require_once("includes/footer.php");
             break;
+        case 'see_all':
+            $pageTitle = "Kontakt oss";
+            require_once("includes/head.php");
+            require_once("includes/nav.php");
+            require_once("pages/see_all.php");
+            require_once("includes/footer.php");
+            break;
         case 'map':
             $pageTitle = "Kart";
             echo '<!DOCTYPE html>';
