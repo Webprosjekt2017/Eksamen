@@ -144,6 +144,9 @@
                             <span class="input-group-addon">
                                 <input type="checkbox" class="day_check" name="same_tuesday" data-group="tuesday">
                             </span>
+                            <span class="input-group-addon">
+                                <input type="checkbox" name="tue_skip">
+                            </span>
                             <input type="time" class="form-control tuesday" name="time_tuesday_start" disabled required>
                             <input type="time" class="form-control tuesday" name="time_tuesday_end" disabled required>
                         </div>
@@ -154,10 +157,11 @@
                             <span class="input-group-addon">
                                 <input type="checkbox" class="day_check" name="same_wednesday" data-group="wednesday">
                             </span>
-                            <input type="time" class="form-control wednesday" name="time_wednesday_start" disabled
-                                   required>
-                            <input type="time" class="form-control wednesday" name="time_wednesday_end" disabled
-                                   required>
+                            <span class="input-group-addon">
+                                <input type="checkbox" name="wed_skip">
+                            </span>
+                            <input type="time" class="form-control wednesday" name="time_wednesday_start" disabled required>
+                            <input type="time" class="form-control wednesday" name="time_wednesday_end" disabled required>
                         </div>
 
                         <div style="margin-bottom: 10px" class="input-group">
@@ -166,8 +170,10 @@
                             <span class="input-group-addon">
                                 <input type="checkbox" class="day_check" name="same_thursday" data-group="thursday">
                             </span>
-                            <input type="time" class="form-control thursday" name="time_thursday_start" disabled
-                                   required>
+                            <span class="input-group-addon">
+                                <input type="checkbox" name="thu_skip">
+                            </span>
+                            <input type="time" class="form-control thursday" name="time_thursday_start" disabled required>
                             <input type="time" class="form-control thursday" name="time_thursday_end" disabled required>
                         </div>
 
@@ -176,6 +182,9 @@
                             <span class="input-group-addon">Fredag</span>
                             <span class="input-group-addon">
                                 <input type="checkbox" class="day_check" name="same_friday" data-group="friday">
+                            </span>
+                            <span class="input-group-addon">
+                                <input type="checkbox" name="fri_skip">
                             </span>
                             <input type="time" class="form-control friday" name="time_friday_start" disabled required>
                             <input type="time" class="form-control friday" name="time_friday_end" disabled required>
@@ -187,8 +196,10 @@
                             <span class="input-group-addon">
                                 <input type="checkbox" class="day_check" name="same_saturday" data-group="saturday">
                             </span>
-                            <input type="time" class="form-control saturday" name="time_saturday_start" disabled
-                                   required>
+                            <span class="input-group-addon">
+                                <input type="checkbox" name="sat_skip">
+                            </span>
+                            <input type="time" class="form-control saturday" name="time_saturday_start" disabled required>
                             <input type="time" class="form-control saturday" name="time_saturday_end" disabled required>
                         </div>
 
@@ -197,6 +208,9 @@
                             <span class="input-group-addon">Søndag</span>
                             <span class="input-group-addon">
                                 <input type="checkbox" class="day_check" name="same_sunday" data-group="sunday">
+                            </span>
+                            <span class="input-group-addon">
+                                <input type="checkbox" name="sun_skip">
                             </span>
                             <input type="time" class="form-control sunday" name="time_sunday_start" disabled required>
                             <input type="time" class="form-control sunday" name="time_sunday_end" disabled required>
@@ -238,38 +252,38 @@
     $mondayOpen = ($_POST['time_monday_start']) . ":00";
     $mondayClose = ($_POST['time_monday_end']) . ":00";
 
-        $link = new PDO("mysql:host=localhost;dbname=woact_explore;", "root", "password");
+    $link = new PDO("mysql:host=localhost;dbname=woact_explore;", "root", "password");
 
-        $insertLocation = $link->prepare('INSERT INTO locations (title, description, address, url, takeaway, delivery, show_title, campus)
+    $insertLocation = $link->prepare('INSERT INTO locations (title, description, address, url, takeaway, delivery, show_title, campus)
     VALUES (:title, :description, :address, :url, :takeaway, :delivery, :show_title, :campus)');
 
-        $insertLocation->execute([
-            'title' => $title,
-            'description' => $desc,
-            'address' => $address,
-            'url' => $website,
-            'takeaway' => $takeaway,
-            'delivery' => $delivery,
-            'show_title' => $showTitle,
-            'campus' => $campus
-        ]);
+    $insertLocation->execute([
+        'title' => $title,
+        'description' => $desc,
+        'address' => $address,
+        'url' => $website,
+        'takeaway' => $takeaway,
+        'delivery' => $delivery,
+        'show_title' => $showTitle,
+        'campus' => $campus
+    ]);
 
-        $locationId = $link->lastInsertId();
+    $locationId = $link->lastInsertId();
 
-        if (isset($_POST['image'])) {
-            $link->prepare('INSERT INTO location_images (loc_id, path) VALUES (?, ?)')->execute([$locationId, $_POST['image']]);
+    if (isset($_POST['image'])) {
+        $link->prepare('INSERT INTO location_images (loc_id, path) VALUES (?, ?)')->execute([$locationId, $_POST['image']]);
+    }
+
+
+    if (!empty($_POST['qty'])) {
+        foreach ($_POST['qty'] as $cnt => $qty) {
+            $link->prepare('INSERT INTO location_tags (loc_id, tag) VALUES (?, ?)')->execute([$locationId, $qty]);
         }
+    }
 
-
-        if (!empty($_POST['qty'])) {
-            foreach ($_POST['qty'] as $cnt => $qty) {
-                $link->prepare('INSERT INTO location_tags (loc_id, tag) VALUES (?, ?)')->execute([$locationId, $qty]);
-            }
-        }
-
-        if (isset($_POST['phone'])) {
-            $link->prepare('INSERT INTO phone_numbers (loc_id, country_code, `number`) VALUES (?, 47, ?)')->execute([$locationId, $_POST['phone']]);
-        }*/
+    if (isset($_POST['phone'])) {
+        $link->prepare('INSERT INTO phone_numbers (loc_id, country_code, `number`) VALUES (?, 47, ?)')->execute([$locationId, $_POST['phone']]);
+    }
 
     $timeArr = Array(
         0 => Array(
@@ -277,79 +291,43 @@
             "close" => $mondayClose
         ),
         1 => Array(
-            "open" => isset($_POST['time_tuesday_start']) ? $_POST['time_tuesday_start'] . ":00" : $mondayOpen,
-            "close" => isset($_POST['time_tuesday_end']) ? $_POST['time_tuesday_end'] . ":00" : $mondayClose
+            "open" => isset($_POST['same_tuesday']) ? $mondayOpen : $_POST['time_tuesday_start'] . ":00",
+            "close" => isset($_POST['same_tuesday']) ? $mondayClose : $_POST['time_tuesday_end'] . ":00",
+            "skip" => isset($_POST['tue_skip']) ? true : false
         ),
         2 => Array(
-            "open" => isset($_POST['time_wednesday_start']) ? $_POST['time_wednesday_start'] . ":00" : $mondayOpen,
-            "close" => isset($_POST['time_wednesday_end']) ? $_POST['time_wednesday_end'] . ":00" : $mondayClose
+            "open" => isset($_POST['same_wednesday']) ? $mondayOpen : $_POST['time_wednesday_start'] . ":00",
+            "close" => isset($_POST['same_wednesday']) ? $mondayClose : $_POST['time_wednesday_end'] . ":00",
+            "skip" => isset($_POST['wed_skip']) ? true : false
         ),
         3 => Array(
-            "open" => isset($_POST['time_thursday_start']) ? $_POST['time_thursday_start'] . ":00" : $mondayOpen,
-            "close" => isset($_POST['time_thursday_end']) ? $_POST['time_thursday_end'] . ":00" : $mondayClose
+            "open" => isset($_POST['same_thursday']) ? $mondayOpen : $_POST['time_thursday_start'] . ":00",
+            "close" => isset($_POST['same_thursday']) ? $mondayClose : $_POST['time_thursday_end'] . ":00",
+            "skip" => isset($_POST['thu_skip']) ? true : false
         ),
         4 => Array(
-            "open" => isset($_POST['time_friday_start']) ? $_POST['time_friday_start'] . ":00" : $mondayOpen,
-            "close" => isset($_POST['time_friday_end']) ? $_POST['time_friday_end'] . ":00" : $mondayClose
+            "open" => isset($_POST['same_friday']) ? $mondayOpen : $_POST['time_friday_start'] . ":00",
+            "close" => isset($_POST['same_friday']) ? $mondayClose : $_POST['time_friday_end'] . ":00",
+            "skip" => isset($_POST['fri_skip']) ? true : false
         ),
         5 => Array(
-            "open" => isset($_POST['time_saturday_start']) ? $_POST['time_saturday_start'] . ":00" : $mondayOpen,
-            "close" => isset($_POST['time_saturday_end']) ? $_POST['time_saturday_end'] . ":00" : $mondayClose
+            "open" => isset($_POST['same_saturday']) ? $mondayOpen : $_POST['time_saturday_start'] . ":00",
+            "close" => isset($_POST['same_saturday']) ? $mondayClose : $_POST['time_saturday_end'] . ":00",
+            "skip" => isset($_POST['sat_skip']) ? true : false
         ),
         6 => Array(
-            "open" => isset($_POST['time_sunday_start']) ? $_POST['time_sunday_start'] . ":00" : $mondayOpen,
-            "close" => isset($_POST['time_sunday_end']) ? $_POST['time_sunday_end'] . ":00" : $mondayClose
+            "open" => isset($_POST['same_sunday']) ? $mondayOpen : $_POST['time_sunday_start'] . ":00",
+            "close" => isset($_POST['same_sunday']) ? $mondayClose : $_POST['time_sunday_end'] . ":00",
+            "skip" => isset($_POST['sun_skip']) ? true : false
         )
     );
 
     foreach ($timeArr as $key => $val) {
-        echo $val['open'];
-        echo "<br>";
+        if (!$val['skip']) {
+            $link->prepare('INSERT INTO opening_hours (`loc_id`, `day`, `open`, `close`) VALUES (?, ?, ?, ?)')->
+            execute([$locationId, $key, $val['open'], $val['close']]);
+        }
     }
-
-    /*insertTime($locationId, $mondayOpen, $mondayClose, 0, $link);
-
-    if (isset($_POST['same_tuesday'])) {
-        insertTime($locationId, $mondayOpen, $mondayClose, 1, $link);
-    } else {
-        insertTime($locationId, $_POST['time_tuesday_start'] . ":00", $_POST['time_tuesday_end'] . ":00", 1, $link);
-    }
-
-    if (isset($_POST['same_wednesday'])) {
-        insertTime($locationId, $mondayOpen, $mondayClose, 2, $link);
-    } else {
-        insertTime($locationId, $_POST['time_wednesday_start'] . ":00", $_POST['time_wednesday_end'] . ":00", 2, $link);
-    }
-
-    if (isset($_POST['same_thursday'])) {
-        insertTime($locationId, $mondayOpen, $mondayClose, 3, $link);
-    } else {
-        insertTime($locationId, $_POST['time_thursday_start'] . ":00", $_POST['time_thursday_end'] . ":00", 3, $link);
-    }
-
-    if (isset($_POST['same_friday'])) {
-        insertTime($locationId, $mondayOpen, $mondayClose, 4, $link);
-    } else {
-        insertTime($locationId, $_POST['time_friday_start'] . ":00", $_POST['time_friday_end'] . ":00", 4, $link);
-    }
-
-    if (isset($_POST['same_saturday'])) {
-        insertTime($locationId, $mondayOpen, $mondayClose, 5, $link);
-    } else {
-        insertTime($locationId, $_POST['time_saturday_start'] . ":00", $_POST['time_saturday_end'] . ":00", 5, $link);
-    }
-
-    if (isset($_POST['same_sunday'])) {
-        insertTime($locationId, $mondayOpen, $mondayClose, 6, $link);
-    } else {
-        insertTime($locationId, $_POST['time_sunday_start'] . ":00", $_POST['time_sunday_end'] . ":00", 6, $link);
-    }
-
-
-    function insertTime($loc_id, $start_time, $end_time, $day, $link) {
-        $this->link->prepare('INSERT INTO opening_hours (loc_id, `day`, `open`, `close`)
-                        VALUES (?, ?, ?, ?)')->execute([$loc_id, $day, $start_time, $end_time]);
-    }*/
 
 
 } ?>
