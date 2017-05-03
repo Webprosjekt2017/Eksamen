@@ -1,9 +1,39 @@
+#see_allcontainer {
+    padding: 50px;
+}
 .infokort {
     padding: 5px;
+    margin: 20px;
     border: 2px solid #ef8f12;
     background-color: #eee;
 }
 
 .infokort img {
     width: 100%;
+}
+
+.infokort .open {
+    height: 18px;
+    border-left: 2px solid #ef8f12;
+    font-size: .95em;
+    overflow: hidden;
+    transition: height 300ms ease-in-out;
+}
+
+.infokort .open .status {
+    display: inline-block;
+    height: 18px;
+    vertical-align: top;
+}
+
+.infokort .open .toggleBtn {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-left: 15px;
+    background: url("../imgs/DropDownArrow.png");
+    background-size: 80% 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
 }
