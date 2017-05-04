@@ -35,9 +35,10 @@ foreach ($locations as $location) {
             <?php } ?>
 
             <div class="tags">
-                <?php foreach ($location['tags'] as $tag) { ?>
+                <?php foreach ($location['tags'] as $tag) {
+                    if ($tag['tag'] != '') {?>
                     <span><?= $tag['tag'] ?></span>
-                <?php } ?>
+                <?php }} ?>
             </div>
 
             <?php if ($location['description']) { ?>
