@@ -128,7 +128,7 @@ class ExploreDatabase extends Database
         return $mergedArray;
     }
 
-    private function removeLocation($address) {
+    public function removeLocation($address) {
         if ($location = $this->getLocId($address)) {
 
             $this->beginTransaction();

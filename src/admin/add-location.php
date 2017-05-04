@@ -2,21 +2,16 @@
 
 <?php if (!isset($_SESSION['logged_in']) or !$_SESSION['logged_in']) { header("Location: index.php"); }?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<!doctype html>
+<html lang="no">
 <head>
-    <title>Legg til lokasjon</title>
+    <title>Legg til sted</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="ROBOTS" content="ALL"/>
-    <meta name="author" content="SJB Solutions"/>
-    <meta name="copyright" content="SJB Solutions"/>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">s
 
     <link rel="stylesheet" href="../assets/css/map.css"/>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript/" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"/></script>
+    <script type="text/javascript/" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/adm-map.js"></script>
     <link href="css/toastr.css" rel="stylesheet" type="text/css"/>
@@ -24,9 +19,6 @@
     <script>
         $(document).ready(function () {
             $('.day_check').change(function () {
-                // gets data-group value and uses it in the outer selector
-                // to select the inputs it controls and sets their disabled
-                // property to the negated value of it's checked property
                 $("." + $(this).data("group")).prop('disabled', this.checked);
             }).change();
         });
@@ -36,7 +28,7 @@
 
 <div class="vertical-center">
     <div class="container">
-        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <div class="panel-title">Legg til lokasjon</div>
