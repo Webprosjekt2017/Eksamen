@@ -165,9 +165,10 @@
       border-color: #aaa
 
     &.highlight
-      width: 18px
       height: 18px
-      animation: pulse 600ms ease-in-out 3
+      width: 18px
+      transform: translate(-3px, -3px)
+      animation: pulse 600ms ease-in-out 300ms 3
 
     &.show
       .locInfo
@@ -175,12 +176,40 @@
         opacity: 1
         transform: translate(10px)
 
-      .subLocations
-        opacity: 1
-        transform: translate(-10px)
+      .hover-title
+        opacity: 0 !important
+
+    &:hover .hover-title
+      opacity: 1
 
     .hover-title
-      visibility: hidden
+      min-width: 150px
+      padding: 10px
+      background: #f9f9f9
+      border: 2px solid #ef8f12
+      border-radius: 2px
+      font-size: 20px
+      text-align: center
+      white-space: nowrap
+      position: absolute
+      top: -70px
+      left: 50%
+      transform: translate(-50%,0)
+
+      transition: opacity 300ms ease-in-out
+      opacity: 0
+      pointer-events: none
+
+      div
+        width: 0
+        height: 0
+        border-left: 12px solid transparent
+        border-right: 12px solid transparent
+        border-top: 12px solid #ef8f12
+        position: absolute
+        bottom: -12px
+        left: 50%
+        transform: translate(-12px,0)
 
     .locInfo
       pointer-events: none
@@ -190,7 +219,7 @@
       background: #eee
       position: relative
       top: -180px
-      right: -60px
+      right: -30px
 
       opacity: 0
       transition: all 300ms ease-in-out
@@ -252,28 +281,6 @@
             repeat: no-repeat
           cursor: pointer
 
-    .subLocations
-      height: 150px
-      width: 50px
-      display: flex
-      flex-direction: column
-      justify-content: space-around
-      align-items: center
-      margin-top: -75px
-      position: absolute
-      left: -60px
-      top: 50%
-
-      opacity: 0
-      transition: all 300ms ease-in-out
-
-      a
-        display: block
-        height: 20px
-        width: 20px
-        border: 2px solid #ef8f12
-        border-radius: 50%
-
   .scrollArrow
     height: 70px
     width: 70px
@@ -317,8 +324,16 @@
 
 @keyframes pulse
   0%
-    transform: scale(1)
+    height: 18px
+    width: 18px
+    transform: translate(-3px, -3px)
+
   50%
-    transform: scale(1.2)
+    height: 24px
+    width: 24px
+    transform: translate(-6px, -6px)
+
   100%
-    transform: scale(1)
+    height: 18px
+    width: 18px
+    transform: translate(-3px, -3px)
