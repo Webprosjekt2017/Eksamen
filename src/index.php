@@ -14,7 +14,7 @@ if (!Config::WEBSITE_ONLINE) {
 if (isset($_GET["destination"])) {
     switch ($_GET["destination"]) {
         case 'about':
-            $pageTitle = "Om pss";
+            $pageTitle = "Om oss";
             require_once("includes/head.php");
             require_once("includes/nav.php");
             require_once("pages/about.php");

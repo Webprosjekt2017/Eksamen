@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="assets/css/home.css"/>
     <?php
     if ($_GET["destination"] == 'about') {
-        echo '<link rel="stylesheet" href="assets/css/om-oss.css"/>';
+        echo '<link rel="stylesheet" href="assets/css/about-us.css"/>';
     } else if ($_GET["destination"] == 'contact') {
         echo '<link rel="stylesheet" href="assets/css/contact.css"/>';
     } else if ($_GET["destination"] == 'see_all') {
