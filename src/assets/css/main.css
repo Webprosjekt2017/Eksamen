@@ -16,6 +16,12 @@ html, body {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box; }
+    .row .column.h-center-content {
+      display: flex;
+      justify-content: center; }
+    .row .column.v-center-content {
+      display: flex;
+      align-items: center; }
   .row .c2 {
     width: 50%; }
   .row .c3 {
