@@ -12,6 +12,8 @@ html, body {
   box-sizing: border-box; }
   .row.vertival {
     flex-direction: column; }
+  .row .column {
+    box-sizing: border-box; }
   .row .c2 {
     width: 50%; }
   .row .c3 {
