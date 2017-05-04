@@ -13,7 +13,9 @@ html, body {
   .row.vertival {
     flex-direction: column; }
   .row .column {
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box; }
   .row .c2 {
     width: 50%; }
   .row .c3 {
