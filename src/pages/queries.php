@@ -12,35 +12,18 @@ if ($db->getError()) {
     echo nl2br("Connection to database has been established\n");
 }
 
-$arr = Array(
-    0 => array(
-        "open" => "15",
-        "close" => "close_time"
-    ),
-    1 => array(
-        "open" => "16",
-        "close" => "close_time"
-    ),
-    2 => array(
-        "open" => "19",
-        "close" => "close_time"
-    ),
-    3 => array(
-        "open" => "0",
-        "close" => "close_time"
-    ),
-    4 => array(
-        "open" => "34",
-        "close" => "close_time"
-    ),
-    5 => array(
-        "open" => "54",
-        "close" => "close_time"
-    ),
 
-);
 
-foreach ($arr as $k => $v) {
-    echo $v['open'];
-    echo "<br>";
+$data =($db->getLocationData("Hausmanns gate 19"));
+
+print_r($data);
+
+echo '<br>';
+echo '<br>';
+echo '<br>';
+
+if (isset($data['hours']['6'])) {
+    echo "I exist";
+} else {
+    echo "I don't";
 }

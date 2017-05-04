@@ -113,7 +113,13 @@ class ExploreDatabase extends Database
         }
 
         return $returnArray;
+    }
 
+    public function getLocationData($address) {
+        $this->query("SELECT * FROM `locations` WHERE `address`=:address");
+        $this->bind(":address", $address);
+        $row = $this->single();
+        return $this->getMergedLocationsData($row);
     }
 
     private function getMergedLocationsData($row) {
