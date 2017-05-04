@@ -12,16 +12,16 @@ class ExploreDatabase extends Database
         parent::__construct($host, $db, $user, $pwd);
     }
 
-    public function getLocId($title) {
-        $this->query("SELECT `id` FROM `locations` WHERE `title`=:title");
-        $this->bind(":title", $title);
+    public function getLocId($address) {
+        $this->query("SELECT `id` FROM `locations` WHERE `address`=:address");
+        $this->bind(":address", $address);
         $location = $this->single();
 
         if (!$location) return false;
         return $location['id'];
     }
-    public function getImages($title) {
-        if ($location = $this->getLocId($title)) {
+    public function getImages($address) {
+        if ($location = $this->getLocId($address)) {
             $this->query("SELECT `path` FROM `location_images` WHERE `loc_id`=:loc_id");
             $this->bind(":loc_id", $location);
             $images = $this->fetchAll();
@@ -30,8 +30,8 @@ class ExploreDatabase extends Database
         return array();
     }
 
-    public function getTags($title){
-        if ($location = $this->getLocId($title)) {
+    public function getTags($address){
+        if ($location = $this->getLocId($address)) {
             $this->query("SELECT `tag` FROM `location_tags` WHERE `loc_id`=:loc_id");
             $this->bind(":loc_id", $location);
             $tags = $this->fetchAll();
@@ -40,8 +40,8 @@ class ExploreDatabase extends Database
         return array();
     }
 
-    public function getOpeningHours($title) {
-        if ($location = $this->getLocId($title)) {
+    public function getOpeningHours($address) {
+        if ($location = $this->getLocId($address)) {
             $this->query("SELECT `day`, `open`, `close` FROM `opening_hours` WHERE `loc_id`=:loc_id");
             $this->bind(":loc_id", $location);
             $hours = $this->fetchAll();
@@ -50,8 +50,8 @@ class ExploreDatabase extends Database
         return array();
     }
 
-    public function getPhoneNumbers($title) {
-        if ($location = $this->getLocId($title)) {
+    public function getPhoneNumbers($address) {
+        if ($location = $this->getLocId($address)) {
             $this->query("SELECT `country_code`, `number` FROM `phone_numbers` WHERE `loc_id`=:loc_id");
             $this->bind(":loc_id", $location);
             $numbers = $this->fetchAll();
@@ -60,16 +60,16 @@ class ExploreDatabase extends Database
         return array();
     }
 
-    public function getLocation($title) {
-        $this->query("SELECT * FROM `locations` WHERE `title`=:title");
-        $this->bind(":title", $title);
+    public function getLocation($address) {
+        $this->query("SELECT * FROM `locations` WHERE `address`=:$address");
+        $this->bind(":address", $address);
         $location = $this->single();
         return $location;
     }
 
-    public function getCampus($title) {
-        $this->query("SELECT `campus` FROM `locations` WHERE `title`=:title");
-        $this->bind(":title", $title);
+    public function getCampus($address) {
+        $this->query("SELECT `campus` FROM `locations` WHERE `address`=:$address");
+        $this->bind(":title", $address);
         return $this->single();
     }
     public function getAllLocations() {
@@ -88,11 +88,11 @@ class ExploreDatabase extends Database
         while ($row = array_shift($rows)) {
             $mergedArray =
                 $row +
-                array('images' => $this->getImages($row['title'])) +
-                array('tags' => $this->getTags($row['title'])) +
-                array('hours' => $this->getOpeningHours($row['title'])) +
-                array('numbers' => $this->getPhoneNumbers($row['title'])) +
-                array('campus' => $this->getCampus($row['title']));
+                array('images' => $this->getImages($row['address'])) +
+                array('tags' => $this->getTags($row['address'])) +
+                array('hours' => $this->getOpeningHours($row['address'])) +
+                array('numbers' => $this->getPhoneNumbers($row['address'])) +
+                array('campus' => $this->getCampus($row['address']));
             array_push($returnArray, $mergedArray);
         }
 
@@ -108,41 +108,16 @@ class ExploreDatabase extends Database
         while ($row = array_shift($rows)) {
             $mergedArray =
                 $row +
-                array('images' => $this->getImages($row['title'])) +
-                array('tags' => $this->getTags($row['title'])) +
-                array('hours' => $this->getOpeningHours($row['title'])) +
-                array('numbers' => $this->getPhoneNumbers($row['title'])) +
-                array('campus' => $this->getCampus($row['title']));
+                array('images' => $this->getImages($row['address'])) +
+                array('tags' => $this->getTags($row['address'])) +
+                array('hours' => $this->getOpeningHours($row['address'])) +
+                array('numbers' => $this->getPhoneNumbers($row['address'])) +
+                array('campus' => $this->getCampus($row['address']));
             array_push($returnArray, $mergedArray);
         }
 
         return $returnArray;
 
     }
-
-    public function generateLocationJson() {
-        $fileName = __DIR__ . "/../assets/locations_read_only.json";
-        $locationsJson = file_get_contents($fileName);
-        $locationsArr = Array();
-        if ($locationsJson) {
-            $locationsArr = json_decode($locationsJson);
-        }
-
-        $this->query("SELECT `address` FROM `locations`");
-        $rows = $this->fetchAll();
-
-        while ($row = array_shift($rows)) {
-            $strippedAddress = strtolower(preg_replace('/\s*/', '', $row['address']));
-            if (!array_key_exists($strippedAddress, $locationsArr)) {
-                $locationsArr[$strippedAddress] = array('x' => 0, 'y' => 0);
-            }
-        }
-
-        $locationsJson = json_encode($locationsArr);
-        file_put_contents(__DIR__ . "/../assets/locations_read_only.json", $locationsJson);
-        chmod($fileName, fileperms($fileName) | 128 + 16 + 2);
-    }
-
-
 }
 // @codeCoverageIgnore
