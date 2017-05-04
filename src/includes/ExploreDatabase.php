@@ -87,16 +87,9 @@ class ExploreDatabase extends Database
         $rows = $this->fetchAll();
 
         while ($row = array_shift($rows)) {
-            $mergedArray =
-                $row +
-                array('images' => $this->getImages($row['address'])) +
-                array('tags' => $this->getTags($row['address'])) +
-                array('hours' => $this->getOpeningHours($row['address'])) +
-                array('numbers' => $this->getPhoneNumbers($row['address'])) +
-                array('campus' => $this->getCampus($row['address']));
+            $mergedArray = $this->getMergedLocationsData($row);
             array_push($returnArray, $mergedArray);
         }
-
         return $returnArray;
     }
 
@@ -107,18 +100,24 @@ class ExploreDatabase extends Database
         $rows = $this->fetchAll();
 
         while ($row = array_shift($rows)) {
-            $mergedArray =
-                $row +
-                array('images' => $this->getImages($row['address'])) +
-                array('tags' => $this->getTags($row['address'])) +
-                array('hours' => $this->getOpeningHours($row['address'])) +
-                array('numbers' => $this->getPhoneNumbers($row['address'])) +
-                array('campus' => $this->getCampus($row['address']));
+            $mergedArray = $this->getMergedLocationsData($row);
             array_push($returnArray, $mergedArray);
         }
 
         return $returnArray;
 
+    }
+
+    private function getMergedLocationsData($row) {
+        $mergedArray =
+            $row +
+            array('images' => $this->getImages($row['address'])) +
+            array('tags' => $this->getTags($row['address'])) +
+            array('hours' => $this->getOpeningHours($row['address'])) +
+            array('numbers' => $this->getPhoneNumbers($row['address'])) +
+            array('campus' => $this->getCampus($row['address'])) +
+            array('distance' => $this->getDistance($row['address']));
+        return $mergedArray;
     }
 }
 // @codeCoverageIgnore
