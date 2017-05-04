@@ -73,6 +73,14 @@ class ExploreDatabase extends Database
         $campus = $this->single();
         return $campus;
     }
+
+    public function getDistance($address) {
+        $this->query("SELECT `distance` FROM `locations` WHERE `address`=:address");
+        $this->bind(":address", $address);
+        $distance = $this->single();
+        return $distance;
+    }
+    
     public function getAllLocations() {
         $this->query("SELECT * FROM `locations`");
         $locations = $this->fetchAll();
