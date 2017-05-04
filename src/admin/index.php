@@ -8,11 +8,9 @@
     <meta name="ROBOTS" content="ALL"/>
     <meta name="author" content="SJB Solutions"/>
     <meta name="copyright" content="SJB Solutions"/>
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript/" src="js/bootstrap.min.js"/></script>
-    <script
-    type = "text/javascript"
-    src = "js/jquery-2.1.1.min.js" ></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript/" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"/></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <link href="css/toastr.css" rel="stylesheet" type="text/css"/>
     <script src="js/toastr.js"></script>
     <script>
