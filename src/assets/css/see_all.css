@@ -1,5 +1,5 @@
 #see_allcontainer {
-    padding: 50px;
+    padding: 60px;
 }
 
 #see_allcontainer h1 {
@@ -22,8 +22,8 @@ hr {
 }
 
 .infokort {
-    padding: 5px;
-    margin: 20px;
+    padding: 10px;
+    margin: 20px 27px;
     border: 4px solid #ef8f12;
     border-radius: 2px;
     background-color: #fefefe;
@@ -32,6 +32,9 @@ hr {
 
 .infokort img {
     width: 100%;
+}
+.infokort a {
+    color: #000;
 }
 
 .infokort .v-align-content {
