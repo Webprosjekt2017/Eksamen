@@ -48,6 +48,14 @@ var loc = {
         'left': val.x + '%',
         'top': val.y + '%'
       })
+      if(val.y < 33) {
+        $('#' + key + ' .locInfo').addClass('top');
+      } else if(val.y > 66) {
+        $('#' + key + ' .locInfo').addClass('bottom');
+      }
+      if(val.x > 80) {
+        $('#' + key + ' .locInfo').addClass('left');
+      }
     });
 
     // fade in locations in 1000 - (loc.printLoops * 100)
