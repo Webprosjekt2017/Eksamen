@@ -69,7 +69,7 @@ class ExploreDatabase extends Database
 
     public function getCampus($address) {
         $this->query("SELECT `campus` FROM `locations` WHERE `address`=:$address");
-        $this->bind(":title", $address);
+        $this->bind(":address", $address);
         return $this->single();
     }
     public function getAllLocations() {
