@@ -77,7 +77,28 @@ class ExploreDatabase extends Database
         $locations = $this->fetchAll();
         return $locations;
     }
-    
+
+    public function getAllCampusLocation($campus) {
+        $returnArray = array();
+        $this->query("SELECT * FROM `locations` WHERE `campus`=:campus");
+        $this->bind(":campus", strtolower($campus));
+
+        $rows = $this->fetchAll();
+
+        while ($row = array_shift($rows)) {
+            $mergedArray =
+                $row +
+                array('images' => $this->getImages($row['title'])) +
+                array('tags' => $this->getTags($row['title'])) +
+                array('hours' => $this->getOpeningHours($row['title'])) +
+                array('numbers' => $this->getPhoneNumbers($row['title'])) +
+                array('campus' => $this->getCampus($row['title']));
+            array_push($returnArray, $mergedArray);
+        }
+
+        return $returnArray;
+    }
+
     public function getAllLocationsData() {
         $returnArray = array();
         $this->query("SELECT * FROM `locations`");
