@@ -5,7 +5,6 @@ vendor
 build
 yarn.lock
 src/includes/config.php
-src/includes/config.php
 
 # NPM Related
 node_modules
