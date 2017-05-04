@@ -12,7 +12,7 @@ nav
   .filterWrapper
     select.filter#filter-type
       option(value="0") Hva ser du etter?
-      each val in ['Bar','Restaurant','Matbutikk']
+      each val in ['Bar','Restaurant','Dagligvare', 'Kaffebar', 'Vegansk', 'Tyrkisk', 'Sushi', 'Mikrobrygg']
         option(value=val)=val
         
     input.filter#filter-name(type="text", placeholder="Kjenner du navnet?")
