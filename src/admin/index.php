@@ -8,9 +8,15 @@
     <meta name="ROBOTS" content="ALL"/>
     <meta name="author" content="SJB Solutions"/>
     <meta name="copyright" content="SJB Solutions"/>
+
+
+    <link rel="stylesheet" href="../assets/css/map.css"/>
+
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript/" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"/></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/adm-map.js"></script>
     <link href="css/toastr.css" rel="stylesheet" type="text/css"/>
     <script src="js/toastr.js"></script>
     <script>
@@ -88,7 +94,7 @@
 
                         <div style="margin-bottom: 10px" class="input-group">
                             <span class="input-group-addon">Campus</span>
-                            <select class="form-control" name="campus" required>
+                            <select class="form-control" name="campus" id="campcamp" onchange="changeMap()" required>
                                 <option>Fjerdingen</option>
                                 <option>Vulkan</option>
                                 <option>Brenneriveien</option>
@@ -207,6 +213,12 @@
     </div>
 </div>
 
+<div class="container">
+        <div class="map">
+            <div class="location" style="opacity: 1;" id="dummy"></div>
+        </div>
+</div>
+
 <script type="text/javascript">
     var rowNum = 0;
     function addTag(frm) {
@@ -220,7 +232,7 @@
 </html>
 
 <?php if (isset($_POST['title']) && (isset($_POST['address'])) && (isset($_POST['campus']))) {
-    $title = $_POST['title'];
+    /*$title = $_POST['title'];
     $desc = $_POST['description'];
     $address = $_POST['address'];
     $website = $_POST['website'];
@@ -309,6 +321,6 @@
     }
 
     echo('<script type="text/javascript">toastr.success("Lokasjon har blitt lagt til!", "")</script>');
-
+*/
 } ?>
     
