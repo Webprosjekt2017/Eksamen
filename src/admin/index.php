@@ -2,7 +2,7 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
 <head>
-    <title>Innlogging - Russeknuter Kontrollpanel</title>
+    <title>Legg til lokasjon</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="ROBOTS" content="ALL"/>
@@ -27,25 +27,6 @@
     </script>
 </head>
 <body>
-
-<?php if (isset($_POST['title'])) {
-    echo $_POST['title'];
-} ?>
-<?php if (isset($_POST['description'])) {
-    echo $_POST['description'];
-} ?>
-<?php if (isset($_POST['takeaway'])) {
-    echo $_POST['takeaway'];
-} ?>
-<?php if (isset($_POST['delivery'])) {
-    echo $_POST['delivery'];
-} ?>
-<?php if (isset($_POST['show-title'])) {
-    echo $_POST['show-title'];
-} ?>
-<?php if (isset($_POST['campus'])) {
-    echo $_POST['campus'];
-} ?>
 
 <div class="vertical-center">
     <div class="container">
@@ -329,6 +310,7 @@
         }
     }
 
+    echo('<script type="text/javascript">toastr.success("Lokasjon har blitt lagt til!", "")</script>');
 
 } ?>
     
