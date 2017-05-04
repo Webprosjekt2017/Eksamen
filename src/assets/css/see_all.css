@@ -1,20 +1,48 @@
 #see_allcontainer {
     padding: 50px;
 }
+
+#see_allcontainer h1 {
+    font-size: 2.5em;
+    width: 47%;
+    border-bottom: 2px solid #ef8f12;
+    padding-bottom: 15px;
+    padding-left: 15px;
+}
+
+h3 {
+    font-size: 1.3em;
+    margin-top: 50px;
+    padding-left: 15px;
+}
+
+
+hr {
+    margin-top: 30px;
+}
+
 .infokort {
     padding: 5px;
     margin: 20px;
-    border: 2px solid #ef8f12;
-    background-color: #eee;
+    border: 4px solid #ef8f12;
+    border-radius: 2px;
+    background-color: #fefefe;
+    box-shadow: 0 6px 7px 2px #ccc;
 }
 
 .infokort img {
     width: 100%;
 }
 
+.infokort .v-align-content {
+    display: flex;
+    align-items: center;
+}
+
 .infokort .open {
     height: 18px;
     border-left: 2px solid #ef8f12;
+    padding-left: 2px;
     font-size: .95em;
     overflow: hidden;
     transition: height 300ms ease-in-out;
