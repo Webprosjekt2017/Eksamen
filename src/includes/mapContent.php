@@ -23,6 +23,7 @@ foreach ($locations as $location) {
 
     <div class="location" id="<?= strtolower(preg_replace('/\s*/', '', $location['address'])) ?>">
         <div class="hover-title"><div></div><?= $location['title'] ?></div>
+        <div class="arr"></div>
         <div class="locInfo">
 
             <?php if (isset($location['images']['0']['path'])) { ?>
