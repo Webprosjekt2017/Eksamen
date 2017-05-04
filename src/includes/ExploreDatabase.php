@@ -80,7 +80,7 @@ class ExploreDatabase extends Database
         $distance = $this->single();
         return $distance;
     }
-    
+
     public function getAllLocations() {
         $this->query("SELECT * FROM `locations`");
         $locations = $this->fetchAll();
@@ -126,6 +126,35 @@ class ExploreDatabase extends Database
             array('campus' => $this->getCampus($row['address'])) +
             array('distance' => $this->getDistance($row['address']));
         return $mergedArray;
+    }
+
+    public function removeLocation($address) {
+        if ($location = $this->getLocId($address)) {
+
+            $this->beginTransaction();
+
+            $this->query("DELETE FROM `phone_numbers` WHERE `loc_id`=:loc_id");
+            $this->bind(":loc_id", $location);
+            $this->execute();
+
+            $this->query("DELETE FROM `opening_hours` WHERE `loc_id`=:loc_id");
+            $this->bind(":loc_id", $location);
+            $this->execute();
+
+            $this->query("DELETE FROM `location_tags` WHERE `loc_id`=:loc_id");
+            $this->bind(":loc_id", $location);
+            $this->execute();
+
+            $this->query("DELETE FROM `location_images` WHERE `loc_id`=:loc_id");
+            $this->bind(":loc_id", $location);
+            $this->execute();
+
+            $this->query("DELETE FROM `locations` WHERE `id`=:loc_id");
+            $this->bind(":loc_id", $location);
+            $this->execute();
+
+            $this->endTransaction();
+        }
     }
 }
 // @codeCoverageIgnore

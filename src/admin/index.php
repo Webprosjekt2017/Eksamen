@@ -40,10 +40,20 @@
     </div>
 <?php } else { ?>
 
-    
+    <div class="container">
+        <div style="margin: 150px 250px 10px 250px">
+            <button class="btn btn-lg btn-success btn-block" onclick="window.location.href='add-location.php';">Legg til sted</button>
+        </div>
+        <div style="margin: 0 250px 10px 250px">
+            <button class="btn btn-lg btn-warning btn-block" onclick="window.location.href='edit-location.php';">Endre sted</button>
+        </div>
+        <div style="margin: 0 250px 10px 250px">
+            <button class="btn btn-lg btn-danger btn-block" onclick="window.location.href='remove-location.php';">Fjern sted</button>
+        </div>
+    </div>
 
 
-<?php }?>
+<?php } ?>
 
 </body>
 </html>
