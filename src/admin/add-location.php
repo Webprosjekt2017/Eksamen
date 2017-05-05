@@ -210,6 +210,26 @@
 <div class="container">
         <div class="map">
             <div class="location" style="opacity: 1;" id="dummy"></div>
+
+            <?php
+                $fjerdingenArr = json_decode(file_get_contents(__DIR__ . '/../assets/fjerdingen.json'), true);
+                $brennArr = json_decode(file_get_contents(__DIR__ . '/../assets/brenneriveien.json'), true);
+                $vulkanArr = json_decode(file_get_contents(__DIR__ . '/../assets/vulkan.json'), true);
+
+                foreach ($fjerdingenArr as $key => $val) {
+                    echo '<div class="location cFjerdingen" style="opacity: 1; left: ' . $val['x'] . '%; top: ' . $val['y'] . '%;"></div>';
+                }
+
+            foreach ($brennArr as $key => $val) {
+                echo '<div class="location cBrenneriveien" style="opacity: 0; left: ' . $val['x'] . '%; top: ' . $val['y'] . '%;"></div>';
+            }
+
+            foreach ($vulkanArr as $key => $val) {
+                echo '<div class="location cVulkan" style="opacity: 0; left: ' . $val['x'] . '%; top: ' . $val['y'] . '%;"></div>';
+            }
+
+            ?>
+
         </div>
 </div>
 
@@ -234,7 +254,7 @@
     $locArr = json_decode($locJson, true);
 
     if (array_key_exists($strippedAddress, $locArr)) {
-        echo('<script>toastr.error("Lokasjon ikke lagt til!", "Det finnes allerede en lokasjon med denne addressen!")</script>');
+        echo('<script>toastr.error("Det finnes allerede en lokasjon med denne addressen.", "Lokasjon ikke lagt til!")</script>');
         header("Location: add-location.php");
         die();
     }
