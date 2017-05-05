@@ -7,7 +7,7 @@
 <head>
     <title>Legg til sted</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">s
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="../assets/css/map.css"/>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -28,7 +28,7 @@
 
 <div class="vertical-center">
     <div class="container">
-        <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div id="" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <div class="panel-title">Legg til lokasjon</div>
@@ -36,7 +36,8 @@
                 <div style="padding-top:30px" class="panel-body">
 
                     <form action="" id="addlocation" class="form-horizontal" role="form" method="post">
-
+                        <input type="hidden" name="posX">
+                        <input type="hidden" name="posY">
                         <div style="margin-bottom: 10px" class="input-group">
                             <span class="input-group-addon">Tittel</span>
                             <input type="text" class="form-control" name="title" value="" placeholder="SJB" required>
@@ -110,7 +111,7 @@
                         <input style="margin-bottom: 10px" onclick="addTag(this.form);" type="button"
                                class="btn btn-primary center-block" value="Legg til tag"/>
 
-                        <div style="margin-bottom: 10px" class="input-group">
+                        <!--<div style="margin-bottom: 10px" class="input-group">
                             <span class="input-group-addon">Åpningstid</span>
                             <span class="input-group-addon">Mandag</span>
                             <input type="time" class="form-control" name="time_monday_start" required>
@@ -193,8 +194,7 @@
                             </span>
                             <input type="time" class="form-control sunday" name="time_sunday_start" disabled required>
                             <input type="time" class="form-control sunday" name="time_sunday_end" disabled required>
-                        </div>
-
+                        </div>-->
                         <div style="margin-top:10px" class="form-group">
                             <div class="col-sm-12 controls">
                                 <input type="submit" class="btn btn-success center-block" value="Legg til!"/>
@@ -226,17 +226,35 @@
 </html>
 
 <?php if (isset($_POST['title']) && (isset($_POST['address'])) && (isset($_POST['campus']))) {
-    /*$title = $_POST['title'];
+
+    $campus = strtolower($_POST['campus']);
+    $strippedAddress = strtolower(preg_replace('/\s*/', '', $_POST['address']));
+
+    $locJson = file_get_contents(__DIR__ . '/../assets/' . $campus . '.json');
+    $locArr = json_decode($locJson, true);
+
+    if (array_key_exists($strippedAddress, $locArr)) {
+        echo('<script>toastr.error("Lokasjon ikke lagt til!", "Det finnes allerede en lokasjon med denne addressen!")</script>');
+        header("Location: add-location.php");
+        die();
+    }
+
+    $locPos = array($strippedAddress => array('x' => $_POST['posX'], 'y' => $_POST['posY']));
+    $mergedArray = array_replace($locArr, $locPos);
+    $locJson = json_encode($mergedArray, true);
+    file_put_contents(__DIR__ . '/../assets/' . $campus . '.json', $locJson);
+
+
+    $title = $_POST['title'];
     $desc = $_POST['description'];
     $address = $_POST['address'];
     $website = $_POST['website'];
     $takeaway = ($_POST['takeaway'] ? 1 : 0);
     $delivery = ($_POST['delivery'] ? 1 : 0);
     $showTitle = ($_POST['show-title'] ? 1 : 0);
-    $campus = strtolower($_POST['campus']);
     $mondayOpen = ($_POST['time_monday_start']) . ":00";
     $mondayClose = ($_POST['time_monday_end']) . ":00";
-
+/*
     $link = new PDO("mysql:host=localhost;dbname=woact_explore;", "root", "password");
 
     $insertLocation = $link->prepare('INSERT INTO locations (title, description, address, url, takeaway, delivery, show_title, campus)

@@ -1,12 +1,1 @@
-{
-  "christiankrohgsgate1": { "x": 31.300, "y": 87.733},
-  "brugata3a": { "x": 19.241, "y": 80.215},
-  "storgata45": { "x": 27.732, "y": 53.674},
-  "storgata45a": { "x": 26.016, "y": 56.843},
-  "hausmannsgate19": { "x": 27.551, "y": 34.264},
-  "motzfeldtsgate7": { "x": 66.084, "y": 87.697},
-  "breigata12": { "x": 59.378, "y": 90.465},
-  "storgata36b": { "x": 26.433, "y": 61.729},
-  "torggata32": { "x": 13.508, "y": 19.370},
-  "torggata17b": { "x": 9.038, "y": 38.953}
-}
+{"christiankrohgsgate1":{"x":31.3,"y":87.733},"brugata3a":{"x":19.241,"y":80.215},"storgata45":{"x":27.732,"y":53.674},"storgata45a":{"x":26.016,"y":56.843},"hausmannsgate19":{"x":27.551,"y":34.264},"motzfeldtsgate7":{"x":66.084,"y":87.697},"breigata12":{"x":59.378,"y":90.465},"storgata36b":{"x":26.433,"y":61.729},"torggata32":{"x":13.508,"y":19.37},"torggata17b":{"x":9.038,"y":38.953},"nygate":{"x":"x_val","y":"y_val"}}

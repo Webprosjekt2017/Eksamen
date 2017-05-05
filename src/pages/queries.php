@@ -1,7 +1,8 @@
 <?php
-error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+error_reporting(E_ALL);
+ini_set('display_errors', 'on');
 
-echo "<pre>";
+echo '<pre>';
 $db = new ExploreDatabase();
 
 if ($db->getError()) {
@@ -13,17 +14,49 @@ if ($db->getError()) {
 }
 
 
+$campus = "fjerdingen";
 
-$data =($db->getLocationData("Hausmanns gate 19"));
 
-print_r($data);
+$locJson = file_get_contents(__DIR__ . '/../assets/' . $campus . '.json');
 
-echo '<br>';
-echo '<br>';
-echo '<br>';
+$locArr = json_decode($locJson, true);
 
-if (isset($data['hours']['6'])) {
-    echo "I exist";
-} else {
-    echo "I don't";
+foreach ($locArr as $key => $val) {
+    echo $key . '<br>';
 }
+
+
+if (!array_key_exists("nygate", $locArr)) {
+    echo 'nygate didnt exist, so this would of added.';
+} else {
+    echo 'nygate exists!!!!!';
+}
+
+
+$newArr = array("nygate" => array("x" => 'x_val', "y" => 'y_val'));
+
+$mergedArray = array_replace($locArr, $newArr);
+
+
+
+$locJson = json_encode($mergedArray, true);
+
+file_put_contents(__DIR__ . '/../assets/' . $campus . '.json', $locJson);
+echo '</pre>';
+
+$campus = strtolower($_POST['campus']);
+$strippedAddress = strtolower(preg_replace('/\s*/', '', $_POST['address'];
+
+$locJson = file_get_contents(__DIR__ . '/../assets/' . $campus . '.json');
+$locArr = json_decode($locJson, true);
+
+if (array_key_exists($strippedAddress, $locArr)) {
+    $_SESSION['err_no'] = 2;
+    header("Location: add-location.php");
+    die();
+}
+
+$locPos = array($strippedAddress => array('x' => $_POST['posX'], 'y' => $_POST['posY']));
+$mergedArray = array_replace($locArr, $locPos);
+$locJson = json_encode($mergedArray, true);
+file_put_contents(__DIR__ . '/../assets/' . $campus - '.json', $locJson);

@@ -35,6 +35,8 @@ $(document).ready(function() {
         x = (x / mapX) * 100;
         y = (y / mapY) * 100;
         moveLocation(x, y);
+        $("input[name='posX']").val(x);
+        $("input[name='posY']").val(y);
     });
 });
 
@@ -48,5 +50,8 @@ function moveLocation(x, y) {
     $('#dummy').css({
         'left': x + '%',
         'top': y + '%'
-    })
+    });
+
+
+    console.log("this didnt change");
 }
