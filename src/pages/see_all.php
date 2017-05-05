@@ -1,4 +1,4 @@
-<div id="see_allcontainer">
+<div id="see_all_container">
     <h1>Vis alt</h1>
     <h3>Campus</h3><!--Overskrift som kommer mellom hver campus-bit-->
     <div class="row">
@@ -6,14 +6,16 @@
             <div class="infokort">
                 <img class="kortbilde" src="assets/imgs/kiwi.png" S>
                 <h4>Tittel</h4>
-                <p>liten, kort og søt beskrivelse</p>
-                <a href="https://kiwi.no/">Gå til hjemmesiden</a>
-                <div class="row">
-                    <div class="c2">
+                <div class="row tags">
                         <!--Denne gjentas for hver tagg-->
-                        <p>Type</p>
-                    </div>
+                        <span>Tags</span>
                 </div>
+                <p class="desc">liten, kort og søt beskrivelse
+                    <br/>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+                <a href="https://kiwi.no/">Gå til hjemmesiden</a>
+                <hr/>
                 <div class="row">
                     <div class="c2 v-align-content"><!--Open drop-downmeny-->
                         <div class="open">
@@ -44,6 +46,6 @@
     </div><!--Row slutt-->
 
     <hr/>
-    <!--Kommer over hvert campus, untatt det første-->
+    <!--Kommer OVER hvert campus, untatt det første on ikke under siste-->
 </div>
 <!--Slutt wrapper for alt innhold-->

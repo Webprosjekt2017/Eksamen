@@ -33,6 +33,7 @@ if (isset($_GET["destination"])) {
         case 'see_all':
             $pageTitle = "Se Alt";
             require_once("includes/head.php");
+            echo "<body>";
             require_once("includes/nav.php");
             require_once("pages/see_all.php");
             require_once("includes/footer.php");

@@ -226,21 +226,6 @@
         margin: 5px 8px;
         margin-top: 0;
         color: #cf6f08; }
-      .map .location .locInfo .tags {
-        width: 100%;
-        height: 20px;
-        display: flex;
-        margin-left: 10px;
-        margin-bottom: 10px; }
-        .map .location .locInfo .tags span {
-          display: inline-block;
-          height: 100%;
-          margin: 0 5px;
-          padding: 3px;
-          background: #ffcf90;
-          border-radius: 6px;
-          box-sizing: border-box;
-          font-size: 0.8em; }
       .map .location .locInfo .desc {
         font-size: .95em;
         margin: 0 10px;
