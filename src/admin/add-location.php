@@ -111,7 +111,7 @@
                         <input style="margin-bottom: 10px" onclick="addTag(this.form);" type="button"
                                class="btn btn-primary center-block" value="Legg til tag"/>
 
-                        <!--<div style="margin-bottom: 10px" class="input-group">
+                        <div style="margin-bottom: 10px" class="input-group">
                             <span class="input-group-addon">Åpningstid</span>
                             <span class="input-group-addon">Mandag</span>
                             <input type="time" class="form-control" name="time_monday_start" required>
@@ -194,7 +194,7 @@
                             </span>
                             <input type="time" class="form-control sunday" name="time_sunday_start" disabled required>
                             <input type="time" class="form-control sunday" name="time_sunday_end" disabled required>
-                        </div>-->
+                        </div>
                         <div style="margin-top:10px" class="form-group">
                             <div class="col-sm-12 controls">
                                 <input type="submit" class="btn btn-success center-block" value="Legg til!"/>
@@ -246,6 +246,11 @@
 </html>
 
 <?php if (isset($_POST['title']) && (isset($_POST['address'])) && (isset($_POST['campus']))) {
+    if ($_POST['x'] == '' || $_POST['y'] == '') {
+        echo('<script>toastr.error("Velg en punkt på kartet for dette stedet.", "Prøv igjen!")</script>');
+        header("Location: add-location.php");
+        die();
+    }
 
     $campus = strtolower($_POST['campus']);
     $strippedAddress = strtolower(preg_replace('/\s*/', '', $_POST['address']));
@@ -274,7 +279,7 @@
     $showTitle = ($_POST['show-title'] ? 1 : 0);
     $mondayOpen = ($_POST['time_monday_start']) . ":00";
     $mondayClose = ($_POST['time_monday_end']) . ":00";
-/*
+
     $link = new PDO("mysql:host=localhost;dbname=woact_explore;", "root", "password");
 
     $insertLocation = $link->prepare('INSERT INTO locations (title, description, address, url, takeaway, delivery, show_title, campus)
@@ -353,6 +358,6 @@
     }
 
     echo('<script type="text/javascript">toastr.success("Lokasjon har blitt lagt til!", "")</script>');
-*/
+
 } ?>
     
