@@ -7,17 +7,20 @@ if (!isset($_SESSION['logged_in']) or !$_SESSION['logged_in']) {
     header("Location: index.php");
 }
 
-if ($_SESSION['success']) {
-    echo '<script type="text/javascript">toastr.success("Lokasjon har blitt fjernet!", "")</script>';
-    $_SESSION['success'] = false;
-}
-
 $db = new ExploreDatabase();
 if ($db->getError()) {
     echo('<script type="text/javascript">toastr.error("Kunne ikke koble til tjener","' . $db->getError() . '")</script>');
 }
 $title = "Fjern sted";
 include_once('header.php');
+
+if ($_SESSION['err_no'] == 0) {
+    echo '<script>toastr.success("Lokasjon har blitt fjernet!", "")</script>';
+    $_SESSION['err_no'] = -1;
+} else if ($_SESSION['err_no' == 1]) {
+    echo '<script>toastr.error("Dette gikk ikke :(", "Noe skjedde..")</script>';
+    $_SESSION['err_no'] = -1;
+}
 
 ?>
 
