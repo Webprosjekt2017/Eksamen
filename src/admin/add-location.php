@@ -1,6 +1,8 @@
-<?php session_start(); ?>
+<?php
+session_start();
+require_once ('../includes/config.php');
 
-<?php if (!isset($_SESSION['logged_in']) or !$_SESSION['logged_in']) {
+if (!isset($_SESSION['logged_in']) or !$_SESSION['logged_in']) {
     header("Location: index.php");
 } ?>
 
@@ -245,7 +247,7 @@
         die();
     }
 
-    $link = new PDO("mysql:host=localhost;dbname=woact_explore;", "root", "");
+    $link = new PDO('mysql:host=' . Config::DB_HOST . ';dbname=' . Config::DB_DATABASE . ';charset=utf8', Config::DB_USER, Config::DB_PASSWORD);
 
     $stmt = $link->prepare('SELECT * FROM `locations` WHERE `address`=?');
     $stmt->bindParam(1, $_POST['address'], PDO::PARAM_STR);
