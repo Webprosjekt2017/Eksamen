@@ -69,7 +69,4 @@ function moveLocation(x, y) {
         'left': x + '%',
         'top': y + '%'
     });
-
-
-    console.log("this didnt change");
 }

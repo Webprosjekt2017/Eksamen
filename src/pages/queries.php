@@ -14,49 +14,30 @@ if ($db->getError()) {
 }
 
 
-$campus = "fjerdingen";
 
+$locJson = file_get_contents(__DIR__ . '/../assets/vulkan.json');
+print_r($locJson);
 
-$locJson = file_get_contents(__DIR__ . '/../assets/' . $campus . '.json');
+echo '<br>';
 
 $locArr = json_decode($locJson, true);
+print_r($locArr);
 
-foreach ($locArr as $key => $val) {
-    echo $key . '<br>';
-}
+echo '<br>';
 
+$oldAddressKey = "dalevegen834";
+$newAddr = "nigga";
 
-if (!array_key_exists("nygate", $locArr)) {
-    echo 'nygate didnt exist, so this would of added.';
-} else {
-    echo 'nygate exists!!!!!';
-}
+$newLoc = array($newAddr => array('x' => $locArr[$oldAddressKey]['x'], 'y' => $locArr[$oldAddressKey]['y']));
+print_r($newLoc);
 
+echo '<br>';
 
-$newArr = array("nygate" => array("x" => 'x_val', "y" => 'y_val'));
+unset($locArr[$oldAddressKey]);
+print_r($locArr);
 
-$mergedArray = array_replace($locArr, $newArr);
+echo '<br>';
+$newArr = array_replace($locArr, $newLoc);
+print_r($newArr);
 
-
-
-$locJson = json_encode($mergedArray, true);
-
-file_put_contents(__DIR__ . '/../assets/' . $campus . '.json', $locJson);
-echo '</pre>';
-
-$campus = strtolower($_POST['campus']);
-$strippedAddress = strtolower(preg_replace('/\s*/', '', $_POST['address'];
-
-$locJson = file_get_contents(__DIR__ . '/../assets/' . $campus . '.json');
-$locArr = json_decode($locJson, true);
-
-if (array_key_exists($strippedAddress, $locArr)) {
-    $_SESSION['err_no'] = 2;
-    header("Location: add-location.php");
-    die();
-}
-
-$locPos = array($strippedAddress => array('x' => $_POST['posX'], 'y' => $_POST['posY']));
-$mergedArray = array_replace($locArr, $locPos);
-$locJson = json_encode($mergedArray, true);
-file_put_contents(__DIR__ . '/../assets/' . $campus - '.json', $locJson);
+file_put_contents(__DIR__ . '/../assets/vulkan.json', json_encode($newArr, true));

@@ -14,28 +14,24 @@ if (isset($_POST['delete'])) {
     $vulkan = json_decode(file_get_contents(__DIR__ . '/../assets/vulkan.json'), true);
 
     $tempArr = array();
-
+    $addressKey = strtolower(preg_replace('/\s*/', '', $location['delete']));
     $hasKey = false;
     $campus = "none";
     if (!$hasKey) {
-        $hasKey = array_key_exists($_POST['delete'], $fjerdingen);
+        $hasKey = array_key_exists($addressKey, $fjerdingen);
         $tempArr = $tempArr + $fjerdingen;
         $campus = "fjerdingen";
-        echo 'died here';
     } else if (!$hasKey) {
-        $hasKey = array_key_exists($_POST['delete'], $brenneriveien);
+        $hasKey = array_key_exists($addressKey, $brenneriveien);
         $tempArr = $tempArr + $brenneriveien;
         $campus = "brenneriveien";
-        echo 'died here2';
     } else if (!$hasKey) {
-        $hasKey = array_key_exists($_POST['delete'], $vulkan);
+        $hasKey = array_key_exists($addressKey, $vulkan);
         $tempArr = $tempArr + $vulkan;
         $campus = "vulkan";
-        echo 'died here3';
     } else if (!$hasKey) {
         $_SESSION['err_no'] = 1;
         header("Location: remove-location.php");
-        echo 'died here 4';
         die();
     }
 

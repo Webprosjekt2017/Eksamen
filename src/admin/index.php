@@ -1,3 +1,6 @@
+<?php session_start(); ?>
+<?php require_once('1993fkdkau23fjs728fkf90124kfasdf.php') ?>
+
 <!doctype html>
 <html lang="no">
 <head>
@@ -15,10 +18,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<?php require_once('1993fkdkau23fjs728fkf90124kfasdf.php') ?>
-<?php session_start(); ?>
 
-<?php if ($_POST['password']) {
+<?php if (isset($_POST['password'])) {
     if ($_POST['password'] == LoginDetails::PASSWORD && $_POST['username'] == LoginDetails::USERNAME) {
         $_SESSION['logged_in'] = true;
         echo('<script type="text/javascript">toastr.success("Du har blitt logget inn!","")</script>');

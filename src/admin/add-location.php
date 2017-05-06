@@ -1,6 +1,8 @@
 <?php session_start(); ?>
 
-<?php if (!isset($_SESSION['logged_in']) or !$_SESSION['logged_in']) { header("Location: index.php"); }?>
+<?php if (!isset($_SESSION['logged_in']) or !$_SESSION['logged_in']) {
+    header("Location: index.php");
+} ?>
 
 <!doctype html>
 <html lang="no">
@@ -10,9 +12,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="../assets/css/map.css"/>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+          type="text/css"/>
     <script type="text/javascript/" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/adm-map.js"></script>
     <link href="css/toastr.css" rel="stylesheet" type="text/css"/>
     <script src="js/toastr.js"></script>
@@ -124,11 +128,8 @@
                             <span class="input-group-addon">
                                 <input type="checkbox" class="day_check" name="same_tuesday" data-group="tuesday">
                             </span>
-                            <span class="input-group-addon">
-                                <input type="checkbox" name="tue_skip">
-                            </span>
-                            <input type="time" class="form-control tuesday" name="time_tuesday_start" disabled required>
-                            <input type="time" class="form-control tuesday" name="time_tuesday_end" disabled required>
+                            <input type="time" class="form-control tuesday" name="time_tuesday_start" disabled>
+                            <input type="time" class="form-control tuesday" name="time_tuesday_end" disabled>
                         </div>
 
                         <div style="margin-bottom: 10px" class="input-group">
@@ -137,11 +138,8 @@
                             <span class="input-group-addon">
                                 <input type="checkbox" class="day_check" name="same_wednesday" data-group="wednesday">
                             </span>
-                            <span class="input-group-addon">
-                                <input type="checkbox" name="wed_skip">
-                            </span>
-                            <input type="time" class="form-control wednesday" name="time_wednesday_start" disabled required>
-                            <input type="time" class="form-control wednesday" name="time_wednesday_end" disabled required>
+                            <input type="time" class="form-control wednesday" name="time_wednesday_start" disabled>
+                            <input type="time" class="form-control wednesday" name="time_wednesday_end" disabled>
                         </div>
 
                         <div style="margin-bottom: 10px" class="input-group">
@@ -150,11 +148,8 @@
                             <span class="input-group-addon">
                                 <input type="checkbox" class="day_check" name="same_thursday" data-group="thursday">
                             </span>
-                            <span class="input-group-addon">
-                                <input type="checkbox" name="thu_skip">
-                            </span>
-                            <input type="time" class="form-control thursday" name="time_thursday_start" disabled required>
-                            <input type="time" class="form-control thursday" name="time_thursday_end" disabled required>
+                            <input type="time" class="form-control thursday" name="time_thursday_start" disabled>
+                            <input type="time" class="form-control thursday" name="time_thursday_end" disabled>
                         </div>
 
                         <div style="margin-bottom: 10px" class="input-group">
@@ -163,11 +158,8 @@
                             <span class="input-group-addon">
                                 <input type="checkbox" class="day_check" name="same_friday" data-group="friday">
                             </span>
-                            <span class="input-group-addon">
-                                <input type="checkbox" name="fri_skip">
-                            </span>
-                            <input type="time" class="form-control friday" name="time_friday_start" disabled required>
-                            <input type="time" class="form-control friday" name="time_friday_end" disabled required>
+                            <input type="time" class="form-control friday" name="time_friday_start" disabled>
+                            <input type="time" class="form-control friday" name="time_friday_end" disabled>
                         </div>
 
                         <div style="margin-bottom: 10px" class="input-group">
@@ -176,11 +168,8 @@
                             <span class="input-group-addon">
                                 <input type="checkbox" class="day_check" name="same_saturday" data-group="saturday">
                             </span>
-                            <span class="input-group-addon">
-                                <input type="checkbox" name="sat_skip">
-                            </span>
-                            <input type="time" class="form-control saturday" name="time_saturday_start" disabled required>
-                            <input type="time" class="form-control saturday" name="time_saturday_end" disabled required>
+                            <input type="time" class="form-control saturday" name="time_saturday_start" disabled>
+                            <input type="time" class="form-control saturday" name="time_saturday_end" disabled>
                         </div>
 
                         <div style="margin-bottom: 10px" class="input-group">
@@ -189,11 +178,8 @@
                             <span class="input-group-addon">
                                 <input type="checkbox" class="day_check" name="same_sunday" data-group="sunday">
                             </span>
-                            <span class="input-group-addon">
-                                <input type="checkbox" name="sun_skip">
-                            </span>
-                            <input type="time" class="form-control sunday" name="time_sunday_start" disabled required>
-                            <input type="time" class="form-control sunday" name="time_sunday_end" disabled required>
+                            <input type="time" class="form-control sunday" name="time_sunday_start" disabled>
+                            <input type="time" class="form-control sunday" name="time_sunday_end" disabled>
                         </div>
                         <div style="margin-top:10px" class="form-group">
                             <div class="col-sm-12 controls">
@@ -207,30 +193,28 @@
     </div>
 </div>
 
-<div class="container">
-        <div class="map">
-            <div class="location" style="opacity: 1;" id="dummy"></div>
+<div class="map">
+    <div class="location" style="opacity: 1; border: 3px solid deeppink;" id="dummy"></div>
 
-            <?php
-                $fjerdingenArr = json_decode(file_get_contents(__DIR__ . '/../assets/fjerdingen.json'), true);
-                $brennArr = json_decode(file_get_contents(__DIR__ . '/../assets/brenneriveien.json'), true);
-                $vulkanArr = json_decode(file_get_contents(__DIR__ . '/../assets/vulkan.json'), true);
+    <?php
+    $fjerdingenArr = json_decode(file_get_contents(__DIR__ . '/../assets/fjerdingen.json'), true);
+    $brennArr = json_decode(file_get_contents(__DIR__ . '/../assets/brenneriveien.json'), true);
+    $vulkanArr = json_decode(file_get_contents(__DIR__ . '/../assets/vulkan.json'), true);
 
-                foreach ($fjerdingenArr as $key => $val) {
-                    echo '<div class="location cFjerdingen" style="opacity: 1; left: ' . $val['x'] . '%; top: ' . $val['y'] . '%;"></div>';
-                }
+    foreach ($fjerdingenArr as $key => $val) {
+        echo '<div class="location cFjerdingen" style="opacity: 1; left: ' . $val['x'] . '%; top: ' . $val['y'] . '%;"></div>';
+    }
 
-            foreach ($brennArr as $key => $val) {
-                echo '<div class="location cBrenneriveien" style="opacity: 0; left: ' . $val['x'] . '%; top: ' . $val['y'] . '%;"></div>';
-            }
+    foreach ($brennArr as $key => $val) {
+        echo '<div class="location cBrenneriveien" style="opacity: 0; left: ' . $val['x'] . '%; top: ' . $val['y'] . '%;"></div>';
+    }
 
-            foreach ($vulkanArr as $key => $val) {
-                echo '<div class="location cVulkan" style="opacity: 0; left: ' . $val['x'] . '%; top: ' . $val['y'] . '%;"></div>';
-            }
+    foreach ($vulkanArr as $key => $val) {
+        echo '<div class="location cVulkan" style="opacity: 0; left: ' . $val['x'] . '%; top: ' . $val['y'] . '%;"></div>';
+    }
 
-            ?>
+    ?>
 
-        </div>
 </div>
 
 <script type="text/javascript">
@@ -246,6 +230,12 @@
 </html>
 
 <?php if (isset($_POST['title']) && (isset($_POST['address'])) && (isset($_POST['campus']))) {
+
+
+    echo $_POST['time_tuesday_start'] . '<br>';
+    echo $_POST['time_tuesday_end'];
+
+
     if ($_POST['x'] == '' || $_POST['y'] == '') {
         echo('<script>toastr.error("Velg en punkt på kartet for dette stedet.", "Prøv igjen!")</script>');
         header("Location: add-location.php");
@@ -283,7 +273,7 @@
     $link = new PDO("mysql:host=localhost;dbname=woact_explore;", "root", "password");
 
     $insertLocation = $link->prepare('INSERT INTO locations (title, description, address, url, takeaway, delivery, show_title, campus)
-    VALUES (:title, :description, :address, :url, :takeaway, :delivery, :show_title, :campus)');
+        VALUES (:title, :description, :address, :url, :takeaway, :delivery, :show_title, :campus)');
 
     $insertLocation->execute([
         'title' => $title,
@@ -320,41 +310,39 @@
         ),
         1 => Array(
             "open" => isset($_POST['same_tuesday']) ? $mondayOpen : $_POST['time_tuesday_start'] . ":00",
-            "close" => isset($_POST['same_tuesday']) ? $mondayClose : $_POST['time_tuesday_end'] . ":00",
-            "skip" => isset($_POST['tue_skip']) ? true : false
+            "close" => isset($_POST['same_tuesday']) ? $mondayClose : $_POST['time_tuesday_end'] . ":00"
         ),
         2 => Array(
             "open" => isset($_POST['same_wednesday']) ? $mondayOpen : $_POST['time_wednesday_start'] . ":00",
-            "close" => isset($_POST['same_wednesday']) ? $mondayClose : $_POST['time_wednesday_end'] . ":00",
-            "skip" => isset($_POST['wed_skip']) ? true : false
+            "close" => isset($_POST['same_wednesday']) ? $mondayClose : $_POST['time_wednesday_end'] . ":00"
         ),
         3 => Array(
             "open" => isset($_POST['same_thursday']) ? $mondayOpen : $_POST['time_thursday_start'] . ":00",
-            "close" => isset($_POST['same_thursday']) ? $mondayClose : $_POST['time_thursday_end'] . ":00",
-            "skip" => isset($_POST['thu_skip']) ? true : false
+            "close" => isset($_POST['same_thursday']) ? $mondayClose : $_POST['time_thursday_end'] . ":00"
         ),
         4 => Array(
             "open" => isset($_POST['same_friday']) ? $mondayOpen : $_POST['time_friday_start'] . ":00",
-            "close" => isset($_POST['same_friday']) ? $mondayClose : $_POST['time_friday_end'] . ":00",
-            "skip" => isset($_POST['fri_skip']) ? true : false
+            "close" => isset($_POST['same_friday']) ? $mondayClose : $_POST['time_friday_end'] . ":00"
         ),
         5 => Array(
             "open" => isset($_POST['same_saturday']) ? $mondayOpen : $_POST['time_saturday_start'] . ":00",
-            "close" => isset($_POST['same_saturday']) ? $mondayClose : $_POST['time_saturday_end'] . ":00",
-            "skip" => isset($_POST['sat_skip']) ? true : false
+            "close" => isset($_POST['same_saturday']) ? $mondayClose : $_POST['time_saturday_end'] . ":00"
         ),
         6 => Array(
             "open" => isset($_POST['same_sunday']) ? $mondayOpen : $_POST['time_sunday_start'] . ":00",
-            "close" => isset($_POST['same_sunday']) ? $mondayClose : $_POST['time_sunday_end'] . ":00",
-            "skip" => isset($_POST['sun_skip']) ? true : false
+            "close" => isset($_POST['same_sunday']) ? $mondayClose : $_POST['time_sunday_end'] . ":00"
         )
     );
 
     foreach ($timeArr as $key => $val) {
-        if (!$val['skip']) {
-            $link->prepare('INSERT INTO opening_hours (`loc_id`, `day`, `open`, `close`) VALUES (?, ?, ?, ?)')->
-            execute([$locationId, $key, $val['open'], $val['close']]);
+        if ($val['open'] == ':00') {
+            $val['open'] = '00:00:00';
         }
+        if ($val['open'] == ':00') {
+            $val['open'] = '00:00:00';
+        }
+        $link->prepare('INSERT INTO opening_hours (`loc_id`, `day`, `open`, `close`) VALUES (?, ?, ?, ?)');
+        execute([$locationId, $key, $val['open'], $val['close']]);
     }
 
     echo('<script type="text/javascript">toastr.success("Lokasjon har blitt lagt til!", "")</script>');
