@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=1024"/>
   <title><?= $pageTitle ?></title>
   <!-- STYLESHEET-->
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet"/>
