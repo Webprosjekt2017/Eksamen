@@ -29,7 +29,15 @@
     </script>
 </head>
 <body>
-
+<?php
+    if (isset($_SESSION['add_success'])) {
+        echo('<script type="text/javascript">toastr.success("Lokasjon har blitt lagt til!", "")</script>');
+        unset($_SESSION['add_success']);
+    } else if (isset($_SESSION['add_fail'])) {
+        echo('<script>toastr.error("Det finnes allerede en lokasjon med denne addressen.", "Lokasjon ikke lagt til!")</script>');
+        unset($_SESSION['add_fail']);
+    }
+?>
 <div class="vertical-center">
     <div class="container">
         <div id="" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
@@ -231,16 +239,25 @@
 
 <?php if (isset($_POST['title']) && (isset($_POST['address'])) && (isset($_POST['campus']))) {
 
-
-    echo $_POST['time_tuesday_start'] . '<br>';
-    echo $_POST['time_tuesday_end'];
-
-
-    if ($_POST['x'] == '' || $_POST['y'] == '') {
+    if ($_POST['posX'] == '' || $_POST['posY'] == '') {
         echo('<script>toastr.error("Velg en punkt på kartet for dette stedet.", "Prøv igjen!")</script>');
-        header("Location: add-location.php");
+        echo "<script>window.location = 'add-location.php'</script>";
         die();
     }
+
+    $link = new PDO("mysql:host=localhost;dbname=woact_explore;", "root", "");
+
+    $stmt = $link->prepare('SELECT * FROM `locations` WHERE `address`=?');
+    $stmt->bindParam(1, $_POST['address'], PDO::PARAM_STR);
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($row) {
+        $_SESSION['add_fail'] = true;
+        echo "<script>window.location = 'add-location.php'</script>";
+        die();
+    }
+
+
 
     $campus = strtolower($_POST['campus']);
     $strippedAddress = strtolower(preg_replace('/\s*/', '', $_POST['address']));
@@ -249,8 +266,8 @@
     $locArr = json_decode($locJson, true);
 
     if (array_key_exists($strippedAddress, $locArr)) {
-        echo('<script>toastr.error("Det finnes allerede en lokasjon med denne addressen.", "Lokasjon ikke lagt til!")</script>');
-        header("Location: add-location.php");
+        $_SESSION['add_fail'] = true;
+        echo "<script>window.location = 'add-location.php'</script>";
         die();
     }
 
@@ -264,13 +281,12 @@
     $desc = $_POST['description'];
     $address = $_POST['address'];
     $website = $_POST['website'];
-    $takeaway = ($_POST['takeaway'] ? 1 : 0);
-    $delivery = ($_POST['delivery'] ? 1 : 0);
-    $showTitle = ($_POST['show-title'] ? 1 : 0);
+    $takeaway = (isset($_POST['takeaway']) ? 1 : 0);
+    $delivery = (isset($_POST['delivery']) ? 1 : 0);
+    $showTitle = (isset($_POST['show-title']) ? 1 : 0);
     $mondayOpen = ($_POST['time_monday_start']) . ":00";
     $mondayClose = ($_POST['time_monday_end']) . ":00";
 
-    $link = new PDO("mysql:host=localhost;dbname=woact_explore;", "root", "password");
 
     $insertLocation = $link->prepare('INSERT INTO locations (title, description, address, url, takeaway, delivery, show_title, campus)
         VALUES (:title, :description, :address, :url, :takeaway, :delivery, :show_title, :campus)');
@@ -341,11 +357,13 @@
         if ($val['open'] == ':00') {
             $val['open'] = '00:00:00';
         }
-        $link->prepare('INSERT INTO opening_hours (`loc_id`, `day`, `open`, `close`) VALUES (?, ?, ?, ?)');
-        execute([$locationId, $key, $val['open'], $val['close']]);
+        $link->prepare('INSERT INTO opening_hours (`loc_id`, `day`, `open`, `close`) VALUES (?, ?, ?, ?)')->execute([$locationId, $key, $val['open'], $val['close']]);
     }
 
-    echo('<script type="text/javascript">toastr.success("Lokasjon har blitt lagt til!", "")</script>');
+
+    $_SESSION['add_success'] = true;
+    echo "<script>window.location = 'add-location.php'</script>";
+    die();
 
 } ?>
     

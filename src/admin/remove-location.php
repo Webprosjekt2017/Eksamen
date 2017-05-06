@@ -7,21 +7,19 @@ if (!isset($_SESSION['logged_in']) or !$_SESSION['logged_in']) {
     header("Location: index.php");
 }
 
+
+$title = "Fjern sted";
+include_once('header.php');
+
 $db = new ExploreDatabase();
 if ($db->getError()) {
     echo('<script type="text/javascript">toastr.error("Kunne ikke koble til tjener","' . $db->getError() . '")</script>');
 }
-$title = "Fjern sted";
-include_once('header.php');
 
-if ($_SESSION['err_no'] == 0) {
-    echo '<script>toastr.success("Lokasjon har blitt fjernet!", "")</script>';
-    $_SESSION['err_no'] = -1;
-} else if ($_SESSION['err_no' == 1]) {
-    echo '<script>toastr.error("Dette gikk ikke :(", "Noe skjedde..")</script>';
-    $_SESSION['err_no'] = -1;
+if (isset($_SESSION['success'])) {
+    echo('<script>toastr.success("Lokasjon har blitt fjernet fra databasen.", "Lokasjon fjernet!")</script>');
+    unset($_SESSION['success']);
 }
-
 ?>
 
 <body>
@@ -35,7 +33,7 @@ if ($_SESSION['err_no'] == 0) {
                         <?php
                         $locations = $db->getAllLocations();
                         foreach ($locations as $location) { ?>
-                            <option value="<?= $location['address'] ?>"><?= $location['title'] ?>
+                            <option value="<?= $location['address'] ?>:<?= $location['campus'] ?>"><?= $location['title'] ?>
                                 – <?= $location['address'] ?></option>
                         <?php } ?>
                     </select>
