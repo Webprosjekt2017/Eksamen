@@ -49,3 +49,6 @@
     <!--Kommer OVER hvert campus, untatt det første on ikke under siste-->
 </div>
 <!--Slutt wrapper for alt innhold-->
+<script>
+    nav.sel = 2;
+</script>

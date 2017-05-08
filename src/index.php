@@ -16,6 +16,7 @@ if (isset($_GET["destination"])) {
         case 'about':
             $pageTitle = "Om oss";
             require_once("includes/head.php");
+            echo "<body>";
             require_once("includes/nav.php");
             require_once("pages/about.php");
             require_once("includes/footer.php");
@@ -26,6 +27,7 @@ if (isset($_GET["destination"])) {
         case 'contact':
             $pageTitle = "Kontakt oss";
             require_once("includes/head.php");
+            echo "<body>";
             require_once("includes/nav.php");
             require_once("pages/contact.php");
             require_once("includes/footer.php");

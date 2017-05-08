@@ -12,5 +12,6 @@
     </div>
 </div>
 
-<script> nav.sel = 2;
+<script>
+    nav.sel = 3;
 </script>

@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="assets/css/main.css"/>
   <link rel="stylesheet" href="assets/css/map.css"/>
   <link rel="stylesheet" href="assets/css/nav.css"/>
+  <link rel="stylesheet" href="assets/css/footer.css"/>
   <link rel="stylesheet" href="assets/css/home.css"/>
     <?php
     if ($_GET["destination"] == 'about') {
