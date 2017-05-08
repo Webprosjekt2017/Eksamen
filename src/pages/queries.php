@@ -1,7 +1,8 @@
 <?php
-error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+error_reporting(E_ALL);
+ini_set('display_errors', 'on');
 
-echo "<pre>";
+echo '<pre>';
 $db = new ExploreDatabase();
 
 if ($db->getError()) {
@@ -14,16 +15,29 @@ if ($db->getError()) {
 
 
 
-$data =($db->getLocationData("Hausmanns gate 19"));
-
-print_r($data);
+$locJson = file_get_contents(__DIR__ . '/../assets/vulkan.json');
+print_r($locJson);
 
 echo '<br>';
-echo '<br>';
+
+$locArr = json_decode($locJson, true);
+print_r($locArr);
+
 echo '<br>';
 
-if (isset($data['hours']['6'])) {
-    echo "I exist";
-} else {
-    echo "I don't";
-}
+$oldAddressKey = "dalevegen834";
+$newAddr = "nigga";
+
+$newLoc = array($newAddr => array('x' => $locArr[$oldAddressKey]['x'], 'y' => $locArr[$oldAddressKey]['y']));
+print_r($newLoc);
+
+echo '<br>';
+
+unset($locArr[$oldAddressKey]);
+print_r($locArr);
+
+echo '<br>';
+$newArr = array_replace($locArr, $newLoc);
+print_r($newArr);
+
+file_put_contents(__DIR__ . '/../assets/vulkan.json', json_encode($newArr, true));

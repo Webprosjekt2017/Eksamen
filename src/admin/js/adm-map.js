@@ -35,6 +35,8 @@ $(document).ready(function() {
         x = (x / mapX) * 100;
         y = (y / mapY) * 100;
         moveLocation(x, y);
+        $("input[name='posX']").val(x);
+        $("input[name='posY']").val(y);
     });
 });
 
@@ -42,11 +44,29 @@ function changeMap() {
     var campus = $('#campcamp').find('option:selected').text();
     console.log(campus);
     map.dom.css('background-image', 'url(../assets/imgs/' + map.campus[campus.toLowerCase()].background + ')');
+
+    if (campus == "Fjerdingen") {
+        $(".cFjerdingen").css('opacity', 1);
+        $(".cBrenneriveien").css('opacity', 0);
+        $(".cVulkan").css('opacity', 0);
+    }
+
+    if (campus == "Brenneriveien") {
+        $(".cBrenneriveien").css('opacity', 1);
+        $(".cFjerdingen").css('opacity', 0);
+        $(".cVulkan").css('opacity', 0);
+    }
+
+    if (campus == "Vulkan") {
+        $(".cVulkan").css('opacity', 1);
+        $(".cFjerdingen").css('opacity', 0);
+        $(".cBrenneriveien").css('opacity', 0);
+    }
 }
 
 function moveLocation(x, y) {
     $('#dummy').css({
         'left': x + '%',
         'top': y + '%'
-    })
+    });
 }
