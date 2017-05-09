@@ -63,6 +63,16 @@
       border-color: #cf6f08; }
 
 
+.dim {
+    border-color: #aaa;
+    transform: scale(0.9)
+}
+
+.highlight {
+    
+}
+
+
 /*NYTT SLUTT*/
 
 h3 {
