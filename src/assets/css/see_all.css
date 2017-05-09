@@ -10,6 +10,61 @@
     padding-left: 15px;
 }
 
+
+/*NYTT START*/
+
+ .filterboks {
+    width: 60%;
+    height: 60px;
+    display: flex;
+    align-content: stretch;
+    margin: auto;
+}
+
+    .filterboks.show {
+      opacity: 1;
+      transform: translateY(0); }
+
+    .filterboks .filter {
+      width: 40%;
+      padding: 10px;
+      font-size: 20px;
+      background-color: #eee;
+      border: 2px solid #ef8f12;
+      margin: 0 5%;
+      border-radius: 4px;
+      transition: border-color 200ms ease-in-out; }
+
+    .filterboks select {
+      cursor: pointer;
+      background-image: url("../imgs/DropDownArrow.png");
+      background-size: 30px;
+      background-position: 98% center;
+      background-repeat: no-repeat;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      /* target Internet Explorer 9 to undo the custom arrow */ }
+
+    .filterboks select::-ms-expand {
+        /* remove default arrow on ie10 and ie11 */
+        display: none; }
+      @media screen and (min-width: 0\0) {
+    .filterboks select {
+          background: none\9;
+          padding: 5px\9; } }
+
+    .filterboks select:focus {
+        outline: none;
+        border-color: #cf6f08; }
+
+ .filterboks input:focus {
+      outline: none;
+      border-color: #cf6f08; }
+
+
+/*NYTT SLUTT*/
+
 h3 {
     font-size: 1.3em;
     margin-top: 50px;

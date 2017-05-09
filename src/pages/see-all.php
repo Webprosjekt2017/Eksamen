@@ -1,4 +1,25 @@
 <div id="see_all_container">
+   
+    <!--NYTT START-->
+    
+    <div class="filterboks">
+    <select class="filter" id="filter-type">
+      <option value="0">Hva ser du etter?</option>
+      <option value="Bar">Bar</option>
+      <option value="Restaurant">Restaurant</option>
+      <option value="Dagligvare">Dagligvare</option>
+      <option value="Kaffebar">Kaffebar</option>
+      <option value="Vegansk">Vegansk</option>
+      <option value="Tyrkisk">Tyrkisk</option>
+      <option value="Sushi">Sushi</option>
+      <option value="Mikrobrygg">Mikrobrygg</option>
+    </select>
+    <input class="filter" id="filter-name" type="text" placeholder="Kjenner du navnet?"/>
+    </div>
+    
+    
+    <!--NYTT SLUTT-->
+    
     <h1>Vis alt</h1>
     <h3>Fjerdingen</h3>
     <div class="row">
