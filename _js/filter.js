@@ -69,22 +69,26 @@ $(document).ready(function() {
   }
 
   // Get dom
-  if(filter.page != null) {
+  if(filter.page == 0) {
     filter.type.input = $('#filter-type').on('change', function() {
       filter.type.val = this.value;
-      if(filter.page == 0) {
-        filter.map();
-      } else if(filter.page == 1) {
-        filter.all();
-      }
+      filter.map();
     });
+  } else if(filter.page == 1) {
+    filter.type.input = $('#filter-type-onpage').on('change', function() {
+      filter.type.val = this.value;
+      filter.all();
+    });
+  }
+  if(filter.page == 0) {
     filter.name.input = $('#filter-name').on('keyup', function() {
       filter.name.val = this.value.toLowerCase();
-      if(filter.page == 0) {
-        filter.map();
-      } else if(filter.page == 1) {
-        filter.all();
-      }
+      filter.map();
+    });
+  } else if(filter.page == 1) {
+    filter.name.input = $('#filter-name-onpage').on('keyup', function() {
+      filter.name.val = this.value.toLowerCase();
+      filter.all();
     });
   }
 
