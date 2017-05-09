@@ -32,12 +32,12 @@ if (isset($_GET["destination"])) {
             require_once("pages/contact.php");
             require_once("includes/footer.php");
             break;
-        case 'see_all':
+        case 'all':
             $pageTitle = "Se Alt";
             require_once("includes/head.php");
             echo "<body>";
             require_once("includes/nav.php");
-            require_once("pages/see_all.php");
+            require_once("pages/see-all.php");
             require_once("includes/footer.php");
             break;
         case 'map':
