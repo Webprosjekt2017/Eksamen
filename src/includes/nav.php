@@ -1,5 +1,8 @@
-
-<nav><img class="logo" src="assets/imgs/Logo.png"/>
+<a class="skipToMainContent" href="#main">Hopp over navigasjonsmeny</a>
+<nav><a href="/">
+    <div class="logo"><img src="assets/imgs/Logo.png" alt="Matvrak Logo"/>
+      <h1>Matvrak</h1>
+    </div></a>
   <div class="navLinkWrapper">
     <div id="navDrawerKnob">
       <div class="arrow"></div>

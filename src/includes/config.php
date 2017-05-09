@@ -7,7 +7,7 @@ class Config {
         DB_HOST = 'localhost',
         DB_USER = 'root',
         DB_PASSWORD = '',
-        DB_DATABASE = 'woact_explore',
+        DB_DATABASE = 'derp',
         REQUIRE_DB = true,
         WEBSITE_ONLINE = true;
 
