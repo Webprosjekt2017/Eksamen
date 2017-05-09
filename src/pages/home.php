@@ -26,10 +26,19 @@
       <div class="c2">
         <h1>Overview</h1>
         <p class="right">
-          <Lorem>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</Lorem>
+          ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
         </p>
       </div>
       <div class="c2">something goes here</div>
+    </div>
+    <div class="row about">
+      <div class="c2">something goes here</div>
+        <div class="c2">
+        <h1>Overview</h1>
+        <p class="right">
+          ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+        </p>
+      </div>
     </div>
   </div>
 </div>
