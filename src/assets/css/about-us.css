@@ -1,21 +1,23 @@
 #aboutusbox{
-    padding: 150px;
+    padding: 125px;
     margin-top: 50px;
     text-align: center;
+    vertical-align: middle;
 }
 #aboutusbox h1 {
-    margin-bottom: 75px;
+    margin-bottom: 50px;
     font-size: 2.5em;
 }
   
 
 #aboutusbox .c2 #aboutustext{
     font-size: 1.2em;
-    
 }
 
 #aboutusbox .c2 #aboutusimg{
     height: 50%;
     margin-left: 50px;
+    padding-left: 20%;
+    border-left: 2px solid #ef8f12;
     
 }
