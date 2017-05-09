@@ -63,13 +63,13 @@
       border-color: #cf6f08; }
 
 
-.dim {
+.infokort.dim {
     border-color: #aaa;
     transform: scale(0.9)
 }
 
-.highlight {
-    
+.infokort.highlight {
+
 }
 
 
