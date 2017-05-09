@@ -6,7 +6,7 @@
   <div class="navLinkWrapper">
     <div id="navDrawerKnob">
       <div class="arrow"></div>
-    </div><a class="navLink" href="home" tabindex="1">Hjem</a><a class="navLink" href="map" tabindex="2">Kart</a><a class="navLink" href="see_all">Vis Alt</a><a class="navLink" href="about" tabindex="3">Om Oss</a><a class="navLink" href="contact" tabindex="4">Kontakt oss</a>
+    </div><a class="navLink" href="home" tabindex="1">Hjem</a><a class="navLink" href="map" tabindex="2">Kart</a><a class="navLink" href="all">Vis Alt</a><a class="navLink" href="about" tabindex="3">Om Oss</a><a class="navLink" href="contact" tabindex="4">Kontakt oss</a>
   </div>
   <div class="filterWrapper">
     <select class="filter" id="filter-type">
