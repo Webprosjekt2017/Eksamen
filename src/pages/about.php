@@ -4,11 +4,10 @@
             Om oss
         </h1>
         <p id="aboutustext">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui autem esse poteris, nisi te amor ipse ceperit? Sine ea igitur iucunde negat posse se vivere? An haec ab eo non dicuntur? Quae autem natura suae primae institutionis oblita est? Laboro autem non sine causa; Duo Reges:
+            Matvrak ble etablert i 2017 i samarbeid med Westerdals Oslo ACT. Denne siden drives av studenter som vil gjøre hverdagen litt enklere for studenter, ansatte og andre sultene til å finne nærliggende spisesteder. Etter en lang dag på campus er det greit med en matbit.
             <br>
             <br>
-            <br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui autem esse poteris, nisi te amor ipse ceperit? Sine ea igitur iucunde negat posse se vivere? An haec ab eo non dicuntur? Quae autem natura suae primae institutionis oblita est? Laboro autem non sine causa; Duo Reges
+            Alle forslag til ønsker og forbedringer er velkommene, gå til kontakt oss for å sende inn deres forslag til forbedringer! Siden er i konstant utviklking for at brukerene skal få den beste opplevelsen.
         </p>
       </div>
     <div class="c2">
