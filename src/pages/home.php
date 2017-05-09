@@ -4,7 +4,7 @@
     <div class="backBtn"><img src="assets/imgs/DropDownArrow.png"/>Tilbake</div>
     <div class="mapText">
       <div class="title">Sulten?</div>
-      <div class="desc">Finn de nærmeste spisestedene rundt Westerdals Oslo ACT!</div>
+      <div class="desc">Finn de nærmeste spisestedene rundt <strong>Westerdals Oslo ACT!</strong></div>
     </div>
     <div class="cover" id="mapCover"></div>
     <div class="campus" id="Vulkan" tabindex="5">
