@@ -1,19 +1,4 @@
-<div id="see_all_container">
-    <h1>Vis alt</h1>
-    <h3>Campus</h3><!--Overskrift som kommer mellom hver campus-bit-->
-    <div class="row">
-        <div class="c4 column h-center-content"><!--Infokort start-->
-            <div class="infokort">
-                <img class="kortbilde" src="assets/imgs/kiwi.png" S>
-                <h4 class="title">Tittel</h4>
-                <div class="row tags">
-                        <!--Denne gjentas for hver tagg-->
-                        <span>Tags</span>
-                </div>
-                <p class="desc">liten, kort og søt beskrivelse
-                    <br/>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
+
                 <a href="https://kiwi.no/">Gå til hjemmesiden</a>
                 <hr/>
                 <div class="row">
