@@ -16,7 +16,7 @@
         echo '<link rel="stylesheet" href="assets/css/about-us.css"/>';
     } else if ($_GET["destination"] == 'contact') {
         echo '<link rel="stylesheet" href="assets/css/contact.css"/>';
-    } else if ($_GET["destination"] == 'see_all') {
+    } else if ($_GET["destination"] == 'all') {
         echo '<link rel="stylesheet" href="assets/css/see_all.css"/>';
     }
   ?>

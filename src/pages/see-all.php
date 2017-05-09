@@ -2,8 +2,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
 
-require_once('../includes/config.php');
-require_once('../includes/ExploreDatabase.php');
+require_once('includes/config.php');
+require_once('includes/ExploreDatabase.php');
 
 if (Config::REQUIRE_DB) {
     $db = new ExploreDatabase();
@@ -26,187 +26,214 @@ $days = array('Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'S�
     <h1>Vis alt</h1>
     <h3>Fjerdingen</h3>
     <?php
-    foreach ($fjerdingen as $fLoc) { ?>
-        <div class="row">
-            <div class="c4 column h-center-content">
-                <div class="infokort">
+    $counter = 1;
+    foreach ($fjerdingen as $fLoc) {
+        if ($counter % 4 == 1) { ?>
+            <div class="row">
+        <?php } ?>
 
-                    <img class="kortbilde" src="assets/img/<?= $fLoc['images'][0]['path'] ?>"
-                         alt="<?= $fLoc['title'] ?>">
-                    <h4 class="title"><?= $fLoc['title'] ?></h4>
+        <div class="c4 column h-center-content">
+            <div class="infokort">
 
-                    <div class="row tags">
-                        <?php foreach ($fLoc['tags'] as $fTag) {
-                            if ($fTag['tag'] != '') { ?>
-                                <span><?= $fTag['tag'] ?></span>
-                                <?php
-                            }
-                        } ?>
-                    </div>
+                <?php if (isset($fLoc['images'][0]['path'])) { ?>
+                    <img class="kortbilde" src="assets/imgs/<?=$fLoc['images'][0]['path']?>" alt="<?= $fLoc['title'] ?>">
+                <?php } ?>
+                <h4 class="title"><?= $fLoc['title'] ?></h4>
 
-                    <p class="desc"><?= nl2br($fLoc['description']) ?></p>
-                    <?php if ($fLoc['URL'] != '') { ?>
-                        <a href="<?= $fLoc['URL'] ?>">Gå til hjemmeside</a>
-                        <hr/>
-                    <?php } ?>
+                <div class="row tags">
+                    <?php foreach ($fLoc['tags'] as $fTag) {
+                        if ($fTag['tag'] != '') { ?>
+                            <span><?= $fTag['tag'] ?></span>
+                            <?php
+                        }
+                    } ?>
+                </div>
 
-                    <div class="c2 v-align-content">
-                        <div class="open">
-                            <div class="status">Open Now</div>
-                            <div class="toggleBtn" onClick="showTimes(this)" data-open="false"></div>
+                <p class="desc"><?= nl2br($fLoc['description']) ?></p>
+                <?php if ($fLoc['URL'] != '') { ?>
+                    <a href="<?= $fLoc['URL'] ?>">Gå til hjemmeside</a>
+                    <hr/>
+                <?php } ?>
 
-                            <div class="times">
-                                <?php foreach ($fLoc['hours'] as $hours) {
-                                    if ($hours['open'] != '00:00:00' && $hours['close'] != '00:00:00') { ?>
-                                        <div class="row">
-                                            <div class="c2"><?= $days[$hours['day']] ?></div>
-                                            <div class="c2"><?= date("H", strtotime($hours['open'])) ?>
-                                                - <?= date("H", strtotime($hours['close'])) ?></div>
-                                        </div>
-                                    <?php } else { ?>
-                                        <div class="row">
-                                            <div class="c2"><?= $days[$hours['day']] ?></div>
-                                            <div class="c2">Stengt</div>
-                                        </div>
-                                    <?php }
-                                } ?>
-                            </div>
+                <div class="c2 v-align-content">
+                    <div class="open">
+                        <div class="status">Open Now</div>
+                        <div class="toggleBtn" onClick="showTimes(this)" data-open="false"></div>
+
+                        <div class="times">
+                            <?php foreach ($fLoc['hours'] as $hours) {
+                                if ($hours['open'] != '00:00:00' && $hours['close'] != '00:00:00') { ?>
+                                    <div class="row">
+                                        <div class="c2"><?= $days[$hours['day']] ?></div>
+                                        <div class="c2"><?= date("H", strtotime($hours['open'])) ?>
+                                            - <?= date("H", strtotime($hours['close'])) ?></div>
+                                    </div>
+                                <?php } else { ?>
+                                    <div class="row">
+                                        <div class="c2"><?= $days[$hours['day']] ?></div>
+                                        <div class="c2">Stengt</div>
+                                    </div>
+                                <?php }
+                            } ?>
                         </div>
                     </div>
-                    <div class="c2">
-                        <?php if ((isset($fLoc['distance'])) && ($fLoc['distance'] != '')) { ?>
-                            <p><?= $fLoc['distance'] ?> min</p>
-                        <?php } else { ?>
-                            <p>Ukjent avstand</p>
-                        <?php } ?>
-                    </div>
+                </div>
+                <div class="c2">
+                    <?php if ((isset($fLoc['distance'])) && ($fLoc['distance'] != '')) { ?>
+                        <p><?= $fLoc['distance'] ?> min</p>
+                    <?php } else { ?>
+                        <p>Ukjent avstand</p>
+                    <?php } ?>
                 </div>
             </div>
         </div>
-        <hr/>
-    <?php } ?>
-
+        <?php if ($counter % 4 == 0) { ?>
+            </div>
+        <?php }
+        $counter++; ?>
+    <?php }
+    if ($counter % 4 != 1) echo "</div>"; ?>
+    <hr/>
     <h3>Vulkan</h3>
     <?php
-    foreach ($vulkan as $fLoc) { ?>
-        <div class="row">
-            <div class="c4 column h-center-content">
-                <div class="infokort">
+    $counter = 1;
+    foreach ($vulkan as $fLoc) {
+        if ($counter % 4 == 1) { ?>
+            <div class="row">
+        <?php } ?>
 
-                    <img class="kortbilde" src="assets/img/<?= $fLoc['images'][0]['path'] ?>"
-                         alt="<?= $fLoc['title'] ?>">
-                    <h4 class="title"><?= $fLoc['title'] ?></h4>
+        <div class="c4 column h-center-content">
+            <div class="infokort">
 
-                    <div class="row tags">
-                        <?php foreach ($fLoc['tags'] as $fTag) {
-                            if ($fTag['tag'] != '') { ?>
-                                <span><?= $fTag['tag'] ?></span>
-                                <?php
-                            }
-                        } ?>
-                    </div>
+                <?php if (isset($fLoc['images'][0]['path'])) { ?>
+                    <img class="kortbilde" src="assets/imgs/<?=$fLoc['images'][0]['path']?>" alt="<?= $fLoc['title'] ?>">
+                <?php } ?>
+                <h4 class="title"><?= $fLoc['title'] ?></h4>
 
-                    <p class="desc"><?= nl2br($fLoc['description']) ?></p>
-                    <?php if ($fLoc['URL'] != '') { ?>
-                        <a href="<?= $fLoc['URL'] ?>">Gå til hjemmeside</a>
-                        <hr/>
-                    <?php } ?>
+                <div class="row tags">
+                    <?php foreach ($fLoc['tags'] as $fTag) {
+                        if ($fTag['tag'] != '') { ?>
+                            <span><?= $fTag['tag'] ?></span>
+                            <?php
+                        }
+                    } ?>
+                </div>
 
-                    <div class="c2 v-align-content">
-                        <div class="open">
-                            <div class="status">Open Now</div>
-                            <div class="toggleBtn" onClick="showTimes(this)" data-open="false"></div>
+                <p class="desc"><?= nl2br($fLoc['description']) ?></p>
+                <?php if ($fLoc['URL'] != '') { ?>
+                    <a href="<?= $fLoc['URL'] ?>">Gå til hjemmeside</a>
+                    <hr/>
+                <?php } ?>
 
-                            <div class="times">
-                                <?php foreach ($fLoc['hours'] as $hours) {
-                                    if ($hours['open'] != '00:00:00' && $hours['close'] != '00:00:00') { ?>
-                                        <div class="row">
-                                            <div class="c2"><?= $days[$hours['day']] ?></div>
-                                            <div class="c2"><?= date("H", strtotime($hours['open'])) ?>
-                                                - <?= date("H", strtotime($hours['close'])) ?></div>
-                                        </div>
-                                    <?php } else { ?>
-                                        <div class="row">
-                                            <div class="c2"><?= $days[$hours['day']] ?></div>
-                                            <div class="c2">Stengt</div>
-                                        </div>
-                                    <?php }
-                                } ?>
-                            </div>
+                <div class="c2 v-align-content">
+                    <div class="open">
+                        <div class="status">Open Now</div>
+                        <div class="toggleBtn" onClick="showTimes(this)" data-open="false"></div>
+
+                        <div class="times">
+                            <?php foreach ($fLoc['hours'] as $hours) {
+                                if ($hours['open'] != '00:00:00' && $hours['close'] != '00:00:00') { ?>
+                                    <div class="row">
+                                        <div class="c2"><?= $days[$hours['day']] ?></div>
+                                        <div class="c2"><?= date("H", strtotime($hours['open'])) ?>
+                                            - <?= date("H", strtotime($hours['close'])) ?></div>
+                                    </div>
+                                <?php } else { ?>
+                                    <div class="row">
+                                        <div class="c2"><?= $days[$hours['day']] ?></div>
+                                        <div class="c2">Stengt</div>
+                                    </div>
+                                <?php }
+                            } ?>
                         </div>
                     </div>
-                    <div class="c2">
-                        <?php if ((isset($fLoc['distance'])) && ($fLoc['distance'] != '')) { ?>
-                            <p><?= $fLoc['distance'] ?> min</p>
-                        <?php } else { ?>
-                            <p>Ukjent avstand</p>
-                        <?php } ?>
-                    </div>
+                </div>
+                <div class="c2">
+                    <?php if ((isset($fLoc['distance'])) && ($fLoc['distance'] != '')) { ?>
+                        <p><?= $fLoc['distance'] ?> min</p>
+                    <?php } else { ?>
+                        <p>Ukjent avstand</p>
+                    <?php } ?>
                 </div>
             </div>
         </div>
-        <hr/>
-    <?php } ?>
+        <?php if ($counter % 4 == 0) { ?>
+            </div>
+        <?php }
+        $counter++; ?>
+    <?php }
+    if ($counter % 4 != 1) echo "</div>"; ?>
+    <hr/>
 
     <h3>Brenneriveien</h3>
     <?php
-    foreach ($brenneriveien as $fLoc) { ?>
-        <div class="row">
-            <div class="c4 column h-center-content">
-                <div class="infokort">
+    $counter = 1;
+    foreach ($brenneriveien as $fLoc) {
+        if ($counter % 4 == 1) { ?>
+            <div class="row">
+        <?php } ?>
 
-                    <img class="kortbilde" src="assets/img/<?=$fLoc['images'][0]['path']?>" alt="<?=$fLoc['title']?>">
-                    <h4 class="title"><?=$fLoc['title']?></h4>
+        <div class="c4 column h-center-content">
+            <div class="infokort">
 
-                    <div class="row tags">
-                        <?php foreach ($fLoc['tags'] as $fTag) {
-                            if ($fTag['tag'] != '') { ?>
-                                <span><?=$fTag['tag']?></span>
-                            <?php}
-                        }?>
-                    </div>
+                <?php if (isset($fLoc['images'][0]['path'])) { ?>
+                    <img class="kortbilde" src="assets/imgs/<?=$fLoc['images'][0]['path']?>" alt="<?= $fLoc['title'] ?>">
+                <?php } ?>
+                <h4 class="title"><?= $fLoc['title'] ?></h4>
 
-                    <p class="desc"><?= nl2br($fLoc['description']) ?></p>
-                    <?php if ($fLoc['URL'] != '') { ?>
-                        <a href="<?= $fLoc['URL']?>">Gå til hjemmeside</a>
-                        <hr/>
-                    <?php } ?>
+                <div class="row tags">
+                    <?php foreach ($fLoc['tags'] as $fTag) {
+                        if ($fTag['tag'] != '') { ?>
+                            <span><?= $fTag['tag'] ?></span>
+                            <?php
+                        }
+                    } ?>
+                </div>
 
-                    <div class="c2 v-align-content">
-                        <div class="open">
-                            <div class="status">Open Now</div>
-                            <div class="toggleBtn" onClick="showTimes(this)" data-open="false"></div>
+                <p class="desc"><?= nl2br($fLoc['description']) ?></p>
+                <?php if ($fLoc['URL'] != '') { ?>
+                    <a href="<?= $fLoc['URL'] ?>">Gå til hjemmeside</a>
+                    <hr/>
+                <?php } ?>
 
-                            <div class="times">
-                                <?php foreach ($fLoc['hours'] as $hours) {
-                                    if ($hours['open'] != '00:00:00' && $hours['close'] != '00:00:00') { ?>
-                                        <div class="row">
-                                            <div class="c2"><?= $days[$hours['day']] ?></div>
-                                            <div class="c2"><?= date("H", strtotime($hours['open'])) ?>
-                                                - <?= date("H", strtotime($hours['close'])) ?></div>
-                                        </div>
-                                    <?php } else { ?>
-                                        <div class="row">
-                                            <div class="c2"><?= $days[$hours['day']] ?></div>
-                                            <div class="c2">Stengt</div>
-                                        </div>
-                                    <?php }
-                                } ?>
-                            </div>
+                <div class="c2 v-align-content">
+                    <div class="open">
+                        <div class="status">Open Now</div>
+                        <div class="toggleBtn" onClick="showTimes(this)" data-open="false"></div>
+
+                        <div class="times">
+                            <?php foreach ($fLoc['hours'] as $hours) {
+                                if ($hours['open'] != '00:00:00' && $hours['close'] != '00:00:00') { ?>
+                                    <div class="row">
+                                        <div class="c2"><?= $days[$hours['day']] ?></div>
+                                        <div class="c2"><?= date("H", strtotime($hours['open'])) ?>
+                                            - <?= date("H", strtotime($hours['close'])) ?></div>
+                                    </div>
+                                <?php } else { ?>
+                                    <div class="row">
+                                        <div class="c2"><?= $days[$hours['day']] ?></div>
+                                        <div class="c2">Stengt</div>
+                                    </div>
+                                <?php }
+                            } ?>
                         </div>
                     </div>
-                    <div class="c2">
-                        <?php if ((isset($fLoc['distance'])) && ($fLoc['distance'] != '')) { ?>
-                            <p><?=$fLoc['distance']?> min</p>
-                        <?php } else {?>
-                            <p>Ukjent avstand</p>
-                        <?php } ?>
-                    </div>
+                </div>
+                <div class="c2">
+                    <?php if ((isset($fLoc['distance'])) && ($fLoc['distance'] != '')) { ?>
+                        <p><?= $fLoc['distance'] ?> min</p>
+                    <?php } else { ?>
+                        <p>Ukjent avstand</p>
+                    <?php } ?>
                 </div>
             </div>
         </div>
-    <?php } ?>
-
+        <?php if ($counter % 4 == 0) { ?>
+            </div>
+        <?php }
+        $counter++; ?>
+    <?php }
+    if ($counter % 4 != 1) echo "</div>"; ?>
 </div>
 <script>
     nav.sel = 2;
