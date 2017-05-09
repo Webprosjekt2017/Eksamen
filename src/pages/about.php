@@ -11,7 +11,7 @@
         </p>
       </div>
     <div class="c2">
-        <img id="aboutusimg" src="assets/imgs/sadpepe.jpeg">
+        <img id="aboutusimg" src="assets/imgs/matvrakLogoStor.png">
     </div>
 </div>
 
