@@ -1,5 +1,5 @@
 <div class="row" id="aboutusbox">
-  <div class="c2">
+  <div class="c2 column middleline">
       <h1>
             Om oss
         </h1>
@@ -10,7 +10,7 @@
             Alle forslag til ønsker og forbedringer er velkommene, gå til kontakt oss for å sende inn deres forslag til forbedringer! Siden er i konstant utviklking for at brukerene skal få den beste opplevelsen.
         </p>
       </div>
-    <div class="c2">
+    <div class="c2 column h-center-content">
         <img id="aboutusimg" src="assets/imgs/matvrakLogoStor.png">
     </div>
 </div>

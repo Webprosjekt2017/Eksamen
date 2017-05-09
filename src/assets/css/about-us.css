@@ -7,17 +7,18 @@
 #aboutusbox h1 {
     margin-bottom: 50px;
     font-size: 2.5em;
+    padding-right: 40px;
 }
   
 
 #aboutusbox .c2 #aboutustext{
     font-size: 1.2em;
+    padding-right:40px;
 }
 
 #aboutusbox .c2 #aboutusimg{
     height: 50%;
-    margin-left: 50px;
-    padding-left: 20%;
-    border-left: 2px solid #ef8f12;
-    
+}
+.middleline{
+    border-right: 2px solid #ef8f12;
 }
