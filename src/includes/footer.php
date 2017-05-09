@@ -19,7 +19,7 @@
     </div>
     <div class="c3 column"><img class="logo" src="assets/imgs/Logo.png"/>
       <h4 class="fontLarge">Matvrak</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>Matvrak etablert i 2017 i samarbeid med Westerdals Oslo ACT. Vi gjør hverdagen litt enklere for sultene studenter og ansatte etter en lang dag på campus</p>
     </div>
   </div>
 </footer>
