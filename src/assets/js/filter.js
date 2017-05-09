@@ -31,7 +31,11 @@ var filter = {
   },
   all: function() {
 
-    this.resetLocs();
+    if(this.page == 0) {
+      this.resetLocs();
+    } else {
+      this.resetCards();
+    }
     loc.hide();
 
     if(this.type.val == '0' && this.name.val == '') return false;
@@ -59,6 +63,9 @@ var filter = {
   },
   resetLocs: function() {
     $('.location').removeClass('highlight dim');
+  },
+  resetCards: function() {
+    $('.infokort').removeClass('highlight dim');
   }
 }
 
