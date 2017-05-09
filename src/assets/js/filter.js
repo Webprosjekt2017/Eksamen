@@ -2,6 +2,7 @@
 var str_sim = require('string-similarity');
 
 var filter = {
+  page: null,
   type: {
     input: null,
     val: '0'
@@ -28,6 +29,24 @@ var filter = {
       }
     });
   },
+  all: function() {
+
+    this.resetLocs();
+    loc.hide();
+
+    if(this.type.val == '0' && this.name.val == '') return false;
+
+    $('.infokort').addClass('dim').each(function() {
+      if (filter.matchTag(this, filter.type.val) || filter.type.val == '0') {
+        var title = $(this).find('.title').text().toLowerCase();
+        if(str_sim.compareTwoStrings(title, filter.name.val) > .4
+           || filter.name.val == ''
+           || title.indexOf(filter.name.val) > -1) {
+          $(this).removeClass('dim').addClass('highlight');
+        }
+      }
+    });
+  },
   matchTag: function(dom, tag) {
     var r = false;
     $(dom).find('.tags').children().each(function(){
@@ -46,19 +65,33 @@ var filter = {
 
 $(document).ready(function() {
 
+  if(typeof filterPage != undefined) {
+    filter.page = filterPage;
+  }
+
   // Get dom
-  filter.type.input = $('#filter-type').on('change', function() {
-    filter.type.val = this.value;
-    filter.map();
-  });
-  filter.name.input = $('#filter-name').on('keyup', function() {
-    filter.name.val = this.value.toLowerCase();
-    filter.map();
-  });
+  if(filter.page != null) {
+    filter.type.input = $('#filter-type').on('change', function() {
+      filter.type.val = this.value;
+      if(filter.page == 0) {
+        filter.map();
+      } else if(filter.page == 1) {
+        filter.all();
+      }
+    });
+    filter.name.input = $('#filter-name').on('keyup', function() {
+      filter.name.val = this.value.toLowerCase();
+      if(filter.page == 0) {
+        filter.map();
+      } else if(filter.page == 1) {
+        filter.all();
+      }
+    });
+  }
 
 });
 
-module.exports = filter;
+exports.module = filter;
 
 },{"string-similarity":136}],2:[function(require,module,exports){
 var getNative = require('./_getNative'),

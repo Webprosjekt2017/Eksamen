@@ -5,7 +5,7 @@
         <div class="c4 column h-center-content"><!--Infokort start-->
             <div class="infokort">
                 <img class="kortbilde" src="assets/imgs/kiwi.png" S>
-                <h4>Tittel</h4>
+                <h4 class="title">Tittel</h4>
                 <div class="row tags">
                         <!--Denne gjentas for hver tagg-->
                         <span>Tags</span>
@@ -51,4 +51,5 @@
 <!--Slutt wrapper for alt innhold-->
 <script>
     nav.sel = 2;
+    filterPage = 1;
 </script>

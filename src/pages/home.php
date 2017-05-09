@@ -1,14 +1,10 @@
 
-<div class="container">
+<div class="container" id="main">
   <div class="map">
     <div class="backBtn"><img src="assets/imgs/DropDownArrow.png"/>Tilbake</div>
     <div class="mapText">
-      <div class="title">
-        <Lorum>Ipsum</Lorum>
-      </div>
-      <div class="desc">
-        <Lorem>ipsum dolor sit amet, consectetur adipisicing elit</Lorem>
-      </div>
+      <div class="title">Sulten?</div>
+      <div class="desc">Finn de nærmeste spisestedene rundt Westerdals Oslo ACT!</div>
     </div>
     <div class="cover" id="mapCover"></div>
     <div class="campus" id="Vulkan" tabindex="5">
@@ -37,3 +33,4 @@
     </div>
   </div>
 </div>
+<script>filterPage = 0;</script>

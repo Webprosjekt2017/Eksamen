@@ -45,6 +45,7 @@
       transform: translate(-50%, 0);
       z-index: 150; }
     .map .mapText .desc {
+      max-width: 35%;
       font-size: 20px;
       position: absolute;
       top: 15%;

@@ -6,7 +6,8 @@ html, body {
   overflow-x: hidden; }
 
 body {
-  margin-bottom: 200px; }
+  margin-bottom: 200px;
+  border-bottom: 4px solid #ef8f12; }
 
 a.skipToMainContent {
   display: block;
