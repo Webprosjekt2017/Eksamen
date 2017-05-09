@@ -6,8 +6,30 @@ html, body
   overflow-x: hidden
 
 body
-  margin-bottom: 200px
+  margin-bottom: 300px
   border-bottom: 4px solid #ef8f12
+
+a.fanzy
+  color: #000
+  position: relative
+  left: 15px
+
+  &::before
+    display: inline-block
+    height: 25px
+    width: 25px
+    background: url('../imgs/link-ico.png')
+    background-size: 100%
+    content: ''
+    position: relative
+    top: 5px
+    right: 10px
+
+.miniLogo
+  display: inline-block
+  height: 18px
+  margin-right: 10px
+
 
 a.skipToMainContent
   display: block
