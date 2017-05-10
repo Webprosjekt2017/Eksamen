@@ -65,11 +65,12 @@
 
 .infokort.dim {
     border-color: #aaa;
-    transform: scale(0.9)
+    transform: scale(0.95);
+    opacity: .9;
 }
 
 .infokort.highlight {
-
+  transform: scale(1.03);
 }
 
 
@@ -94,6 +95,7 @@ hr {
     border-radius: 2px;
     background-color: #fefefe;
     box-shadow: 0 6px 7px 2px #ccc;
+    transition: all 300ms ease-in-out;
 }
 
 .infokort img {
