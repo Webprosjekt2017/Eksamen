@@ -24,9 +24,9 @@
   <div class="wrapper">
     <div class="row overview">
       <div class="c2">
-        <h1>Overview</h1>
+        <h1>Hola Hombres</h1>
         <p class="right">
-          ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+          Velkommen til denne siden, ved bruk av Matvrak skal du enkelt kunne finne nærliggende spisesteder, utesteder og daglivare. Alle lokasjonene er under 10 minutter gå avstand fra campusene. Øverst på siden finner du en navigasjons bar som gjør det enkelt for deg å finne mer informasjon. Denne blir gjort om til en søkebar og filter etter at du har trykket på en av campusene du vil finne lokasjoner i nærheten av.
         </p>
       </div>
       <div class="c2">something goes here</div>
@@ -34,9 +34,9 @@
     <div class="row about">
       <div class="c2">something goes here</div>
         <div class="c2">
-        <h1>Overview</h1>
+        <h1>Om Matvraket</h1>
         <p class="right">
-          ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+          Matvrak ble etablert i 2017 i samarbeid med Westerdals Oslo ACT. Denne siden drives av studenter som vil gjøre hverdagen litt enklere for studenter og ansatte. Alle forslag til ønsker og forbedringer er velkommene, gå til kontakt oss for å sende inn deres forslag til forbedringer! Siden er i konstant utviklking for at brukerene skal få den beste opplevelsen.
         </p>
       </div>
     </div>
