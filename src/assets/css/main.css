@@ -13,8 +13,7 @@ body {
     content: '';
     display: block;
     height: 84px;
-    width: 100vw;
-    background: pink; }
+    width: 100vw; }
 
 a.fanzy {
   color: #000;
