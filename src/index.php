@@ -34,6 +34,8 @@ if (isset($_GET["destination"])) {
             break;
         case 'all':
             $pageTitle = "Se Alt";
+            echo "<!DOCTYPE html>";
+            echo "<html>";
             require_once("includes/head.php");
             echo "<body>";
             require_once("includes/nav.php");
