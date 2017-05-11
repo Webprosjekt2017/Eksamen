@@ -37,7 +37,7 @@
 
                 <div class="c2 v-align-content">
                     <div class="open">
-                        <div class="status">Open Now</div>
+                        <div class="status">Åpent nå</div>
                         <div class="toggleBtn" onClick="showTimes(this)" data-open="false"></div>
 
                         <div class="times">
@@ -71,6 +71,9 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="c2">
+                    <p>Adresse</p>
                 </div>
                 <div class="c2">
                     <p>Ukjent avstand</p>
