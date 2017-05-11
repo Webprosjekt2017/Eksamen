@@ -228,7 +228,10 @@
       .map .location .locInfo .desc {
         font-size: .95em;
         margin: 0 10px;
-        margin-bottom: 10px; }
+        margin-bottom: 10px;
+        border-bottom: 2px solid #ef8f12;
+        padding-bottom: 10px;
+        padding-top: 10px; }
       .map .location .locInfo .open {
         height: 18px;
         margin: 0 10px;
