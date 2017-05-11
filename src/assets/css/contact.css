@@ -3,17 +3,17 @@
   
 }
 
-#info_text_left{
-            left: 40%;
-            top:70%;
-            
-        }    
+#info_text_left
+{        
+    left: 40%;
+    top:70%;          
+}    
 
-#info_text_right{
-            left: 50%;
-            top:70%;
-            
-        }    
+#info_text_right
+{
+    left: 50%;
+    top:70%;           
+}    
 
 #contact_info{
         }
@@ -27,3 +27,28 @@
     
 }
 
+div.verticalLine{
+    border-left: thick solid: #000;
+    background-color: black;
+    height: 100%;
+    border:15px ridge black;
+    float:left;
+    bordere-radius:3px;
+    height:200px;
+}
+#vLine{
+    top:50%;
+}
+
+div.horisontalLine{
+    border-bottom: thick solid: #000;
+    background-color: black;
+    height: 100%;
+    border:15px ridge black;
+    float:left;
+    bordere-radius:3px;
+    width:200px;
+}
+#hLine{
+    top:50%;
+}
