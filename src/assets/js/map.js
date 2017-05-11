@@ -20,7 +20,7 @@ var map = {
   cover: null,
   mapText: null,
   classIgnore: '.cover, .location, .title, .desc, .scrollArrow, .mapText, .backBtn'
-}
+};
 
 var loc = {
   dom: null,
@@ -30,7 +30,7 @@ var loc = {
 
     this.clear();
 
-    if((this.dom == null || this.pos == null)) {
+    if((this.dom === null || this.pos === null)) {
       if(this.printLoops < 10) {
         this.printLoops++;
         setTimeout(function() {loc.printLocs();}, 100);
@@ -47,7 +47,7 @@ var loc = {
       $('#' + key).css({
         'left': val.x + '%',
         'top': val.y + '%'
-      })
+      });
       if(val.y < 33) {
         $('#' + key + ' .locInfo').addClass('top');
       } else if(val.y > 66) {
@@ -79,7 +79,7 @@ var loc = {
   hide: function() {
     $('.location').removeClass('show');
   }
-}
+};
 
 $(document).ready(function() {
   // Get map and relevant childred
@@ -96,7 +96,7 @@ $(document).ready(function() {
     if (e.target !== this) return;
 
     loc.hide();
-  })
+  });
 
   // Setup back button
   map.backBtn.click(function() {
@@ -139,7 +139,7 @@ $(document).ready(function() {
       map.mapText.addClass('hide');
       map.backBtn.addClass('show');
 
-      nav.setSel($('.navLink:eq(1)')) // Set selected tab to 'map'
+      nav.setSel($('.navLink:eq(1)')); // Set selected tab to 'map'
 
       // ### Reset location obj
       loc.dom = null;
@@ -192,13 +192,13 @@ $(document).ready(function() {
 });
 
 function showTimes(e) {
-  if ( $(e).data('open') ) {
-    $(e).parent().css('height', $(e).data('height'));
-    $(e).data('open', false);
+  if ( $(e).attr('data-open') == 'true' ) {
+    $(e).parent().css('height', $(e).attr('height'));
+    $(e).attr('data-open', 'false');
   } else {
-    $(e).data('height', $(e).css('height'));
+    $(e).attr('height', $(e).css('height'));
     $(e).parent().css('height', $(e).parent()[0].scrollHeight + 'px');
-    $(e).data('open', true);
+    $(e).attr('data-open', 'true');
   }
 }
 

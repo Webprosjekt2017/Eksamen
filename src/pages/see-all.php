@@ -38,7 +38,7 @@
                 <div class="c2 v-align-content">
                     <div class="open">
                         <div class="status">Åpent nå</div>
-                        <div class="toggleBtn" onClick="showTimes(this)" data-open="false"></div>
+                        <img src="assets/imgs/DropDownArrow.png" class="toggleBtn" onClick="showTimes(this)" data-open="false"></img>
 
                         <div class="times">
                             <div class="row">

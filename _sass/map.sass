@@ -301,6 +301,10 @@
             position: center
             repeat: no-repeat
           cursor: pointer
+          transition: transform 300ms ease-in-out
+
+          &[data-open="true"]
+              transform: rotate(180deg)
 
   .scrollArrow
     height: 70px

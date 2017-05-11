@@ -251,7 +251,10 @@
           background-size: 80% 80%;
           background-position: center;
           background-repeat: no-repeat;
-          cursor: pointer; }
+          cursor: pointer;
+          transition: transform 300ms ease-in-out; }
+          .map .location .locInfo .open .toggleBtn[data-open="true"] {
+            transform: rotate(180deg); }
   .map .scrollArrow {
     height: 70px;
     width: 70px;
