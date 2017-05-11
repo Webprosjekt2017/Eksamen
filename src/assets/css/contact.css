@@ -1,19 +1,29 @@
+#body{
+    background-color: #eee;
+  
+}
+
 #info_text_left{
-            position: absolute;
             left: 40%;
             top:70%;
             
         }    
-        #info_text_right{
-            position: absolute;
+
+#info_text_right{
             left: 50%;
             top:70%;
             
         }    
-        #contact_info{
+
+#contact_info{
         }
         
-        #subject_box{
+
+#subject_box{
                 
         }
-                
+
+#message_box{
+    
+}
+
