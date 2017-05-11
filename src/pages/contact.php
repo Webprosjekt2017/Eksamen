@@ -1,34 +1,34 @@
-<div class="row vertical">
-    <div class="c2">
-        <div id="info_text_left">
+<div class="row vertical contact_wrapper">
+
+  <div class="c1 h-center-content" id="contact_info">
+    <div class="contact_form">
+      <form id="contact" action="/example.php">
+        <input type="text" name="firstname" placeholder="Fornavn"> <br><br>
+        <input type="text" name="e-mail" placeholder="Epost"> <br><br>
+        <input type="text" name="subject" placeholder="Emne"> <br><br>
+        <textarea form="contact" name="message" placeholder="Hva kan vi hjelpe deg med?" id="message_box"></textarea> <br> <br>
+        <input type="submit" value="Send">
+      </form>
+    </div>
+  </div>
+
+  <div class="c1 contact_info">
+    <div class="row">
+      <div class="c2" id="info_text_left">
         <h3>Adresse: </h3>
-        <h3>Tlf: </h3>
         <h3>E-Post: </h3>
-    </div>
+        <h3>Tlf: </h3>
+      </div>
 
 
-    <div id="info_text_right">
+      <div id="info_text_right">
         <h3>Christian Kroghs Gate 32A</h3>
-        <h3>99 99 99 99</h3>
         <h3>matvrak@westerdals.no</h3>
+        <h3>99 99 99 99</h3>
+      </div>
     </div>
-    </div>
-
-    <div class="c2" id="contact_info">
-        <form action="/example.php">
-            Navn <br>
-            <input type="text" name="firstname"> <br><br>
-            E-post<br>
-            <input type="text" name="e-mail"> <br><br>
-            Emne<br>
-            <input type="text" name="subject" > <br><br>
-            Melding<br>
-            <input type="text" name="message" id="message_box"> <br> <br>
-            <input type="submit" value="Send">
-        </form>
-
-    </div>
-    </div>
-    <script>
-        nav.sel = 4;
-    </script>
+  </div>
+</div>
+<script>
+    nav.sel = 4;
+</script>

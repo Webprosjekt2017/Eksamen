@@ -1,55 +1,64 @@
-#body{
-    background-color: #eee;
-  
+.contact_wrapper {
+  padding-top: 50px;
 }
 
-#info_text_left
-{        
-    left: 40%;
-    top:70%;          
-}    
-
-#info_text_right
-{
-    left: 50%;
-    top:70%;           
-}    
-
-#contact_info{
-    top:100%
+#info_text_left {
+  text-align: center;
+  padding-right: 10px;
 }
-        
-
-#subject_box{
-                
-        }
-
-#message_box{
-    
+#info_text_right {
+  text-align: center;
+  padding-left: 10px;
 }
 
-div.verticalLine{
-    border-left: thick solid: #000;
-    background-color: black;
-    height: 100%;
-    border:15px ridge black;
-    float:left;
-    bordere-radius:3px;
-    height:200px;
-}
-#vLine{
-    top:50%;
+.contact_form {
+  margin: auto;
+  width: 30%;
+  padding-bottom: 50px;
+  border-bottom: 2px solid #ef8f12;
+  position: relative;
 }
 
-div.horisontalLine{
-    border-bottom: thick solid: #000;
-    background-color: black;
-    height: 100%;
-    border:15px ridge black;
-    float:left;
-    bordere-radius:3px;
-    width:200px;
+.contact_form input {
+  width: 80%;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #eee;
+  border: 2px solid #ef8f12;
+  border-radius: 4px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: border-color 300ms ease-in-out;
 }
-#hLine{
-    top:50%;
+.contact_form input[type="submit"] {
+  width: 40%
+}
+#message_box {
+  width: 80%;
+  height: 300px;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #eee;
+  border: 2px solid #ef8f12;
+  border-radius: 4px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: border-color 300ms ease-in-out;
+}
+.contact_form input:focus {
+  outline: none;
+  border-color: #cf6f08;
+}
+#message_box:focus {
+  outline: none;
+  border-color: #cf6f08;
+}
+
+.contact_info {
+  width: 30%;
+  margin: auto;
+  padding-top: 50px;
+  padding-bottom: 80px
 }
