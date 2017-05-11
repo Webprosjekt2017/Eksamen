@@ -21,7 +21,7 @@
     <!--NYTT SLUTT-->
 
     <h1>Vis alt</h1>
-    <h3>Fjerdingen</h3>
+    <h3 id="titleC">Fjerdingen</h3>
     <div class="row">
         <div class="c4 column h-center-content">
             <div class="infokort">
