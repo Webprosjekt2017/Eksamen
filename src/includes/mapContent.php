@@ -48,6 +48,10 @@ foreach ($locations as $location) {
                     <div class="desc"><?= nl2br($location['description']) ?></div>
                 <?php } ?>
 
+                <?php if(true /* if location has website */) ?>
+                    <a class="fanzy" href="#">Gå til hjemmeside</a>
+                <?php } ?>
+
                 <div class="open">
                     <div class="status">Open Now</div>
                     <div class="toggleBtn" onClick="showTimes(this)" data-open="false"></div>
@@ -69,6 +73,7 @@ foreach ($locations as $location) {
                         } ?>
                     </div>
                 </div>
+
             </div>
             <!--<div class="subLocations"><a href="#">ico</a><a href="#">ico</a></div>-->
         </div>

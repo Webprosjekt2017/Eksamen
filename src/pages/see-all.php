@@ -35,6 +35,8 @@
 
                 <p class="desc"></p>
 
+                <a class="fanzy" href="#">Gå til hjemmeside</a>
+
                 <div class="c2 v-align-content">
                     <div class="open">
                         <div class="status">Åpent nå</div>
