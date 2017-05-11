@@ -137,6 +137,7 @@ hr {
 
 .infokort .open {
     height: 18px;
+    width: 100%;
     border-left: 2px solid #ef8f12;
     padding-left: 10px;
     font-size: .95em;

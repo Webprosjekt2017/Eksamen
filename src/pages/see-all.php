@@ -73,12 +73,8 @@
                     </div>
                 </div>
                 <div class="c2">
-                    <p>Adresse</p>
+                    <p>Avstand</p>
                 </div>
-                <div class="c2">
-                    <p>Ukjent avstand</p>
-                </div>
-            </div>
         </div>
     </div>
 </div>
