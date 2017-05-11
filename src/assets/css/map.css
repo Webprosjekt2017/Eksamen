@@ -131,7 +131,6 @@
     border-radius: 50%;
     background: #eee;
     position: absolute;
-    z-index: 200;
     opacity: 0;
     transition: all 300ms ease-in-out;
     box-shadow: 0 1px 3px 1px #888; }
@@ -191,7 +190,7 @@
       right: -270px;
       opacity: 0;
       transition: all 300ms ease-in-out;
-      z-index: 250; }
+      z-index: 500; }
       .map .location .locInfo.top {
         top: -20px; }
         .map .location .locInfo.top .arr {
