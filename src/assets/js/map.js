@@ -82,14 +82,18 @@ var loc = {
   },
   addOnClick: function() {
     $('.location').click(function() {
-      loc.hide(); // close all location before opening this one
+      loc.hide(this); // close all location before opening this one
       $(this).toggleClass('show');
     }).children().click(function() {
       return false;
     });
   },
-  hide: function() {
-    $('.location').removeClass('show');
+  hide: function(not) {
+    if (not) {
+      $('.location').not(not).removeClass('show');
+    } else {
+      $('.location').removeClass('show');
+    }
   }
 };
 

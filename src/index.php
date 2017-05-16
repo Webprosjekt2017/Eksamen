@@ -33,7 +33,7 @@ if (isset($_GET["destination"])) {
             require_once("includes/footer.php");
             break;
         case 'all':
-            $pageTitle = "Se Alt";
+            $pageTitle = "Vis Alt";
             echo "<!DOCTYPE html>";
             echo "<html>";
             require_once("includes/head.php");
