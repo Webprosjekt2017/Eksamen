@@ -33,7 +33,10 @@
       <div class="c2">something goes here</div>
     </div>
     <div class="row about">
-      <div class="c2">something goes here</div>
+        
+        <div class="c2">
+            <img class="westerdalsLogo" src="assets/imgs/icons&logos-imgs/WACT_hovedlogo_sort_rgb.png"/> 
+        </div>
         <div class="c2">
         <h1>Om Matvraket</h1>
         <p class="right">
