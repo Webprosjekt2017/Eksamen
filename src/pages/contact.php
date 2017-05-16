@@ -3,10 +3,27 @@
   <div class="c1 h-center-content" id="contact_info">
     <div class="contact_form">
       <form id="contact" action="/example.php">
-        <input type="text" name="firstname" placeholder="Fornavn"> <br><br>
-        <input type="text" name="e-mail" placeholder="Epost"> <br><br>
-        <input type="text" name="subject" placeholder="Emne"> <br><br>
-        <textarea form="contact" name="message" placeholder="Hva kan vi hjelpe deg med?" id="message_box"></textarea> <br> <br>
+        <div class="tooltip">
+        <input type="text" name="firstname" placeholder="Fornavn">  
+          <span class="tooltiptext">Fornavn</span>
+          </div>
+          <br><br>
+          <div class="tooltip">
+        <input type="text" name="e-mail" placeholder="Epost">
+          <span class="tooltiptext">Epost</span>
+          </div>
+          <br><br>
+          <div class="tooltip">
+        <input type="text" name="subject" placeholder="Emne"> 
+          <span class="tooltiptext">Emne</span>
+          </div>
+          <br><br>
+          <div class="tooltip tooltip_2">
+        <textarea form="contact" name="message" placeholder="Hva kan vi hjelpe deg med?" id="message_box"></textarea>
+              <span class="tooltiptext">Hvordan kan vi hjelpe deg?
+              </span>
+          </div>
+          <br><br>
         <input type="submit" value="Send">
       </form>
     </div>
