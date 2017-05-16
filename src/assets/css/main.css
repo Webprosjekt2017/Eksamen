@@ -19,7 +19,7 @@ a.fanzy {
   color: #000;
   position: relative;
   left: 15px; }
-  a.fanzy::before {
+  a.fanzy:before {
     display: inline-block;
     height: 25px;
     width: 25px;

@@ -4,6 +4,11 @@
   <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge"/>
   <meta name="viewport" content="width=1024"/>
   <title><?= $pageTitle ?></title>
+  <!-- SCRIPTS-->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/map.js"></script>
+  <script src="assets/js/filter.js"></script>
   <!-- STYLESHEET-->
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet"/>
   <link rel="stylesheet" href="assets/css/main.css"/>
@@ -15,15 +20,10 @@
     if ($_GET["destination"] == 'about') {
         echo '<link rel="stylesheet" href="assets/css/about-us.css"/>';
     } else if ($_GET["destination"] == 'contact') {
+        echo '<script src="assets/js/contact.js"></script>';
         echo '<link rel="stylesheet" href="assets/css/contact.css"/>';
     } else if ($_GET["destination"] == 'all') {
         echo '<link rel="stylesheet" href="assets/css/see_all.css"/>';
     }
   ?>
-  <!-- SCRIPTS-->
-
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="assets/js/nav.js"></script>
-  <script src="assets/js/map.js"></script>
-  <script src="assets/js/filter.js"></script>
 </head>

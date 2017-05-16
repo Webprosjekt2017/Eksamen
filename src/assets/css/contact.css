@@ -1,89 +1,94 @@
 .contact_wrapper {
-  padding-top: 50px;
+    padding-top: 50px;
 }
 
 #info_text_left {
-  text-align: center;
-  padding-right: 10px;
+    text-align: center;
+    padding-right: 10px;
 }
+
 #info_text_right {
-  text-align: center;
-  padding-left: 10px;
+    text-align: center;
+    padding-left: 10px;
 }
 
 .contact_form {
-  margin: auto;
-  width: 30%;
-  padding-bottom: 50px;
-  border-bottom: 2px solid #ef8f12;
-  position: relative;
+    margin: auto;
+    width: 30%;
+    padding-bottom: 50px;
+    border-bottom: 2px solid #ef8f12;
+    position: relative;
 }
 
 .contact_form input {
-  width: 80%;
-  padding: 10px;
-  font-size: 20px;
-  background-color: #eee;
-  border: 2px solid #ef8f12;
-  border-radius: 4px;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: border-color 300ms ease-in-out;
+    width: 80%;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #eee;
+    border: 2px solid #ef8f12;
+    border-radius: 4px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: border-color 300ms ease-in-out;
 }
-.contact_form input[type="submit"] {
-  width: 40%
-}
-#message_box {
-  width: 80%;
-  height: 300px;
-  padding: 10px;
-  font-size: 20px;
-  background-color: #eee;
-  border: 2px solid #ef8f12;
-  border-radius: 4px;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: border-color 300ms ease-in-out;
-}
+
 .contact_form input:focus {
-  outline: none;
-  border-color: #cf6f08;
+    outline: none;
+    border-color: #ef8f12;
 }
+
 #message_box:focus {
-  outline: none;
-  border-color: #cf6f08;
+    outline: none;
+    border-color: #ef8f12;
+}
+
+.contact_form input[type="submit"] {
+    width: 40%
+}
+
+#message_box {
+    width: 80%;
+    height: 300px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #eee;
+    border: 2px solid #ef8f12;
+    border-radius: 4px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: border-color 300ms ease-in-out;
 }
 
 .contact_info {
-  width: 30%;
-  margin: auto;
-  padding-top: 50px;
-  padding-bottom: 80px
+    width: 30%;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 80px
 }
 
-.tooltip{
-    display:inline;   
+.tooltiptext {
+  display: block;
+  height: 0;
+  width: 0;
+  margin-right: auto;
+  position: relative;
+  left: 88%
 }
 
-.tooltip .tooltiptext{
-    visibility:hidden;
-    width:100px;
-    background-color: #cf6f08;
-    color: #fff;
-    text-align: center;
-    border-radius: 10px;
-    padding: 5px 0;
-    z-index: 1;
+.tooltiptext span {
+    display: block;
+    padding: 11.5px 20px;
+    font-size: 20px;
+    white-space: nowrap;
+    background: #ef8f12;
+    border-radius: 5px;
+    transition: transform 300ms ease-in-out;
     position: absolute;
-    margin: 20px 70px 20px 70px;
-    
-}
-.tooltip:hover .tooltiptext{
-    visibility: visible;
+    transform: translateX(-90%);
 }
 
-.tooltip_2 .tooltiptext{
-    width:300px;
+.tooltiptext.show span {
+  transform: translateX(0%);
 }
