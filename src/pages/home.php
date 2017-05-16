@@ -30,7 +30,9 @@
           Velkommen til denne siden, ved bruk av Matvrak skal du enkelt kunne finne nærliggende spisesteder, utesteder og daglivare. Alle lokasjonene er under 10 minutter gå avstand fra campusene. Øverst på siden finner du en navigasjons bar som gjør det enkelt for deg å finne mer informasjon. Denne blir gjort om til en søkebar og filter etter at du har trykket på en av campusene du vil finne lokasjoner i nærheten av.
         </p>
       </div>
-      <div class="c2">something goes here</div>
+        <div class="c2">
+            <img class="homepageimg" src="assets/imgs/Nothing_is_good_enough_Sad_Pepe_placeholder.png"/>
+        </div>
     </div>
     <div class="row about">
         
