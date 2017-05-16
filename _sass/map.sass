@@ -36,6 +36,28 @@
       opacity: 1
       pointer-events: all
 
+  .seeAllBtn
+    font-size: 30px
+    opacity: 0
+    padding: 8px
+    border-radius: 10px
+    background: rgba(100, 100, 100, .2)
+    transition: all 300ms ease-in-out
+    text-decoration: none
+    color: black
+    position: absolute
+    top: 25px
+    right: 300px
+    z-index: 150
+    pointer-events: none
+
+    &:hover
+      background: rgba(100, 100, 100, .4)
+
+    &.show
+      opacity: 1
+      pointer-events: all
+
   .mapText
     text-align: center
     transition: opacity 300ms ease-in-out

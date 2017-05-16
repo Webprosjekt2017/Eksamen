@@ -10,7 +10,7 @@ var nav = {
     nav.drawerKnow.addClass('show');
     setTimeout(function() {
       nav.filterWrapper.addClass('show');
-    }, 800)
+    }, 800);
   },
   hideFilter: function() {
     nav.linkWrapper.removeClass('closed');

@@ -2,6 +2,7 @@
 <div class="container" id="main">
   <div class="map">
     <div class="backBtn"><img src="assets/imgs/DropDownArrow.png"/>Tilbake</div>
+    <a href="all" class="seeAllBtn">Se som liste</a>
     <div class="mapText">
       <div class="title">Sulten?</div>
       <div class="desc">Finn de nærmeste spisestedene rundt <strong>Westerdals Oslo ACT!</strong></div>

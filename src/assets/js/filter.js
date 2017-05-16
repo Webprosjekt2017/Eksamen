@@ -16,14 +16,14 @@ var filter = {
     this.resetLocs();
     loc.hide();
 
-    if(this.type.val == '0' && this.name.val == '') return false;
+    if(this.type.val == '0' && this.name.val === '') return false;
 
     $('.location').addClass('dim').each(function() {
       if (filter.matchTag(this, filter.type.val) || filter.type.val == '0') {
         var title = $(this).find('.hover-title').text().toLowerCase();
-        if(str_sim.compareTwoStrings(title, filter.name.val) > .4
-           || filter.name.val == ''
-           || title.indexOf(filter.name.val) > -1) {
+        if(str_sim.compareTwoStrings(title, filter.name.val) > 0.4 ||
+           filter.name.val === '' ||
+           title.indexOf(filter.name.val) > -1) {
           $(this).removeClass('dim').addClass('highlight');
         }
       }
@@ -31,21 +31,21 @@ var filter = {
   },
   all: function() {
 
-    if(this.page == 0) {
+    if(this.page === 0) {
       this.resetLocs();
     } else {
       this.resetCards();
     }
     loc.hide();
 
-    if(this.type.val == '0' && this.name.val == '') return false;
+    if(this.type.val == '0' && this.name.val === '') return false;
 
     $('.infokort').addClass('dim').each(function() {
       if (filter.matchTag(this, filter.type.val) || filter.type.val == '0') {
         var title = $(this).find('.title').text().toLowerCase();
-        if(str_sim.compareTwoStrings(title, filter.name.val) > .4
-           || filter.name.val == ''
-           || title.indexOf(filter.name.val) > -1) {
+        if(str_sim.compareTwoStrings(title, filter.name.val) > 0.4 ||
+           filter.name.val === '' ||
+           title.indexOf(filter.name.val) > -1) {
           $(this).removeClass('dim').addClass('highlight');
         }
       }
@@ -55,7 +55,7 @@ var filter = {
     var r = false;
     $(dom).find('.tags').children().each(function(){
       if($(this).text() == tag) {
-        r = true
+        r = true;
         return false;
       }
     });
@@ -67,17 +67,17 @@ var filter = {
   resetCards: function() {
     $('.infokort').removeClass('highlight dim');
   }
-}
+};
 
 
 $(document).ready(function() {
 
-  if(typeof filterPage != undefined) {
+  if(typeof filterPage !== undefined) {
     filter.page = filterPage;
   }
 
   // Get dom
-  if(filter.page == 0) {
+  if(filter.page === 0) {
     filter.type.input = $('#filter-type').on('change', function() {
       filter.type.val = this.value;
       filter.map();
@@ -88,7 +88,7 @@ $(document).ready(function() {
       filter.all();
     });
   }
-  if(filter.page == 0) {
+  if(filter.page === 0) {
     filter.name.input = $('#filter-name').on('keyup', function() {
       filter.name.val = this.value.toLowerCase();
       filter.map();

@@ -17,9 +17,10 @@ var map = {
     }
   },
   backBtn: null,
+  seeAllBtn: null,
   cover: null,
   mapText: null,
-  classIgnore: '.cover, .location, .title, .desc, .scrollArrow, .mapText, .backBtn'
+  classIgnore: '.cover, .location, .title, .desc, .scrollArrow, .mapText, .backBtn, .seeAllBtn'
 };
 
 var loc = {
@@ -90,6 +91,7 @@ $(document).ready(function() {
   map.cover = $('#mapCover');
   map.mapText = $('.mapText');
   map.backBtn = $('.backBtn');
+  map.seeAllBtn = $('.seeAllBtn');
 
   // Close location info when ckicking outside them
   map.cover.click(function(e) {
@@ -103,6 +105,7 @@ $(document).ready(function() {
     map.cover.removeClass('hide');
     map.mapText.removeClass('hide');
     map.backBtn.removeClass('show');
+    map.seeAllBtn.removeClass('show');
     $('.campus').removeClass('active standby').off('mouseover').mouseover(function() {
       // Hover function chanes map in background
       map.dom.css('background-image', 'url(assets/imgs/' + $(this).data('bg') + ')');
@@ -138,6 +141,7 @@ $(document).ready(function() {
       map.cover.addClass('hide');
       map.mapText.addClass('hide');
       map.backBtn.addClass('show');
+      map.seeAllBtn.addClass('show');
 
       nav.setSel($('.navLink:eq(1)')); // Set selected tab to 'map'
 
