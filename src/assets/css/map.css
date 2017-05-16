@@ -97,7 +97,13 @@
     top: 50%;
     right: 50%;
     transition: all 1.3s ease-in-out;
-    outline: none; }
+    outline: none;
+    animation-duration: 400ms;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 4; }
+    .map .campus.bounce {
+      animation-name: bounceSmall; }
     .map .campus#Vulkan {
       background: url("../imgs/Vulkan.jpg");
       background-position: 90% 90%;
@@ -107,12 +113,14 @@
       background: url("../imgs/Fjerdingen.jpg");
       background-position: 60% 60%;
       background-size: cover;
-      transform: translate(50%, -50%); }
+      transform: translate(50%, -50%);
+      animation-delay: 133ms; }
     .map .campus#Brenneriveien {
       background: url("../imgs/brenneriveien.jpg");
       background-position: 60% 60%;
       background-size: cover;
-      transform: translate(170%, -50%); }
+      transform: translate(170%, -50%);
+      animation-delay: 266ms; }
     .map .campus h1 {
       color: #ef8f12;
       text-shadow: 0 0 1px #000;
@@ -279,12 +287,12 @@
   .map .scrollArrow {
     height: 70px;
     width: 70px;
+    margin-left: -35px;
     background: url("../imgs/DropDownArrow.png");
     background-size: contain;
     position: absolute;
     bottom: 10px;
     left: 50%;
-    transform: translate(-50%, 0);
     z-index: 200;
     animation: bounce 400ms ease-out 2s 9 alternate forwards, fall 500ms ease-in 5.6s forwards; }
 
@@ -304,15 +312,21 @@
 
 @keyframes bounce {
   0% {
-    transform: translate(-50%, 0%); }
+    transform: translateY(0%); }
   100% {
-    transform: translate(-50%, -80%); } }
+    transform: translateY(-80%); } }
 
 @keyframes fall {
   0% {
-    transform: translate(-50%, -80%); }
+    transform: translateY(-80%); }
   100% {
-    transform: translate(-50%, 150%); } }
+    transform: translateY(150%); } }
+
+@keyframes bounceSmall {
+  0% {
+    margin-top: 0px; }
+  100% {
+    margin-top: -50px; } }
 
 @keyframes pulse {
   0% {

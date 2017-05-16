@@ -20,7 +20,18 @@ var map = {
   seeAllBtn: null,
   cover: null,
   mapText: null,
-  classIgnore: '.cover, .location, .title, .desc, .scrollArrow, .mapText, .backBtn, .seeAllBtn'
+  classIgnore: '.cover, .location, .title, .desc, .scrollArrow, .mapText, .backBtn, .seeAllBtn',
+  campusBounce: function() {
+    $.each(map.campus, function(key,val) {
+      val.dom.addClass('bounce');
+    });
+
+    setTimeout(function() {
+      $.each(map.campus, function(key,val) {
+        val.dom.removeClass('bounce');
+      });
+    }, 2000);
+  }
 };
 
 var loc = {

@@ -53,6 +53,14 @@ $(document).ready(function() {
   // Get filterWrapper
   nav.filterWrapper = $('.filterWrapper');
 
+  // if page == home or map
+  if (nav.sel === 0 || nav.sel === 1) {
+    $(nav.links[0]).attr('href', '#');
+    $(nav.links[0]).click(function() {map.campusBounce();});
+    $(nav.links[1]).attr('href', '#');
+    $(nav.links[1]).click(function() {map.campusBounce();});
+  }
+
   // replace nav.sel(index) with corresponding element
   nav.sel = $(nav.links[nav.sel]);
 
