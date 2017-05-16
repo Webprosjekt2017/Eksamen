@@ -38,3 +38,9 @@
     margin: 80px 0;
     font-size: 20px; 
 }
+.wrapper .about .westerdalsLogo {
+    height: 300px;
+    position: absolute;
+    right: 50%;
+    transform: translateX(-50%);
+}
