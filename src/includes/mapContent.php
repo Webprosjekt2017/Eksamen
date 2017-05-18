@@ -44,10 +44,10 @@ foreach ($locations as $location) {
                     } ?>
                 </div>
 
-                <div class="desc"><?= 'Beskrivelse her';//nl2br($location['description']) ?></div>
+                <div class="desc"><?=nl2br($location['description']) ?></div>
 
-                <?php if(true /* if location has website */) { ?>
-                    <a class="fanzy" href="#">Gå til hjemmeside</a>
+                <?php if(isset($location['URL']) && $location['URL'] != '') { ?>
+                    <a class="fanzy" href="<?=$location['URL']?>">Gå til hjemmeside</a>
                     <hr>
                 <?php } ?>
 
