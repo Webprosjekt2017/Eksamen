@@ -6,8 +6,8 @@ class Config {
     const
         DB_HOST = 'localhost',
         DB_USER = 'root',
-        DB_PASSWORD = 'password',
-        DB_DATABASE = 'woact_explore',
+        DB_PASSWORD = '',
+        DB_DATABASE = 'derp',
         REQUIRE_DB = true,
         WEBSITE_ONLINE = true;
 

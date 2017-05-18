@@ -15,7 +15,7 @@ var filter = {
     this.resetLocs();
     loc.hide();
 
-    if(this.type.val == '0' && this.name.val === '') return false;
+    if(this.type.val == '0' && this.name.val === '') return;
 
     $('.location').addClass('dim').each(function() {
       if (filter.matchTag(this, filter.type.val) || filter.type.val == '0') {
@@ -30,12 +30,7 @@ var filter = {
   },
   all: function() {
 
-    if(this.page === 0) {
-      this.resetLocs();
-    } else {
-      this.resetCards();
-    }
-    loc.hide();
+    this.resetCards();
 
     if(this.type.val == '0' && this.name.val === '') return false;
 

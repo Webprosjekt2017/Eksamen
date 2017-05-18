@@ -7,6 +7,7 @@
   <!-- SCRIPTS-->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="assets/js/nav.js"></script>
+  <script src="assets/js/main.js"></script>
   <!-- STYLESHEET-->
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet"/>
   <link rel="stylesheet" href="assets/css/main.css"/>
@@ -28,16 +29,6 @@
         echo '<link rel="stylesheet" href="assets/css/contact.css"/>';
     } else if ($_GET["destination"] == 'all') {
         echo '<link rel="stylesheet" href="assets/css/see_all.css"/>';
-    }
-
-    if ($_GET['destination'] == 'all') {
-        echo '<link rel="stylesheet" href="assets/css/map.css"/>';
-        echo '<script src="assets/js/map.js"></script>';
-    }
-
-    if ($_GET['destination'] == 'contact') {
-        echo '<link rel="stylesheet" href="admin/css/toastr.css"/>';
-        echo '<script src="admin/js/toastr.js"></script>';
     }
   ?>
 </head>

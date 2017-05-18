@@ -116,6 +116,8 @@ nav {
         width: 50%; }
       nav .navLinkWrapper .navLink:last-child {
         border-right: none; }
+      nav .navLinkWrapper .navLink:focus {
+        outline: none; }
   nav .filterWrapper {
     width: 60%;
     height: 60px;
