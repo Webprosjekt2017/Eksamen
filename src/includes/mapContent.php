@@ -29,7 +29,7 @@ foreach ($locations as $location) {
                 <div class="arr"></div>
 
                 <?php if (isset($location['images']['0']['path'])) { ?>
-                    <img src="<?= $location['images'][0]['path'] ?>" alt="<?= $location['title'] ?>">
+                    <img src="assets/imgs/<?= $location['images'][0]['path'] ?>" alt="<?= $location['title'] ?>">
                 <?php } ?>
 
                 <?php if ($location['show_title']) { ?>
