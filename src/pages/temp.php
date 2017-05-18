@@ -22,7 +22,6 @@ $days = array('Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'S�
 
 ?>
 
-
 <div id="see_all_container">
     <h1>Vis alt</h1>
     <h3 id="titleC">Fjerdingen</h3>
@@ -97,7 +96,7 @@ $days = array('Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'S�
 
 
     <hr/>
-    <h3 id="titleC">Vulkan</h3>
+    <h3>Vulkan</h3>
     <?php
     $counter = 1;
     foreach ($vulkan as $fLoc) {
@@ -124,14 +123,14 @@ $days = array('Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'S�
 
                 <p class="desc"><?= nl2br($fLoc['description']) ?></p>
                 <?php if ($fLoc['URL'] != '') { ?>
-                    <a class="fanzy" href="<?= $fLoc['URL'] ?>">Gå til hjemmeside</a>
+                    <a href="<?= $fLoc['URL'] ?>">Gå til hjemmeside</a>
                     <hr/>
                 <?php } ?>
 
                 <div class="c2 v-align-content">
                     <div class="open">
-                        <div class="status">Åpningstider</div>
-                        <img src="assets/imgs/DropDownArrow.png" class="toggleBtn" onClick="showTimes(this)" data-open="false">
+                        <div class="status">Open Now</div>
+                        <div class="toggleBtn" onClick="showTimes(this)" data-open="false"></div>
 
                         <div class="times">
                             <?php foreach ($fLoc['hours'] as $hours) {
@@ -168,7 +167,7 @@ $days = array('Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'S�
     if ($counter % 4 != 1) echo "</div>"; ?>
     <hr/>
 
-    <h3 id="titleC">Brenneriveien</h3>
+    <h3>Brenneriveien</h3>
     <?php
     $counter = 1;
     foreach ($brenneriveien as $fLoc) {
@@ -195,14 +194,14 @@ $days = array('Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'S�
 
                 <p class="desc"><?= nl2br($fLoc['description']) ?></p>
                 <?php if ($fLoc['URL'] != '') { ?>
-                    <a class="fanzy" href="<?= $fLoc['URL'] ?>">Gå til hjemmeside</a>
+                    <a href="<?= $fLoc['URL'] ?>">Gå til hjemmeside</a>
                     <hr/>
                 <?php } ?>
 
                 <div class="c2 v-align-content">
                     <div class="open">
-                        <div class="status">Åpningstider</div>
-                        <img src="assets/imgs/DropDownArrow.png" class="toggleBtn" onClick="showTimes(this)" data-open="false">
+                        <div class="status">Open Now</div>
+                        <div class="toggleBtn" onClick="showTimes(this)" data-open="false"></div>
 
                         <div class="times">
                             <?php foreach ($fLoc['hours'] as $hours) {
