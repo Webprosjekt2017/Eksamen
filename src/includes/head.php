@@ -7,17 +7,21 @@
   <!-- SCRIPTS-->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="assets/js/nav.js"></script>
-  <script src="assets/js/map.js"></script>
-  <script src="assets/js/filter.js"></script>
   <!-- STYLESHEET-->
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet"/>
   <link rel="stylesheet" href="assets/css/main.css"/>
-  <link rel="stylesheet" href="assets/css/map.css"/>
   <link rel="stylesheet" href="assets/css/nav.css"/>
   <link rel="stylesheet" href="assets/css/footer.css"/>
-  <link rel="stylesheet" href="assets/css/home.css"/>
+  <!-- PAGE SPECIFIC -->
     <?php
-    if ($_GET["destination"] == 'about') {
+    if($_GET["destination"] == 'home' || $_GET["destination"] == 'map' || $_GET["destination"] == 'all') {
+      echo '<script src="assets/js/filter.js"></script>';
+    }
+    if ($_GET["destination"] == 'home' || $_GET["destination"] == 'map') {
+      echo '<link rel="stylesheet" href="assets/css/home.css"/>';
+      echo '<link rel="stylesheet" href="assets/css/map.css"/>';
+      echo '<script src="assets/js/map.js"></script>';
+    } else if ($_GET["destination"] == 'about') {
         echo '<link rel="stylesheet" href="assets/css/about-us.css"/>';
     } else if ($_GET["destination"] == 'contact') {
         echo '<script src="assets/js/contact.js"></script>';

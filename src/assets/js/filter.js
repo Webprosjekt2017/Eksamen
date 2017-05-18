@@ -72,7 +72,7 @@ var filter = {
 
 $(document).ready(function() {
 
-  if(filterPage) {
+  if(filterPage !== undefined) {
     filter.page = filterPage;
   }
 
@@ -99,6 +99,9 @@ $(document).ready(function() {
       filter.all();
     });
   }
+
+  console.log('filter init');
+  console.log(filter);
 
 });
 

@@ -71,7 +71,7 @@ var filter = {
 
 $(document).ready(function() {
 
-  if(filterPage) {
+  if(filterPage !== undefined) {
     filter.page = filterPage;
   }
 
