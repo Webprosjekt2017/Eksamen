@@ -14,10 +14,10 @@
   <link rel="stylesheet" href="assets/css/footer.css"/>
   <!-- PAGE SPECIFIC -->
     <?php
-    if($_GET["destination"] == 'home' || $_GET["destination"] == 'map' || $_GET["destination"] == 'all' || !isset($_GET['destionation'])) {
+    if($_GET["destination"] == 'home' || $_GET["destination"] == 'map' || $_GET["destination"] == 'all' || !isset($_GET['destination'])) {
       echo '<script src="assets/js/filter.js"></script>';
     }
-    if ($_GET["destination"] == 'home' || $_GET["destination"] == 'map' || !isset($_GET['destionation'])) {
+    if ($_GET["destination"] == 'home' || $_GET["destination"] == 'map' || !isset($_GET['destination'])) {
       echo '<link rel="stylesheet" href="assets/css/home.css"/>';
       echo '<link rel="stylesheet" href="assets/css/map.css"/>';
       echo '<script src="assets/js/map.js"></script>';
