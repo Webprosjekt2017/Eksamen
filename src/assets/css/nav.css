@@ -3,7 +3,8 @@ nav {
   height: 80px;
   background: #eee;
   border-bottom: 4px solid #ef8f12;
-  box-shadow: 0 2px 15px 0 #888;
+  -webkit-box-shadow: 0 2px 15px 0 #888;
+          box-shadow: 0 2px 15px 0 #888;
   position: fixed;
   top: 0;
   z-index: 1000; }
@@ -27,29 +28,43 @@ nav {
   nav .navLinkWrapper {
     width: 60%;
     height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background: #eee;
-    align-content: stretch;
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
     position: absolute;
     top: 10px;
     right: 10px;
-    transform: translate(0%);
+    -webkit-transform: translate(0%);
+            transform: translate(0%);
+    -webkit-transition: -webkit-transform 300ms ease-in-out;
+    transition: -webkit-transform 300ms ease-in-out;
     transition: transform 300ms ease-in-out;
+    transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
     z-index: 100; }
     nav .navLinkWrapper.closed {
-      transform: translate(96%);
-      transition-duration: 1000ms; }
+      -webkit-transform: translate(96%);
+              transform: translate(96%);
+      -webkit-transition-duration: 1000ms;
+              transition-duration: 1000ms; }
       nav .navLinkWrapper.closed #navDrawerKnob .arrow {
-        transform: skewX(-20deg) translate(0, -50%) rotate(90deg); }
+        -webkit-transform: skewX(-20deg) translate(0, -50%) rotate(90deg);
+                transform: skewX(-20deg) translate(0, -50%) rotate(90deg); }
     nav .navLinkWrapper #navDrawerKnob {
       height: 80px;
       width: 32px;
-      flex: none;
+      -webkit-box-flex: 0;
+          -ms-flex: none;
+              flex: none;
       margin-top: -10px;
       border-left: 4px solid #ef8f12;
-      transform: skewX(20deg);
+      -webkit-transform: skewX(20deg);
+              transform: skewX(20deg);
       position: relative;
       opacity: 0;
+      -webkit-transition: opacity 300ms ease-in-out;
       transition: opacity 300ms ease-in-out;
       cursor: pointer; }
       nav .navLinkWrapper #navDrawerKnob.show {
@@ -63,14 +78,19 @@ nav {
         background-position: top, bottom;
         position: relative;
         top: 50%;
+        -webkit-transition: -webkit-transform 300ms ease-in-out;
+        transition: -webkit-transform 300ms ease-in-out;
         transition: transform 300ms ease-in-out;
-        transform: skewX(-20deg) translate(0, -50%) rotate(-90deg); }
+        transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+        -webkit-transform: skewX(-20deg) translate(0, -50%) rotate(-90deg);
+                transform: skewX(-20deg) translate(0, -50%) rotate(-90deg); }
     nav .navLinkWrapper .navLink {
       display: block;
       height: 100%;
       width: 100%;
       border-right: 1px solid #ef8f12;
-      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
       text-align: center;
       line-height: 200%;
       font-size: 30px;
@@ -85,8 +105,10 @@ nav {
         left: 0;
         bottom: 5px;
         pointer-events: none;
+        -webkit-transition: all ease-in-out 300ms;
         transition: all ease-in-out 300ms;
-        transform: translateX(10%); }
+        -webkit-transform: translateX(10%);
+                transform: translateX(10%); }
       nav .navLinkWrapper .navLink:nth-child(2) {
         border-right: none;
         width: 50%; }
@@ -97,17 +119,23 @@ nav {
   nav .filterWrapper {
     width: 60%;
     height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-content: stretch;
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
     position: absolute;
     top: 10px;
     right: 50px;
     opacity: 0;
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    -webkit-transition: all 500ms ease-in-out;
     transition: all 500ms ease-in-out; }
     nav .filterWrapper.show {
       opacity: 1;
-      transform: translateY(0); }
+      -webkit-transform: translateY(0);
+              transform: translateY(0); }
     nav .filterWrapper .filter {
       width: 40%;
       padding: 10px;
@@ -116,6 +144,7 @@ nav {
       border: 2px solid #ef8f12;
       margin: 0 5%;
       border-radius: 4px;
+      -webkit-transition: border-color 200ms ease-in-out;
       transition: border-color 200ms ease-in-out; }
     nav .filterWrapper select {
       cursor: pointer;

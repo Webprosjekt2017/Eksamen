@@ -29,7 +29,9 @@
     border-radius: 4px;
     position: relative;
     left: 50%;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    -webkit-transition: border-color 300ms ease-in-out;
     transition: border-color 300ms ease-in-out;
 }
 
@@ -57,7 +59,9 @@
     border-radius: 4px;
     position: relative;
     left: 50%;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    -webkit-transition: border-color 300ms ease-in-out;
     transition: border-color 300ms ease-in-out;
 }
 
@@ -84,11 +88,16 @@
     white-space: nowrap;
     background: #ef8f12;
     border-radius: 5px;
+    -webkit-transition: -webkit-transform 300ms ease-in-out;
+    transition: -webkit-transform 300ms ease-in-out;
     transition: transform 300ms ease-in-out;
+    transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
     position: absolute;
-    transform: translateX(-90%);
+    -webkit-transform: translateX(-90%);
+            transform: translateX(-90%);
 }
 
 .tooltiptext.show span {
-  transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
 }
