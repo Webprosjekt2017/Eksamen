@@ -179,6 +179,7 @@ $(document).ready(function() {
       // Get positions form json
       $.getJSON( "assets/" + $(this).text().trim().toLowerCase() + ".json", function( data ) {
         loc.pos = data;
+        console.log(data);
       });
 
       // Start trying to print the locations
