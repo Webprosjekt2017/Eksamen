@@ -29,5 +29,15 @@
     } else if ($_GET["destination"] == 'all') {
         echo '<link rel="stylesheet" href="assets/css/see_all.css"/>';
     }
+
+    if ($_GET['destination'] == 'all') {
+        echo '<link rel="stylesheet" href="assets/css/map.css"/>';
+        echo '<script src="assets/js/map.js"></script>';
+    }
+
+    if ($_GET['destination'] == 'contact') {
+        echo '<link rel="stylesheet" href="admin/css/toastr.css"/>';
+        echo '<script src="admin/js/toastr.js"></script>';
+    }
   ?>
 </head>

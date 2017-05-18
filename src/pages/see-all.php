@@ -58,7 +58,7 @@ $days = array('Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'S�
 
                 <div class="c2 v-align-content">
                     <div class="open">
-                        <div class="status">Åpningstider</div>
+                        <div class="status">Åpent</div>
                         <img src="assets/imgs/DropDownArrow.png" class="toggleBtn" onClick="showTimes(this)" data-open="false">
 
                         <div class="times">
@@ -130,7 +130,7 @@ $days = array('Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'S�
 
                 <div class="c2 v-align-content">
                     <div class="open">
-                        <div class="status">Åpningstider</div>
+                        <div class="status">Åpent</div>
                         <img src="assets/imgs/DropDownArrow.png" class="toggleBtn" onClick="showTimes(this)" data-open="false">
 
                         <div class="times">
@@ -201,7 +201,7 @@ $days = array('Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'S�
 
                 <div class="c2 v-align-content">
                     <div class="open">
-                        <div class="status">Åpningstider</div>
+                        <div class="status">Åpent</div>
                         <img src="assets/imgs/DropDownArrow.png" class="toggleBtn" onClick="showTimes(this)" data-open="false">
 
                         <div class="times">
