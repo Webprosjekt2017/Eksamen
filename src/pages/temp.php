@@ -24,7 +24,7 @@ $days = array('Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'LÃ¸rdag', 'SÃ
 
 <div id="see_all_container">
     <h1>Vis alt</h1>
-    <h3>Fjerdingen</h3>
+    <h3 id="titleC">Fjerdingen</h3>
     <?php
     $counter = 1;
     foreach ($fjerdingen as $fLoc) {
@@ -51,14 +51,14 @@ $days = array('Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'LÃ¸rdag', 'SÃ
 
                 <p class="desc"><?= nl2br($fLoc['description']) ?></p>
                 <?php if ($fLoc['URL'] != '') { ?>
-                    <a href="<?= $fLoc['URL'] ?>">GÃ¥ til hjemmeside</a>
+                    <a class="fanzy" href="<?= $fLoc['URL'] ?>">GÃ¥ til hjemmeside</a>
                     <hr/>
                 <?php } ?>
 
                 <div class="c2 v-align-content">
                     <div class="open">
-                        <div class="status">Open Now</div>
-                        <div class="toggleBtn" onClick="showTimes(this)" data-open="false"></div>
+                        <div class="status">Ã…pningstider</div>
+                        <img src="assets/imgs/DropDownArrow.png" class="toggleBtn" onClick="showTimes(this)" data-open="false">
 
                         <div class="times">
                             <?php foreach ($fLoc['hours'] as $hours) {
@@ -93,6 +93,8 @@ $days = array('Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'LÃ¸rdag', 'SÃ
         $counter++; ?>
     <?php }
     if ($counter % 4 != 1) echo "</div>"; ?>
+
+
     <hr/>
     <h3>Vulkan</h3>
     <?php
@@ -235,6 +237,8 @@ $days = array('Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'LÃ¸rdag', 'SÃ
     <?php }
     if ($counter % 4 != 1) echo "</div>"; ?>
 </div>
+
+
 <script>
     nav.sel = 2;
     filterPage = 1;
