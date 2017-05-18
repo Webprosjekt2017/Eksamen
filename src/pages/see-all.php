@@ -23,8 +23,8 @@ $days = array('Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'LÃ¸rdag', 'SÃ
 ?>
 
 
-<div id="see_all_container">
-    
+<div id="see_all_container" id="main">
+
     <div class="filterboks">
     <select class="filter" id="filter-type-onpage">
       <option value="0">Hva ser du etter?</option>
@@ -39,7 +39,7 @@ $days = array('Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'LÃ¸rdag', 'SÃ
     </select>
     <input class="filter" id="filter-name-onpage" type="text" placeholder="Kjenner du navnet?"/>
     </div>
-    
+
     <h1>Vis alt</h1>
     <h3 id="titleC">Fjerdingen</h3>
     <?php

@@ -31,11 +31,11 @@ require_once('includes/config.php');
               "showMethod": "fadeIn",
               "hideMethod": "fadeOut"
             };
-  
+
             toastr.success("Meldingen har blitt sendt!", "");</script>');
 } ?>
 
-<div class="row vertical contact_wrapper">
+<div class="row vertical contact_wrapper" id="main">
     <div class="c1 h-center-content" id="contact_info">
         <div class="contact_form">
             <form id="contact" action="" role="form" method="post">
