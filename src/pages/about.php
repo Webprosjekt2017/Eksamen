@@ -1,4 +1,4 @@
-<div class="row" id="main">
+<div class="aboutusbox row" id="main">
   <div class="c2 column middleline">
       <h1>
             Om oss
