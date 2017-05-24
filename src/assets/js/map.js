@@ -82,11 +82,11 @@ var loc = {
   },
   addOnClick: function() {
     $('.location').click(function() {
-      loc.hide(this); // close all location before opening this one
-      $(this).toggleClass('show');
-    }).children().click(function() {
-      /** temporarily disabled **/
-      //return false;
+      console.log(event.currentTarget);
+      if (!$(event.currentTarget).hasClass('show')) {
+          loc.hide(this); // close all location before opening this one
+          $(this).toggleClass('show');
+      }
     });
   },
   hide: function(not) {
