@@ -1,5 +1,11 @@
-<?php session_start(); ?>
-<?php require_once('1993fkdkau23fjs728fkf90124kfasdf.php') ?>
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+require_once('1993fkdkau23fjs728fkf90124kfasdf.php');
+
+?>
 
 <!doctype html>
 <html lang="no">

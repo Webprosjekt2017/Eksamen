@@ -1,5 +1,8 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 require_once ('../includes/config.php');
 
 if (!isset($_SESSION['logged_in']) or !$_SESSION['logged_in']) {
