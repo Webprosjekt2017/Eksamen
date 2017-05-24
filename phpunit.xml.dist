@@ -23,6 +23,7 @@
                 <file>./src/includes/globals.php</file>
                 <file>./src/includes/head.php</file>
                 <file>./src/includes/mapContent.php</file>
+                <file>./src/pages/see-all.php</file>
                 <file>./src/includes/Database.php</file>
                 <file>./src/includes/ExploreDatabase.php</file>
             </exclude>
