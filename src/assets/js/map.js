@@ -85,7 +85,8 @@ var loc = {
       loc.hide(this); // close all location before opening this one
       $(this).toggleClass('show');
     }).children().click(function() {
-      return false;
+      /** temporarily disabled **/
+      //return false;
     });
   },
   hide: function(not) {
