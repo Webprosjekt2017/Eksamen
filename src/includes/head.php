@@ -32,7 +32,9 @@
         echo '<link rel="stylesheet" href="assets/css/about-us.css"/>';
     } else if ($_GET["destination"] == 'contact') {
         echo '<script src="assets/js/contact.js"></script>';
+        echo '<script src="admin/js/toastr.js"></script>';
         echo '<link rel="stylesheet" href="assets/css/contact.css"/>';
+        echo '<link rel="stylesheet" href="admin/css/toastr.css"/>';
     } else if ($_GET["destination"] == 'all') {
         echo '<link rel="stylesheet" href="assets/css/see_all.css"/>';
     }
