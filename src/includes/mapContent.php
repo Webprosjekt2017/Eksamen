@@ -33,8 +33,8 @@ foreach ($locations as $location) {
             <div class="hover-title">
                 <div></div><?= $location['title'] ?></div>
 
+            <div class="arr"></div>
             <div class="locInfo">
-                <div class="arr"></div>
 
                 <!-- Vis bilde hvis det eksisterer en bilde -->
                 <?php if (isset($location['images']['0']['path'])) { ?>

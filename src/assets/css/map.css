@@ -203,6 +203,10 @@
               transform: translate(-3px, -3px);
       -webkit-animation: pulse 600ms ease-in-out 300ms 3;
               animation: pulse 600ms ease-in-out 300ms 3; }
+    .map .location.show .arr {
+      opacity: 1;
+      -webkit-transition-delay: 200ms;
+              transition-delay: 200ms; }
     .map .location.show .locInfo {
       pointer-events: all;
       opacity: 1;
@@ -246,6 +250,24 @@
         left: 50%;
         -webkit-transform: translate(-12px, 0);
                 transform: translate(-12px, 0); }
+    .map .location .arr {
+      height: 0;
+      width: 0;
+      border-bottom: 12px solid transparent;
+      border-top: 12px solid transparent;
+      border-right: 12px solid #ef8f12;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      position: absolute;
+      top: 50%;
+      left: 26px;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      opacity: 0;
+      -webkit-transition: opacity 200ms ease-in-out;
+      transition: opacity 200ms ease-in-out;
+      -webkit-transition-delay: 0ms;
+              transition-delay: 0ms; }
     .map .location .locInfo {
       pointer-events: none;
       height: 400px;
@@ -261,35 +283,15 @@
       -webkit-transition: all 300ms ease-in-out;
       transition: all 300ms ease-in-out;
       z-index: 500;
-      overflow-y: auto;
-      overflow-x: hidden; }
+      overflow-y: auto; }
       .map .location .locInfo.top {
         top: -20px; }
-        .map .location .locInfo.top .arr {
-          top: 12px; }
       .map .location .locInfo.bottom {
         top: auto;
         bottom: -20px; }
-        .map .location .locInfo.bottom .arr {
-          top: auto;
-          bottom: 12px; }
       .map .location .locInfo.left {
         right: auto;
         left: -270px; }
-        .map .location .locInfo.left .arr {
-          left: auto;
-          right: -12px;
-          border-right: none;
-          border-left: 12px solid #ef8f12; }
-      .map .location .locInfo .arr {
-        height: 0;
-        width: 0;
-        border-bottom: 12px solid transparent;
-        border-top: 12px solid transparent;
-        border-right: 12px solid #ef8f12;
-        position: absolute;
-        top: 172px;
-        left: -12px; }
       .map .location .locInfo img {
         width: 100%;
         height: 80px; }
