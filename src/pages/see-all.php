@@ -111,6 +111,13 @@ EOD;
 EOD;
         }
 
+        if (isset($location['address'])) {
+            $string .= <<<EOD
+<div class="address">{$location['address']}</div>
+<hr>
+EOD;
+        }
+
         $string .= <<<EOD
 <div class="c2 v-align-content">
 <div class="open">
