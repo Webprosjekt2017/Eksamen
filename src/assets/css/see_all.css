@@ -198,3 +198,17 @@ hr {
 .infokort.dim .tags span {
     background-color: #aaa;
 }
+
+.infokort .address {
+  padding-left: 30px;
+  padding-top: 10px;
+  position: relative;
+}
+.infokort .address::before {
+  display: block;
+  content: 'Addresse';
+  font-weight: bold;
+  position: absolute;
+  top: -10px;
+  left: 8px;
+}
