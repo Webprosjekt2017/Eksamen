@@ -67,6 +67,7 @@ var loc = {
       }
       if(val.x > 80) {
         $('#' + key + ' .locInfo').addClass('left');
+        $('#' + key + ' .arr').addClass('left');
       }
     });
 
