@@ -32,4 +32,5 @@ exclude_paths:
 - _sass/
 - Concept
 - src/assets/js/jsvendor
+- src/assets/js/filter.js
 - src/admin
