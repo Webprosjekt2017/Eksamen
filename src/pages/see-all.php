@@ -111,9 +111,9 @@ EOD;
 EOD;
         }
 
-        if (isset($location['address'])) {
+        if (isset($fLoc['address'])) {
             $string .= <<<EOD
-<div class="address">{$location['address']}</div>
+<div class="address">{$fLoc['address']}</div>
 <hr>
 EOD;
         }
