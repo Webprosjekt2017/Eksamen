@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 'on');
+//error_reporting(E_ALL);
+//ini_set('display_errors', 'on');
 
 require_once('includes/config.php');
 require_once('includes/ExploreDatabase.php');
@@ -46,10 +46,16 @@ require_once('includes/ExploreDatabase.php');
 
 <?php
 
+/*
+ * Funksjon for å sortere alfabetisk, basert på tittel.
+ */
 function compareByName($a, $b) {
     return strcmp($a["title"], $b["title"]);
 }
 
+/*
+ * Funksjon for å printe ut lokasjonene til en campus.
+ */
 function printCampus($campusLoc) {
     $days = array('Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'Søndag');
     $db = new ExploreDatabase();

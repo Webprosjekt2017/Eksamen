@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 'on');
+/*error_reporting(E_ALL);
+ini_set('display_errors', 'on');*/
 
 require_once ('includes/config.php');
 require_once ('includes/ExploreDatabase.php');
@@ -16,53 +16,39 @@ if (isset($_GET["destination"])) {
         case 'about':
             $pageTitle = "Om oss";
             require_once("includes/head.php");
-            echo "<body>";
             require_once("includes/nav.php");
             require_once("pages/about.php");
             require_once("includes/footer.php");
             break;
-        case 'debug':
-            require_once ("pages/queries.php");
-            break;
         case 'contact':
             $pageTitle = "Kontakt oss";
             require_once("includes/head.php");
-            echo "<body>";
             require_once("includes/nav.php");
             require_once("pages/contact.php");
             require_once("includes/footer.php");
             break;
         case 'all':
             $pageTitle = "Vis Alt";
-            echo "<!DOCTYPE html>";
-            echo "<html>";
             require_once("includes/head.php");
-            echo "<body>";
             require_once("includes/nav.php");
             require_once("pages/see-all.php");
             require_once("includes/footer.php");
             break;
         case 'map':
             $pageTitle = "Kart";
-            echo '<!DOCTYPE html>';
-            echo '<html>';
             require_once("includes/head.php");
-            echo '<body>';
+            echo '<script>nav.sel = 1;</script>';
             require_once("includes/nav.php");
             require_once("pages/home.php");
             require_once("includes/footer.php");
-            echo '<script>nav.sel = 1;</script>';
             break;
         default:
             $pageTitle = "Hjem";
-            echo '<!DOCTYPE html>';
-            echo '<html>';
             require_once("includes/head.php");
-            echo '<body>';
+            echo '<script>nav.sel = 0;</script>';
             require_once("includes/nav.php");
             require_once("pages/home.php");
             require_once("includes/footer.php");
-            echo '<script>nav.sel = 0;</script>';
             break;
     }
     die();
