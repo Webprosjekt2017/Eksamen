@@ -212,3 +212,16 @@ hr {
   top: 0;
   left: 8px;
 }
+.infokort .distance {
+  padding-left: 20px;
+  padding-top: 20px;
+  position: relative;
+}
+.infokort .distance::before {
+  display: block;
+  content: 'Gåtid';
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 8px;
+}

@@ -155,11 +155,13 @@ EOD;
 
         if ((isset($fLoc['distance'])) && ($fLoc['distance'] != '')) {
             $string .= <<<EOD
-<p>{$fLoc['distance']} min</p>
+<hr>
+<div class="distance">{$fLoc['distance']} min</div>
 EOD;
         } else {
             $string .= <<<EOD
-<p>Ukjent avstand</p>
+<hr>
+<div class="distance">Ukjent avstand</div>
 EOD;
         }
 
