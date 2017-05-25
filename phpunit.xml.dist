@@ -26,6 +26,7 @@
                 <file>./src/pages/see-all.php</file>
                 <file>./src/includes/Database.php</file>
                 <file>./src/includes/ExploreDatabase.php</file>
+                <file>./src/assets/js/filter.js</file>
             </exclude>
         </whitelist>
     </filter>
