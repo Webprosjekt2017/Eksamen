@@ -206,7 +206,7 @@ hr {
 }
 .infokort .address::before {
   display: block;
-  content: 'Addresse';
+  content: 'Adresse';
   font-weight: bold;
   position: absolute;
   top: -10px;
