@@ -30,13 +30,13 @@
           Velkommen til Matvrak. Her kan du enkelt finne nærliggende spisesteder, utesteder og daglivare. Alle lokasjonene er under 10 minutter gåavstand fra campusene til Westerdals Olso ACT. Øverst på siden finner du en navigasjonsbar som gjør det enkelt for deg å finne mer informasjon. 
         </p>
       </div>
-        <div class="c2">
+        <div class="c2 rel">
             <img class="homepageimg" src="assets/imgs/Fjerdingen.png"/>
         </div>
     </div>
     <div class="row about">
         
-        <div class="c2">
+        <div class="c2 rel">
             <img class="westerdalsLogo" src="assets/imgs/Icons&logos-imgs/WACT_hovedlogo_sort_rgb.png"/>
         </div>
         <div class="c2">
