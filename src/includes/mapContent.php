@@ -64,6 +64,11 @@ foreach ($locations as $location) {
                     <hr>
                 <?php } ?>
 
+                <?php if(isset($location['address'])) { ?>
+                    <div class="address"><?= $location['address'] ?></div>
+                    <hr>
+                <?php } ?>
+
                 <div class="open">
                     <div class="status">Åpningstider</div>
                     <div class="toggleBtn" onClick="showTimes(this)" data-open="false"></div>
