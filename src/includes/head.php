@@ -1,4 +1,5 @@
-
+<!DOCTYPE html>
+<html lang="no">
 <head>
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge"/>
@@ -37,3 +38,4 @@
     }
   ?>
 </head>
+<body>
