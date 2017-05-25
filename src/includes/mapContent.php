@@ -95,7 +95,7 @@ foreach ($locations as $location) {
                 <!-- Skriv ut avstand å gå fra campus til stedet -->
                 <?php if(true /*isset($location['distance'])*/) { ?>
                     <hr>
-                    <div class="distance"><?= '5 min'/*$location['distance']*/ ?> min</div>
+                    <div class="distance"><?= $location['distance'] ?> min</div>
                 <?php } ?>
 
             </div>
