@@ -56,6 +56,10 @@ button.toast-close-button {
   border: 0;
   -webkit-appearance: none;
 }
+.custom-pos {
+  top: 100px;
+  right: 12px
+}
 .toast-top-center {
   top: 0;
   right: 0;
@@ -80,7 +84,7 @@ button.toast-close-button {
   top: 12px;
   left: 12px;
 }
-.toast-top-right {
+.toast-ght {
   top: 12px;
   right: 12px;
 }
