@@ -27,7 +27,7 @@
       <div class="c2">
         <h1>Hola Hombres</h1>
         <p class="right">
-          Velkommen til denne siden, ved bruk av Matvrak skal du enkelt kunne finne nærliggende spisesteder, utesteder og daglivare. Alle lokasjonene er under 10 minutter gå avstand fra campusene. Øverst på siden finner du en navigasjons bar som gjør det enkelt for deg å finne mer informasjon. Denne blir gjort om til en søkebar og filter etter at du har trykket på en av campusene du vil finne lokasjoner i nærheten av.
+          Velkommen til Matvrak. Her kan du enkelt finne nærliggende spisesteder, utesteder og daglivare. Alle lokasjonene er under 10 minutter gåavstand fra campusene til Westerdals Olso ACT. Øverst på siden finner du en navigasjonsbar som gjør det enkelt for deg å finne mer informasjon. 
         </p>
       </div>
         <div class="c2">
