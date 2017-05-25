@@ -46,7 +46,8 @@
 }
 
 .contact_form input[type="submit"] {
-    width: 40%
+    width: 40%;
+    cursor: pointer;;
 }
 
 #message_box {
