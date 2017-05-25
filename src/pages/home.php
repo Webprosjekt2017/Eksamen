@@ -31,7 +31,7 @@
         </p>
       </div>
         <div class="c2">
-            <img class="homepageimg" src="assets/imgs/Nothing_is_good_enough_Sad_Pepe_placeholder.png"/>
+            <img class="homepageimg" src="assets/imgs/Fjerdingen.png"/>
         </div>
     </div>
     <div class="row about">
