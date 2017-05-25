@@ -258,7 +258,8 @@
       opacity: 0;
       -webkit-transition: all 300ms ease-in-out;
       transition: all 300ms ease-in-out;
-      z-index: 500; }
+      z-index: 500;
+      overflow-y: scroll; }
       .map .location .locInfo.top {
         top: -20px; }
         .map .location .locInfo.top .arr {
