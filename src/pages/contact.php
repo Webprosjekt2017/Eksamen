@@ -3,6 +3,10 @@ require_once('includes/config.php');
 ?>
 
 <?php if (isset($_POST['message'])) {
+    /*
+     * Åpne en tilkobling til databasen, og legg inn meldingen som ble sendt.
+     * Gi brukeren en toast om at meldingen ble sendt.
+     */
     $conn = new PDO('mysql:host=' . Config::DB_HOST . ';dbname=' . Config::DB_DATABASE . ';charset=utf8', Config::DB_USER, Config::DB_PASSWORD);
     $stmt = $conn->prepare('INSERT INTO `contact` (firstname, email, subject, message) VALUES (:fname, :email, :subject, :message)');
 

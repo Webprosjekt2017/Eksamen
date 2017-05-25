@@ -14,6 +14,11 @@
   <link rel="stylesheet" href="assets/css/nav.css"/>
   <link rel="stylesheet" href="assets/css/footer.css"/>
   <!-- PAGE SPECIFIC -->
+
+    <?php
+    /* Brukes for å hente inn riktig css, siden alle sidene bruker samme header */
+    ?>
+
     <?php
     if($_GET["destination"] == 'home' || $_GET["destination"] == 'map' || $_GET["destination"] == 'all' || $_GET['destination'] == '') {
       echo '<script src="assets/js/filter.js"></script>';
