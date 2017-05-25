@@ -23,7 +23,7 @@ require_once('includes/config.php');
               "debug": false,
               "newestOnTop": false,
               "progressBar": false,
-              "positionClass": "toast-bottom-right",
+              "positionClass": "custom-pos",
               "preventDuplicates": false,
               "onclick": null,
               "showDuration": "300",
