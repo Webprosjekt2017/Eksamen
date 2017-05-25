@@ -81,8 +81,8 @@ var loc = {
     $('.location').remove();
   },
   addOnClick: function() {
-    $('.location').click(function() {
-      if (!$(event.currentTarget).hasClass('show')) {
+    $('.location').click(function(e) {
+      if ( this == e.target ) {
           loc.hide(this); // close all location before opening this one
           $(this).toggleClass('show');
       }
