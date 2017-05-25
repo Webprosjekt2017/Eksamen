@@ -73,8 +73,9 @@ foreach ($locations as $location) {
                     </div>
                 </div>
 
-                <?php if(true/*isset($location['distance'])*/) { ?>
-                    <div class="distance"><?= 'test dist'/*$location['distance']*/?></div>
+                <?php if(isset($location['distance'])) { ?>
+                    <hr>
+                    <div class="distance"><?= $location['distance'] ?></div>
                 <?php } ?>
 
             </div>

@@ -214,6 +214,8 @@
       opacity: 0 !important; }
     .map .location:hover .hover-title {
       opacity: 1; }
+    .map .location hr {
+      margin: 20px 0; }
     .map .location .hover-title {
       min-width: 150px;
       padding: 10px;
@@ -328,6 +330,8 @@
           .map .location .locInfo .open .toggleBtn[data-open="true"] {
             -webkit-transform: rotate(180deg);
                     transform: rotate(180deg); }
+      .map .location .locInfo .distance {
+        padding: 0 20px; }
   .map .scrollArrow {
     height: 70px;
     width: 70px;
