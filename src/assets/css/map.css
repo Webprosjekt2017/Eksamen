@@ -249,6 +249,7 @@
       pointer-events: none;
       height: 400px;
       width: 250px;
+      padding-bottom: 15px;
       border: 2px solid #ef8f12;
       border-radius: 3px;
       background: #eee;
@@ -259,7 +260,7 @@
       -webkit-transition: all 300ms ease-in-out;
       transition: all 300ms ease-in-out;
       z-index: 500;
-      overflow-y: scroll;
+      overflow-y: auto;
       overflow-x: hidden; }
       .map .location .locInfo.top {
         top: -20px; }
@@ -296,12 +297,14 @@
         margin-top: 0;
         color: #cf6f08; }
       .map .location .locInfo .desc {
+        width: 100%;
         font-size: .95em;
-        margin: 0 10px;
         margin-bottom: 10px;
         border-bottom: 2px solid #ef8f12;
         padding-bottom: 10px;
-        padding-top: 10px; }
+        padding: 10px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box; }
       .map .location .locInfo .open {
         height: 18px;
         margin: 0 10px;

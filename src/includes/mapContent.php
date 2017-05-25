@@ -56,7 +56,7 @@ foreach ($locations as $location) {
                 </div>
 
                 <!-- Skriv ut beskrivelse om stedet -->
-                <div class="desc"><?=nl2br($location['description']) ?></div>
+                <div class="desc"><?= nl2br($location['description']) ?></div>
 
                 <!-- Skriv ut en hyperlenke til stedets hjemmested, hvis det eksisterer -->
                 <?php if(isset($location['URL']) && $location['URL'] != '') { ?>
