@@ -1,7 +1,7 @@
 
 <div class="container" id="main">
   <div class="map">
-    <div class="backBtn"><img src="assets/imgs/DropDownArrow.png" alt/>Tilbake</div>
+    <div class="backBtn"><img src="assets/imgs/icons/DropDownArrow.png" alt/>Tilbake</div>
     <a href="all" class="seeAllBtn">Se som liste</a>
     <div class="mapText">
       <div class="title">Sulten?</div>
@@ -31,13 +31,13 @@
         </p>
       </div>
         <div class="c2 rel">
-            <img class="homepageimg" src="assets/imgs/Fjerdingen.png" alt="Campus Fjerdingen lobby"/>
+            <img class="homepageimg" src="assets/imgs/Fjerdingen-imgs/Fjerdingen.png" alt="Campus Fjerdingen lobby"/>
         </div>
     </div>
     <div class="row about">
 
         <div class="c2 rel">
-            <img class="westerdalsLogo" src="assets/imgs/Icons&logos-imgs/WACT_hovedlogo_sort_rgb.png" alt="Westerdals logo"/>
+            <img class="westerdalsLogo" src="assets/imgs/logo/WACT_hovedlogo_sort_rgb.png" alt="Westerdals logo"/>
         </div>
         <div class="c2">
         <h1>Om Matvraket</h1>

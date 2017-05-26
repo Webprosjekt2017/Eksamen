@@ -3,7 +3,7 @@
   width: 100%;
   height: 45vw;
   border-bottom: 2px solid #ef8f12;
-  background: url("../imgs/fjerdingen-map.png");
+  background: url("../imgs/map/fjerdingen-map.png");
   background-size: cover;
   position: relative;
   -webkit-transition: background 300ms ease-in-out;
@@ -127,13 +127,13 @@
       -webkit-animation-name: bounceSmall;
               animation-name: bounceSmall; }
     .map .campus#Vulkan {
-      background: url("../imgs/Vulkan.jpg");
+      background: url("../imgs/Vulkan-imgs/Vulkan.jpg");
       background-position: 90% 90%;
       background-size: cover;
       -webkit-transform: translate(-70%, -50%);
               transform: translate(-70%, -50%); }
     .map .campus#Fjerdingen {
-      background: url("../imgs/Fjerdingen.jpg");
+      background: url("../imgs/Fjerdingen-imgs/Fjerdingen.jpg");
       background-position: 60% 60%;
       background-size: cover;
       -webkit-transform: translate(50%, -50%);
@@ -141,7 +141,7 @@
       -webkit-animation-delay: 133ms;
               animation-delay: 133ms; }
     .map .campus#Brenneriveien {
-      background: url("../imgs/brenneriveien.jpg");
+      background: url("../imgs/Brenneriveien-imgs/brenneriveien.jpg");
       background-position: 60% 60%;
       background-size: cover;
       -webkit-transform: translate(170%, -50%);
@@ -343,7 +343,7 @@
           width: 18px;
           height: 18px;
           margin-left: 15px;
-          background: url("../imgs/DropDownArrow.png");
+          background: url("../imgs/icons/DropDownArrow.png");
           background-size: 80% 80%;
           background-position: center;
           background-repeat: no-repeat;
@@ -370,7 +370,7 @@
     height: 70px;
     width: 70px;
     margin-left: -35px;
-    background: url("../imgs/DropDownArrow.png");
+    background: url("../imgs/icons/DropDownArrow.png");
     background-size: contain;
     position: absolute;
     bottom: 10px;

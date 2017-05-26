@@ -43,7 +43,7 @@ $(document).ready(function() {
 function changeMap() {
     var campus = $('#campcamp').find('option:selected').text();
     console.log(campus);
-    map.dom.css('background-image', 'url(../assets/imgs/' + map.campus[campus.toLowerCase()].background + ')');
+    map.dom.css('background-image', 'url(../assets/imgs/map/' + map.campus[campus.toLowerCase()].background + ')');
 
     if (campus == "Fjerdingen") {
         $(".cFjerdingen").css('opacity', 1);

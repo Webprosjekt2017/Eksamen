@@ -122,25 +122,26 @@ EOD;
 <div class="c2 v-align-content">
 <div class="open">
 <div class="status">Åpningstider</div>
-<img src="assets/imgs/DropDownArrow.png" class="toggleBtn" alt="Rullegardinmeny" onClick="showTimes(this)" data-open="false">
+<img src="assets/imgs/icons/DropDownArrow.png" class="toggleBtn" alt="Rullegardinmeny" onClick="showTimes(this)" data-open="false">
 <div class="times">
 EOD;
 
         foreach ($fLoc['hours'] as $hours) {
             $start = date("H", strtotime($hours['open']));
             $end = date("H", strtotime($hours['close']));
-            if ($hours['open'] != '00:00:00' && $hours['close'] != '00:00:00') {
-                $string .= <<<EOD
-<div class="row">
-<div class="c2">{$days[$hours['day']]}</div>
-<div class="c2">{$start} - {$end}</div>
-</div>
-EOD;
-            } else {
+            if ($hours['open'] == '00:00:00' && $hours['close'] == '00:00:00') {
                 $string .= <<<EOD
 <div class="row">
 <div class="c2">{$days[$hours['day']]}</div>
 <div class="c2">Stengt</div>
+</div>
+EOD;
+            } else {
+               
+                $string .= <<<EOD
+<div class="row">
+<div class="c2">{$days[$hours['day']]}</div>
+<div class="c2">{$start} - {$end}</div>
 </div>
 EOD;
             }

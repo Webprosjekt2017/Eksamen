@@ -23,7 +23,7 @@ a.fanzy {
     display: inline-block;
     height: 25px;
     width: 25px;
-    background: url("../imgs/link-ico.png");
+    background: url("../imgs/icons/link-ico.png");
     background-size: 100%;
     content: '';
     position: relative;

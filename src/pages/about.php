@@ -11,7 +11,7 @@
         </p>
       </div>
     <div class="c2 column h-center-content v-center-content">
-        <img id="aboutusimg" src="assets/imgs/matvrakLogoStor.png" alt="Matvrak logo stor"/>
+        <img id="aboutusimg" src="assets/imgs/logo/matvrakLogoStor.png" alt="Matvrak logo stor"/>
     </div>
 </div>
 

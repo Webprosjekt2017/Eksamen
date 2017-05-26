@@ -124,7 +124,7 @@ $(document).ready(function() {
     map.seeAllBtn.removeClass('show');
     $('.campus').removeClass('active standby').off('mouseover').mouseover(function() {
       // Hover function chanes map in background
-      map.dom.css('background-image', 'url(assets/imgs/' + $(this).data('bg') + ')');
+      map.dom.css('background-image', 'url(assets/imgs/map/' + $(this).data('bg') + ')');
     });
     loc.clear();
     nav.hideFilter();
@@ -136,7 +136,7 @@ $(document).ready(function() {
     // add hover action
     $(this.dom).data('bg', this.background);
     $(this.dom).mouseover(function() { // Hover function chanes map in background
-      map.dom.css('background-image', 'url(assets/imgs/' + $(this).data('bg') + ')');
+      map.dom.css('background-image', 'url(assets/imgs/map/' + $(this).data('bg') + ')');
     });
 
     $(this.dom).keydown(function(e) {
@@ -189,7 +189,7 @@ $(document).ready(function() {
       // Show filter on nav bar
       nav.showFilter();
       // Change map
-      map.dom.css('background-image', 'url(assets/imgs/' + $(this).data('bg') + ')');
+      map.dom.css('background-image', 'url(assets/imgs/map/' + $(this).data('bg') + ')');
       // Add 'standby' class to sibling campus buttons
       $(this).siblings().not(map.classIgnore).addClass('standby');
       // remove potential 'active' class

@@ -1,6 +1,6 @@
 <a class="skipToMainContent" href="#main">Hopp over navigasjonsmeny</a>
 <nav><a href="home">
-    <div class="logo"><img src="assets/imgs/Logo.png" alt="Matvrak Logo"/>
+    <div class="logo"><img src="assets/imgs/logo/Logo.png" alt="Matvrak Logo"/>
       <h1>Matvrak</h1>
     </div></a>
   <div class="navLinkWrapper">

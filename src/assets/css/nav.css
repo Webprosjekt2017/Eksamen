@@ -72,7 +72,7 @@ nav {
       nav .navLinkWrapper #navDrawerKnob .arrow {
         height: 28px;
         width: 28px;
-        background-image: url("../imgs/DropDownArrow.png"), url("../imgs/DropDownArrow.png");
+        background-image: url("../imgs/icons/DropDownArrow.png"), url("../imgs/icons/DropDownArrow.png");
         background-size: 70%;
         background-repeat: no-repeat;
         background-position: top, bottom;
@@ -150,7 +150,7 @@ nav {
       transition: border-color 200ms ease-in-out; }
     nav .filterWrapper select {
       cursor: pointer;
-      background-image: url("../imgs/DropDownArrow.png");
+      background-image: url("../imgs/icons/DropDownArrow.png");
       background-size: 30px;
       background-position: 98% center;
       background-repeat: no-repeat;
@@ -169,7 +169,7 @@ nav {
         outline: none;
         border-color: #cf6f08; }
     nav .filterWrapper input {
-      background: url("../imgs/SearchIco.png");
+      background: url("../imgs/icons/SearchIco.png");
       background-position: 98% center;
       background-size: 35px 35px;
       background-repeat: no-repeat; }
