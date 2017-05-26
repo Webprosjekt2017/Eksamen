@@ -73,7 +73,7 @@ require_once('includes/config.php');
             <div class="c2" id="info_text_right">
                 <h3>Christian Kroghs Gate 32A</h3>
                 <h3>matvrak@westerdals.no</h3>
-                <h3>99 99 99 99</h3>
+                <h3>123 45 678</h3>
             </div>
         </div>
     </div>

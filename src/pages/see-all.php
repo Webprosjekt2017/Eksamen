@@ -121,8 +121,8 @@ EOD;
         $string .= <<<EOD
 <div class="c2 v-align-content">
 <div class="open">
-<div class="status">Åpent</div>
-<img src="assets/imgs/DropDownArrow.png" class="toggleBtn" onClick="showTimes(this)" data-open="false">
+<div class="status">Åpningstider</div>
+<img src="assets/imgs/DropDownArrow.png" class="toggleBtn" alt="Rullegardinmeny" onClick="showTimes(this)" data-open="false">
 <div class="times">
 EOD;
 

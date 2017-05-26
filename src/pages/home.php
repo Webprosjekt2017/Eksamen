@@ -1,7 +1,7 @@
 
 <div class="container" id="main">
   <div class="map">
-    <div class="backBtn"><img src="assets/imgs/DropDownArrow.png"/>Tilbake</div>
+    <div class="backBtn"><img src="assets/imgs/DropDownArrow.png" alt/>Tilbake</div>
     <a href="all" class="seeAllBtn">Se som liste</a>
     <div class="mapText">
       <div class="title">Sulten?</div>
@@ -25,19 +25,19 @@
   <div class="wrapper">
     <div class="row overview">
       <div class="c2">
-        <h1>Hola Hombres</h1>
+        <h1>Velkommen!</h1>
         <p class="right">
-          Velkommen til Matvrak. Her kan du enkelt finne nærliggende spisesteder, utesteder og daglivare. Alle lokasjonene er under 10 minutter gåavstand fra campusene til Westerdals Olso ACT. Øverst på siden finner du en navigasjonsbar som gjør det enkelt for deg å finne mer informasjon. 
+          Velkommen til Matvrak. Her kan du enkelt finne nærliggende spisesteder, utesteder og daglivare. Alle lokasjonene er under 10 minutter gåavstand fra campusene til Westerdals Olso ACT. Øverst på siden finner du en navigasjonsbar som gjør det enkelt for deg å finne mer informasjon.
         </p>
       </div>
         <div class="c2 rel">
-            <img class="homepageimg" src="assets/imgs/Fjerdingen.png"/>
+            <img class="homepageimg" src="assets/imgs/Fjerdingen.png" alt="Campus Fjerdingen lobby"/>
         </div>
     </div>
     <div class="row about">
-        
+
         <div class="c2 rel">
-            <img class="westerdalsLogo" src="assets/imgs/Icons&logos-imgs/WACT_hovedlogo_sort_rgb.png"/>
+            <img class="westerdalsLogo" src="assets/imgs/Icons&logos-imgs/WACT_hovedlogo_sort_rgb.png" alt="Westerdals logo"/>
         </div>
         <div class="c2">
         <h1>Om Matvraket</h1>

@@ -9,7 +9,7 @@
     font-size: 2.5em;
     padding-right: 40px;
 }
-  
+
 
 .aboutusbox .c2 #aboutustext{
     font-size: 1.2em;
@@ -17,7 +17,7 @@
 }
 
 .aboutusbox .c2 #aboutusimg{
-    height: 50%;
+    width: 50%;
 }
 .middleline{
     border-right: 2px solid #ef8f12;

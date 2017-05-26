@@ -10,8 +10,8 @@
             Alle forslag til ønsker og forbedringer er velkommene, gå til kontakt oss for å sende inn deres forslag til forbedringer! Siden er i konstant utviklking for at brukerene skal få den beste opplevelsen.
         </p>
       </div>
-    <div class="c2 column h-center-content">
-        <img id="aboutusimg" src="assets/imgs/matvrakLogoStor.png">
+    <div class="c2 column h-center-content v-center-content">
+        <img id="aboutusimg" src="assets/imgs/matvrakLogoStor.png" alt="Matvrak logo stor"/>
     </div>
 </div>
 
