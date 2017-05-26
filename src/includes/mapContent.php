@@ -76,16 +76,16 @@ foreach ($locations as $location) {
                     <div class="times">
                         <!-- Skriv ut alle åpningstidene. Hvis tid ikke eksistere, så er stedet stengt. -->
                         <?php foreach ($location['hours'] as $hours) {
-                            if ($hours['open'] != '00:00:00' && $hours['close'] != '00:00:00') { ?>
+                            if ($hours['open'] == '00:00:00' && $hours['close'] == '00:00:00') { ?>
                                 <div class="row">
                                     <div class="c2"><?= $days[$hours['day']] ?></div>
-                                    <div class="c2"><?= date("H", strtotime($hours['open'])) ?>
-                                        - <?= date("H", strtotime($hours['close'])) ?></div>
+                                    <div class="c2">Stengt</div>
                                 </div>
                             <?php } else { ?>
                                 <div class="row">
                                     <div class="c2"><?= $days[$hours['day']] ?></div>
-                                    <div class="c2">Stengt</div>
+                                    <div class="c2"><?= date("H", strtotime($hours['open'])) ?>
+                                        - <?= date("H", strtotime($hours['close'])) ?></div>
                                 </div>
                             <?php }
                         } ?>
