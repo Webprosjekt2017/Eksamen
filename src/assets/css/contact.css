@@ -99,6 +99,6 @@
 }
 
 .tooltiptext.show span {
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
+  -webkit-transform: translateX(15%);
+          transform: translateX(15%);
 }
